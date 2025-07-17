@@ -12,6 +12,9 @@ from .. import valid_extensions
 import time
 from pdf2image import convert_from_path
 from typing import List, Optional
+import fitz  # PyMuPDF
+from pathlib import Path
+
 ### Save table results and annotated image
 
 class AnnotatedImage:
@@ -29,41 +32,6 @@ class AnnotatedImage:
         if dir_path and not os.path.exists(dir_path):
             os.makedirs(dir_path, exist_ok=True)
         return path
-    
-    @staticmethod
-    def pdf_to_img(self, path_pdf, dpi = 300, path_img = None, n_threads = None, output_message = True):
-        pdf_basename = os.path.basename(path_pdf)
-        pdf_name, ext = os.path.splitext(pdf_basename)
-        valid_ext = '.pdf'
-
-        if ext.lower() not in valid_ext:
-            print("Error: Input is not a PDF file")
-        else:
-            try:
-                if n_threads is None:
-                    n_threads = 1
-                
-                images = convert_from_path(
-                    path_pdf,
-                    dpi = dpi,
-                    thread_count = n_threads
-                )
-
-                if path_img is None or not os.path.exists(path_img):
-                    dirname = os.path.dirname(path_pdf)
-                    path_res = os.path.join(dirname, 'images_from_pdf')
-                    os.makedirs(path_res, exist_ok = True)
-                    path_img = path_res # <- Update the new dir path
-                
-                for i, image in enumerate(images):
-                    img_name = f'{pdf_name}_page{i+1}.jpg'
-                    output_path = os.path.join(path_img, img_name)
-                    image.save(output_path, 'JPEG')
-                
-                if output_message: 
-                    print(f'{len(images)} images saved in: {path_res}')
-            except Exception as e:
-                print(f'An expected error ocurred: {str(e)}')
 
     def save_img(self, path: Optional[str] = None, format: Optional[str] = None, dpi: int = 300,  output_message: bool = True, **kwargs):
         """Guarda la imagen en el mismo directorio que la imagen original"""
@@ -249,20 +217,74 @@ class AnalyzingImage:
             if output_message:
                 print(error_msg)
             raise RuntimeError(error_msg) from e
+        
+    @staticmethod
+    def pdf_to_img_pymupdf(pdf_path: str, 
+                dpi: int = 300, 
+                output_dir: Optional[str] = None, 
+                n_threads: Optional[int] = None,  # Mantengo por compatibilidad, pero no se usa
+                output_message: bool = True) -> List[str]:
+        """
+        Converts a PDF file to JPEG images (one per page) using PyMuPDF (fitz), 
+        and renames them to a simple format (e.g., pdf_page1.jpg).
 
+        Args:
+            pdf_path: Path to the input PDF file.
+            dpi: Conversion resolution (dots per inch).
+            output_dir: Directory to save the images. If None, creates 'images_from_pdf' in the same folder as the PDF.
+            n_threads: (Unused) Included for interface compatibility.
+            output_message: Whether to print progress messages.
 
-    def read_image(self, plot=False, output_message= True, plot_size=(5,5), plot_axis = False, plot_title = None, plot_title_pos = 'center', plot_title_fontsize = '12'):
-        self.img = ms.load_image(self.image_path, plot=plot, figsize=plot_size, axis = plot_axis, title = plot_title, title_location = plot_title_pos,
-                                 title_fontsize = plot_title_fontsize)
-        if self.img is None:
-            raise ValueError(f"No se pudo cargar la imagen: {self.image_path}")
+        Returns:
+            List of paths to the generated image files.
 
-        if output_message: 
-            img_name = os.path.basename(self.image_path)
-            output_message = f'{img_name} successfully loaded ♡'
-            print(output_message)
+        Raises:
+            ValueError: If the input file is not a valid PDF.
+            RuntimeError: If the conversion process fails.
+        """
+        # Validación de entrada
+        if not os.path.isfile(pdf_path):
+            raise ValueError(f"File not found: {pdf_path}")
+        if not pdf_path.lower().endswith('.pdf'):
+            raise ValueError("Input file must be a PDF (.pdf extension)")
 
-        return None
+        pdf_dir = os.path.dirname(pdf_path)
+        pdf_name = os.path.splitext(os.path.basename(pdf_path))[0]
+
+        if output_dir is None:
+            output_dir = os.path.join(pdf_dir, 'images_from_pdf')
+
+        os.makedirs(output_dir, exist_ok=True)
+
+        try:
+            if output_message:
+                print("╔══════════════════════════════════════╗")
+                print("║  Extracting images may take a few minutes... ⋆✧｡٩(ˊᗜˋ )و✧*｡  ║")
+                print("╚══════════════════════════════════════╝")
+
+            doc = fitz.open(pdf_path)
+            scale = dpi / 72  # 72 DPI is default in PDFs
+            image_paths = []
+
+            for i, page in enumerate(doc, 1):
+                mat = fitz.Matrix(scale, scale)
+                pix = page.get_pixmap(matrix=mat)
+                output_file = os.path.join(output_dir, f"{pdf_name}_page{i}.jpg")
+                pix.save(output_file)
+                image_paths.append(output_file)
+
+            if output_message:
+                print(f"✅ Converted {len(image_paths)} pages to images.")
+                print(f"📁 Saved in: {output_dir}")
+
+            return None
+
+        except Exception as e:
+            error_msg = f"PDF conversion error: {str(e)}"
+            if output_message:
+                print("❌", error_msg)
+            raise RuntimeError(error_msg) from e
+
 
     def create_mask(self, n_kernel=5, plot=False, plot_size=(5,5), stamp=False, plot_axis = False, n_iteration = 1, canny_min = 30, canny_max = 100, lower_black = None,
                     upper_black = None):

@@ -957,45 +957,6 @@ def analyze_fruits(img, contours, fruit_locus_map, px_per_cm_x, px_per_cm_y,
     return AnnotatedImage(annotated_img, results, image_path = path)
 
 
-#########
-
-def pdf_to_img(path_pdf, dpi = 600, path_img = None, n_threads = None, output_message = True):
-    # Verify PDF extension first
-    pdf_basename = os.path.basename(path_pdf)
-    pdf_name, ext = os.path.splitext(pdf_basename)
-    valid_extension = '.pdf'
-
-    if ext.lower() not in valid_extension:
-        print("Error: Input is not a PDF file")
-    else:
-        try: 
-            if n_threads is None:
-                n_threads = 1
-            
-            images = convert_from_path(
-                path_pdf,
-                dpi = dpi,
-                thread_count = n_threads
-            )
-        
-            if path_img is None or not os.path.exists(path_img):
-                    dirname = os.path.dirname(path_pdf)
-                    path_res = os.path.join(dirname, "images_from_pdf")
-                    os.makedirs(path_res, exist_ok=True)
-                    path_img = path_res  # Update path_img to the new directory
-
-            # Save images
-            for i, image in enumerate(images):
-                img_name = f"{pdf_name}_page{i+1}.jpg"
-                output_path = os.path.join(path_img, img_name)
-                image.save(output_path, 'JPEG')
-            
-            if output_message:
-                print(f"{len(images)} images saved in: {path_res}")
-
-        except Exception as e:
-            print(f'An unexpected error ocurred: {str(e)}')
-
 ############### 
 
 # Analyzing multiple photos in a folder
