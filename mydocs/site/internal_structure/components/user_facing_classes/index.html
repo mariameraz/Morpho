@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>User-Facing Classes - Traitly</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../../../stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "User-Facing Classes";
+        var mkdocs_page_input_path = "internal_structure/components/user_facing_classes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Traitly
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">General Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../installation/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../installation/requirements/">Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../installation/multi_platform/">Multi-Platform Support</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../modules_description/">2.2 Modules Overview</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modules</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Internal Structure</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../requirements/">Internal Structure – requirements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tables_of_traits/">Traits Description</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Components</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">User-Facing Classes</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#1-classes">1. Classes:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#analyzingimage">AnalyzingImage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#annotatedimage">AnnotatedImage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-methods">2. Methods:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#read_image">read_image</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create_mask">create_mask</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#find_fruits">find_fruits</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#analyze_image">analyze_image</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#analyze_folder">analyze_folder</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pdf_to_img">pdf_to_img</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#save_img">save_img</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#save_csv">save_csv</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#save_all">save_all</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../helper_functions/">Internal Structure – helper_functions</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../core_functions/">Internal/Core Functions</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tutorials</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../tutorials/stamps_analysis/">Stamps Analysis</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../tutorials/cranberry_slice_analysis/">Tutorial: Fruit Internal Structure Analysis Using Slice Images</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../tutorials/complex_slices/">Tutorial: Fruit Internal Structure Analysis Using Slice Images</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Color Correction</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../color_correction/">Color Correction – index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../color_correction/tables_of_traits/">Color Correction – tables_of_traits</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../color_correction/user_facing_classes/">Color Correction – user_facing_classes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../color_correction/helper_functions/">Color Correction – helper_functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../color_correction/color_correction_functions/">Color Correction – color_correction_functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../color_correction/tutorials/">Color Correction – tutorials</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../core/">Internal Structure – Core API</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Traitly</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Modules</li>
+          <li class="breadcrumb-item">Internal Structure</li>
+          <li class="breadcrumb-item">Components</li>
+      <li class="breadcrumb-item active">User-Facing Classes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="user-facing-classes">User-Facing Classes</h1>
+<hr />
+<h2 id="1-classes">1. Classes:</h2>
+<hr />
+<h2 id="analyzingimage"><code>AnalyzingImage</code></h2>
+<h2> Description: </h2>
+
+<p>Main class for <strong>preparing and analyzing images</strong> of fruits (or similar objects).
+Provides methods for <strong>reading</strong>, <strong>masking</strong>, <strong>detecting contours/locules</strong>, and <strong>running morphological analysis</strong>.
+Can also batch-process entire folders of images.</p>
+<h2> Implementation Details: </h2>
+
+<p><strong>Initialization</strong></p>
+<ul>
+<li>Accepts a path to either a single image or a directory of images.</li>
+<li>Tracks state (original image, masks, contours, label text, calibration).</li>
+</ul>
+<p><strong>PDF conversion</strong></p>
+<ul>
+<li><code>pdf_to_img()</code> converts multi-page PDFs into JPEG images.</li>
+<li>Creates an output folder automatically if none is provided.</li>
+</ul>
+<p><strong>Reading images</strong></p>
+<ul>
+<li><code>read_image()</code> loads the image into memory using utility functions.</li>
+<li>Optionally displays it with customizable figure size.</li>
+</ul>
+<p><strong>Mask creation</strong></p>
+<ul>
+<li><code>create_mask()</code> segments fruits from the background.</li>
+<li>Supports options for inverted stamps, Canny thresholds, HSV thresholds, CLAHE contrast, and locule detection.</li>
+</ul>
+<p><strong>Fruit detection</strong></p>
+<ul>
+<li><code>find_fruits()</code> filters contours using circularity, aspect ratio, and area thresholds.</li>
+<li>Builds a mapping between fruits and their locules.</li>
+<li>Detects labels within the image for metadata.</li>
+</ul>
+<p><strong>Metadata handling</strong></p>
+<ul>
+<li><code>detect_metadata()</code> extracts image name and label text.</li>
+</ul>
+<p><strong>Image analysis</strong></p>
+<ul>
+<li><code>analyze_image()</code> computes morphological descriptors and generates annotated results.</li>
+<li>Returns an <code>AnnotatedImage</code> with both annotated image and results table.</li>
+</ul>
+<p><strong>Batch processing</strong></p>
+<ul>
+<li><code>analyze_folder()</code> loops over all images in a directory.</li>
+<li>Applies the full workflow (mask → contours → analysis).</li>
+<li>Saves annotated images, results (<code>all_results.csv</code>), and error reports.</li>
+</ul>
+<p><strong>Summaries</strong></p>
+<ul>
+<li><code>metadata_summary()</code> prints quick metadata (labels, contours, fruit count, physical dimensions).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Required</strong>:</p>
+<ul>
+<li><code>image_path</code> (<code>str</code>): Path to an input image file <strong>or</strong> a folder containing multiple images.</li>
+</ul>
+<p><strong>Optional</strong>:</p>
+<ul>
+<li>For a detailed description of method parameters, see  <font style="color:red">User-Facing Classes: 2. Methods</font>.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<p>Instance of <code>AnalyzingImage</code>, with multiple methods to run analysis.</p>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Analyze a single image</span>
+<span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">(</span><span class="n">stamp</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">find_fruits</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">detect_metadata</span><span class="p">()</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">save_all</span><span class="p">()</span>
+
+<span class="c1"># Analyze all images in a folder</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/&quot;</span><span class="p">)</span>
+<span class="n">batch</span><span class="o">.</span><span class="n">analyze_folder</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;fruits/Results&quot;</span><span class="p">,</span> <span class="n">stamp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="annotatedimage"><code>AnnotatedImage</code></h2>
+<h2> Description: </h2>
+
+<p>Represents an <strong>analyzed image</strong> along with its <strong>associated results</strong> (tables, metrics).
+Provides functionality to <strong>save outputs</strong> in different formats, including annotated images (<code>.jpg</code>, <code>.png</code>, etc.) and result tables (<code>.csv</code>).</p>
+<p>This class is typically created as the <strong>output</strong> of the analysis workflow performed by <strong><code>ImageAnalyzer</code></strong>.
+It acts as a <strong>container</strong> that holds both the <strong>visual annotation</strong> (image with contours/labels) and the <strong>quantitative results</strong> (CSV-ready table).</p>
+<h2>Implementation Details: </h2>
+
+<p><strong>Initialization</strong></p>
+<ul>
+<li>Converts the input <code>cv2_image</code> (BGR) to RGB.</li>
+<li>Stores results in both <code>results</code> and <code>table</code>.</li>
+<li>Optionally stores the original image path.</li>
+</ul>
+<p><strong>Directory handling</strong></p>
+<ul>
+<li><code>_ensure_dir_exists()</code> checks if a directory exists before saving files.</li>
+<li>Expands <code>~</code> and relative paths to absolute paths.</li>
+</ul>
+<p><strong>Saving images</strong></p>
+<ul>
+<li><code>save_img()</code> exports the annotated RGB image to disk.</li>
+<li>Uses <code>matplotlib</code> to remove axes and margins, producing a clean figure.</li>
+<li>Supports DPI and format customization.</li>
+</ul>
+<p><strong>Saving tables</strong></p>
+<ul>
+<li><code>save_csv()</code> converts the <code>table</code> (list of results) into a Pandas DataFrame.</li>
+<li>Saves the results as a <code>.csv</code> file.</li>
+</ul>
+<p><strong>Combined saving</strong></p>
+<ul>
+<li><code>save_all()</code> writes both the annotated image and CSV results using a common base name.</li>
+<li>Allows flexible control of output directory and file names.</li>
+</ul>
+<p><strong>Relationship with <code>ImageAnalyzer</code></strong>:</p>
+<ul>
+<li>The class <strong><code>ImageAnalyzer</code></strong> performs the full workflow (masking, contour detection, morphological analysis).</li>
+<li>When analysis is completed, <code>ImageAnalyzer.analyze_image()</code> returns an <strong><code>AnnotatedImage</code></strong> instance.</li>
+<li>This means <strong><code>AnnotatedImage</code> is the final product of the analysis pipeline</strong>, used for reporting, exporting, and visualization.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Required</strong>:</p>
+<ul>
+<li><code>cv2_image</code> (<code>np.ndarray</code>): Input image in <strong>BGR</strong> format.</li>
+</ul>
+<p><strong>Optional</strong>:</p>
+<ul>
+<li><code>results</code> (<code>list</code>): Analysis results (default = empty list).</li>
+<li><code>image_path</code> (<code>str | None</code>): Path to the original image file.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<p>Instance of <code>AnnotatedImage</code> with methods to save outputs.</p>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run analysis with ImageAnalyzer</span>
+<span class="n">analyzer</span> <span class="o">=</span> <span class="n">ImageAnalyzer</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">find_fruits</span><span class="p">()</span>
+
+<span class="c1"># Perform analysis and retrieve an AnnotatedImage</span>
+<span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save outputs</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">save_img</span><span class="p">()</span> <span class="c1"># Save image</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">save_csv</span><span class="p">()</span> <span class="c1"># Save csv file</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">save_all</span><span class="p">()</span> <span class="c1"># Save both image and csv file</span>
+
+<span class="c1"># Access the result table</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">table</span>
+</code></pre></div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="2-methods">2. Methods:</h2>
+<h2 id="read_image"><code>read_image</code></h2>
+<h2>Description:</h2>
+
+<p>Loads the image from <code>image_path</code> into memory and optionally displays it.
+Works directly with the file path provided at initialization and stores the result internally in <code>self.img</code>.</p>
+<p>For algorithmic details, refer to <code>Utilities → ms.load_img</code>.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Optional:</strong></p>
+<ul>
+<li><code>plot</code> (<code>bool</code>, default <code>False</code>) — Whether to display the loaded image.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — Print a confirmation message after loading.</li>
+<li><code>plot_size</code> (<code>tuple[int,int]</code>, default <code>(5,5)</code>) — Size of the display figure.</li>
+<li><code>plot_axis</code> (<code>bool</code>, default <code>False</code>) — Whether to show axes in the display.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<ul>
+<li>
+<p><code>None</code> — does not return a value. Instead, stores the loaded image in:</p>
+<ul>
+<li><code>self.img</code> → original image in <strong>BGR format</strong> (as loaded with OpenCV).</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_size</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Access the loaded image directly</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">img</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (H, W, 3) -&gt; BGR image</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><strong>Notes</strong></p>
+<ul>
+<li>Internally calls <code>ms.load_img</code> for image reading and optional plotting.</li>
+<li>The image is preserved in memory for use in subsequent steps (<code>create_mask</code>, <code>find_fruits</code>, etc.).</li>
+</ul>
+</div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="create_mask"><code>create_mask</code></h2>
+<h2> Description </h2>
+
+<p>Segments fruits from the background. Wrapper around the core masking routine that adds state storage (class attributes), stamp handling, and optional plotting.
+Works directly with the image and metadata managed by <code>ImageAnalyzer</code> and is built on top of <code>core.create_mask</code>. </p>
+<p>For algorithmic details, see <code>Internal/Core Utilities → core.create_mask</code>.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Optional:</strong></p>
+<p><strong>Morphology</strong>:</p>
+<ul>
+<li><code>n_kernel</code> (<code>int</code>, default <code>5</code>) — size of the structuring element used in morphological operations.</li>
+<li><code>n_iteration</code> (<code>int</code>, default <code>1</code>) — number of times morphological operations are applied.</li>
+</ul>
+<p><strong>Edges &amp; Color</strong>:</p>
+<ul>
+<li><code>canny_min</code> (<code>int</code>, default <code>30</code>) — minimum threshold for Canny edge detection.</li>
+<li><code>canny_max</code> (<code>int</code>, default <code>100</code>) — maximum threshold for Canny edge detection.</li>
+<li><code>lower_hsv</code> (<code>list[int] | None</code>, default <code>None</code>) — lower bound for HSV color filtering (e.g., background removal).</li>
+<li><code>upper_hsv</code> (<code>list[int] | None</code>, default <code>None</code>) — upper bound for HSV color filtering.</li>
+</ul>
+<p><strong>Stamps &amp; Locules</strong>:</p>
+<ul>
+<li><code>stamp</code> (<code>bool</code>, default <code>False</code>) — if <code>True</code>, the input image is inverted before processing (for stamp-like images).</li>
+<li><code>locules_filled</code> (<code>bool</code>, default <code>False</code>) — if <code>True</code>, applies extra CLAHE + Otsu thresholding to detect internal locules (even when not hollow).</li>
+<li><code>min_locule_size</code> (<code>int</code>, default <code>300</code>) — minimum pixel area required to consider a locule valid.</li>
+<li><code>n_blur</code> (<code>int</code>, default <code>11</code>) — kernel size for median blur used to smooth the locule mask.</li>
+<li><code>clip_limit</code> (<code>int</code>, default <code>4</code>) — contrast limit for CLAHE enhancement.</li>
+<li><code>tile_grid_size</code> (<code>int</code>, default <code>8</code>) — CLAHE grid size (local histogram equalization regions).</li>
+</ul>
+<p><strong>Visualization</strong>:</p>
+<ul>
+<li><code>plot</code> (<code>bool</code>, default <code>False</code>) — whether to display the generated mask.</li>
+<li><code>plot_size</code> (<code>tuple[int,int]</code>, default <code>(5,5)</code>) — size of the plot figure.</li>
+<li><code>plot_axis</code> (<code>bool</code>, default <code>False</code>) — if <code>True</code>, shows axis ticks/labels in the plot.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong>:</p>
+<ul>
+<li>
+<p><code>None</code> — does not return a value. Instead, stores results internally:</p>
+<ul>
+<li><code>self.mask</code> → main binary mask (always set).</li>
+<li><code>self.mask_fruits</code> → set when <code>locules_filled=True</code>.</li>
+<li><code>self.img_inverted</code> → set when <code>stamp=True</code>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">(</span><span class="n">stamp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locules_filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Access the generated mask directly</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">mask</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (H, W)</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><strong>Notes</strong>:</p>
+<ul>
+<li>When <code>locules_filled=True</code>, the method enhances the L channel (LAB space) using CLAHE, then applies Otsu thresholding and morphology to detect internal regions.</li>
+<li>This allows segmentation of <strong>internal locules</strong> that may not appear as hollow cavities (i.e., filled or partially filled locules).</li>
+</ul>
+</div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="find_fruits"><code>find_fruits</code></h2>
+<h2>Description:</h2>
+
+<p>Detects fruits and locules from the mask, applying geometric filters and label detection.
+Stores contours and fruit–locule mappings as class attributes.</p>
+<p>For algorithmic details, refer to <code>Internal/Core Utilities → core.find_fruits</code>.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong>"</p>
+<p><strong>Optional</strong></p>
+<p><strong>Shape filters</strong>:</p>
+<ul>
+<li><code>min_circularity</code> (<code>float</code>, default <code>0.5</code>) — minimum circularity to accept a fruit contour.</li>
+<li><code>max_circularity</code> (<code>float</code>, default <code>1.0</code>) — maximum circularity to accept a fruit contour.</li>
+<li><code>min_aspect_ratio</code> (<code>float</code>, default <code>0.3</code>) — minimum aspect ratio (width/height) for valid contours.</li>
+<li><code>max_aspect_ratio</code> (<code>float</code>, default <code>3.0</code>) — maximum aspect ratio (width/height) for valid contours.</li>
+<li><code>contour_filters</code> (<code>dict | None</code>) — custom thresholds to override defaults.</li>
+</ul>
+<p><strong>Locules</strong>:</p>
+<ul>
+<li><code>min_locule_area</code> (<code>int</code>, default <code>50</code>) — minimum area (px²) for a locule to be considered valid.</li>
+<li><code>min_locule_per_fruit</code> (<code>int</code>, default <code>1</code>) — minimum number of locules required to keep a fruit.</li>
+</ul>
+<p><strong>Labels</strong>:</p>
+<ul>
+<li><code>language_label</code> (<code>list[str]</code>, default <code>['es','en']</code>) — languages to use in OCR for label detection.</li>
+<li><code>min_area_label</code> (<code>int</code>, default <code>500</code>) — minimum contour area to classify as label region.</li>
+<li><code>min_canny_label</code> (<code>int</code>, default <code>0</code>), <code>max_canny_label</code> (<code>int</code>, default <code>150</code>) — Canny thresholds for label edge detection.</li>
+<li><code>blur_label</code> (<code>tuple[int,int]</code>, default <code>(11,11)</code>) — blur kernel applied before label detection.</li>
+</ul>
+<p><strong>Misc</strong>:</p>
+<ul>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print detection summary.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong>:</p>
+<ul>
+<li>
+<p><code>None</code> — does not return a value. Instead, stores results internally:</p>
+<ul>
+<li><code>self.contours</code> → list of detected contours.</li>
+<li><code>self.fruit_locules_map</code> → mapping fruit → locule IDs.</li>
+<li><code>self.label_text</code>, <code>self.label_coord</code>, <code>self.label_id</code> (if a label is detected).</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">find_fruits</span><span class="p">()</span>
+
+<span class="c1"># Access contours and fruit-locule mapping</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">analyzer</span><span class="o">.</span><span class="n">contours</span><span class="p">))</span>         
+<span class="nb">print</span><span class="p">(</span><span class="n">analyzer</span><span class="o">.</span><span class="n">fruit_locules_map</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><strong>Notes</strong>:</p>
+<ul>
+<li>Internally wraps <code>core.find_fruits</code> and adds label detection (via <code>ms.detect_label</code>) plus state storage.</li>
+</ul>
+</div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="analyze_image"><code>analyze_image</code></h2>
+<h2>Description:</h2>
+
+<p>Runs the full morphological analysis on detected fruits and locules.
+Handles label detection (if not done), calibration of px/cm, and contour analysis.</p>
+<p>Returns an <code>AnnotatedImage</code> with annotated RGB image and results table.</p>
+<p>For algorithmic details, refer to <code>Internal/Core Utilities → core.px_per_cm</code> and <code>core.analyze_fruits</code>.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Optional:</strong></p>
+<p><strong>Visualization</strong>:</p>
+<ul>
+<li><code>plot</code> (<code>bool</code>, default <code>True</code>) — display results with annotations.</li>
+<li><code>plot_size</code> (<code>tuple[int,int]</code>, default <code>(10,10)</code>) — figure size for display.</li>
+<li><code>plot_axis</code> (<code>bool</code>, default <code>False</code>) — show axis in plots.</li>
+<li><code>font_scale</code> (<code>float</code>, default <code>1.5</code>) — font size for text annotations.</li>
+<li><code>font_thickness</code> (<code>int</code>, default <code>2</code>) — line thickness for text.</li>
+<li><code>plot_title_fontsize</code> (<code>int</code>, default <code>12</code>) — font size for title.</li>
+<li><code>label_bg_color</code> (<code>tuple[int,int,int]</code>, default <code>(255,255,255)</code>) — background color for label boxes.</li>
+<li><code>line_spacing</code> (<code>int</code>, default <code>15</code>) — spacing between annotation lines.</li>
+<li><code>plot_title_pos</code> (<code>str</code>, default <code>'center'</code>) — title alignment.</li>
+</ul>
+<p><strong>Contours &amp; Shape</strong>:</p>
+<ul>
+<li><code>use_ellipse</code> (<code>bool</code>, default <code>False</code>) — fit ellipses to contours instead of raw polygon.</li>
+<li><code>contour_mode</code> (<code>str</code>, default <code>'raw'</code>) — contour approximation mode.</li>
+<li><code>epsilon_hull</code> (<code>float</code>, default <code>0.001</code>) — tolerance for convex hull simplification.</li>
+</ul>
+<p><strong>Locules</strong>:</p>
+<ul>
+<li><code>min_locule_area</code> (<code>int</code>, default <code>100</code>) — minimum area (px²) to consider a locule.</li>
+<li><code>max_locule_area</code> (<code>int | None</code>) — maximum allowed locule area.</li>
+<li><code>min_distance</code> (<code>int</code>, default <code>0</code>) — minimum distance for merging locules.</li>
+<li><code>max_distance</code> (<code>int</code>, default <code>100</code>) — maximum distance for merging locules.</li>
+</ul>
+<p><strong>Symmetry</strong>:</p>
+<ul>
+<li><code>n_shifts</code> (<code>int</code>, default <code>500</code>) — number of shifts for symmetry analysis.</li>
+<li><code>angle_weight</code> (<code>float</code>, default <code>0.5</code>) — weight for angle symmetry.</li>
+<li><code>radius_weight</code> (<code>float</code>, default <code>0.5</code>) — weight for radius symmetry.</li>
+<li><code>min_radius_threshold</code> (<code>float</code>, default <code>0.1</code>) — minimum radius threshold.</li>
+<li><code>rel_tol</code> (<code>float</code>, default <code>1e-6</code>) — relative tolerance in calculations.</li>
+</ul>
+<p><strong>Calibration</strong>:</p>
+<ul>
+<li><code>width_cm</code> (<code>float | None</code>) — manual physical width in cm.</li>
+<li><code>length_cm</code> (<code>float | None</code>) — manual physical length in cm.</li>
+<li><code>scale_size</code> (<code>str</code>, default <code>'letter_ansi'</code>) — reference scale for px/cm calibration.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<ul>
+<li>
+<p><code>AnnotatedImage</code> — containing:</p>
+<ul>
+<li><code>rgb_image</code> → annotated image (RGB).</li>
+<li><code>table</code> → list of results (metrics per fruit/locule).</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">find_fruits</span><span class="p">()</span>
+
+<span class="c1"># Perform final analysis</span>
+<span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Access image and results</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">annotated</span><span class="p">))</span>            <span class="c1"># AnnotatedImage</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">annotated</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">table</span><span class="p">))</span>       <span class="c1"># number of rows in results</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><strong>Notes</strong></p>
+<ul>
+<li>Internally calls <code>core.px_per_cm</code> for calibration and <code>core.analyze_fruits</code> for analysis.</li>
+<li>Also uses <code>ms.detect_label</code> if label metadata was not detected before.</li>
+</ul>
+</div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="analyze_folder"><code>analyze_folder</code></h2>
+<h2>Description</h2>
+
+<p>Batch wrapper that processes all valid images in a directory.</p>
+<p>Applies the full pipeline (read → mask → find_fruits → analyze_image) to each file, saving annotated images, results, and error reports.</p>
+<p>For algorithmic details, see <code>Internal/Core Utilities → core.analyze_fruits</code> (used internally via <code>analyze_image</code>).</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Optional</strong></p>
+<p><strong>General</strong>:</p>
+<ul>
+<li><code>output_dir</code> (<code>str | None</code>, default <code>None</code>) — folder for saving results (defaults to <code>&lt;input&gt;/Results</code>).</li>
+<li><code>stamp</code> (<code>bool</code>, default <code>False</code>) — whether input images are inverted stamps.</li>
+<li><code>contour_mode</code> (<code>str</code>, default <code>'raw'</code>) — contour approximation mode.</li>
+<li><code>n_kernel</code> (<code>int</code>, default <code>7</code>) — kernel size for morphology in mask creation.</li>
+<li><code>min_circularity</code> (<code>float</code>, default <code>0.3</code>) — minimum circularity filter for fruits.</li>
+</ul>
+<p><strong>Visualization</strong>:</p>
+<ul>
+<li><code>font_scale</code> (<code>float</code>, default <code>1.5</code>) — font size for text annotations.</li>
+<li><code>font_thickness</code> (<code>int</code>, default <code>2</code>) — thickness of annotation text.</li>
+<li><code>padding</code> (<code>int</code>, default <code>15</code>) — padding around text.</li>
+<li><code>line_spacing</code> (<code>int</code>, default <code>15</code>) — spacing between annotation lines.</li>
+<li><code>label_bg_color</code> (<code>tuple[int,int,int]</code>, default <code>(255,255,255)</code>) — background color for labels.</li>
+</ul>
+<p><strong>Locules</strong>:</p>
+<ul>
+<li><code>min_locule_area</code> (<code>int</code>, default <code>300</code>) — minimum area (px²) for locule acceptance.</li>
+<li><code>max_locule_area</code> (<code>int | None</code>) — maximum locule area.</li>
+<li><code>min_distance</code> (<code>int</code>, default <code>2</code>) — minimum distance for merging locules.</li>
+<li><code>max_distance</code> (<code>int</code>, default <code>30</code>) — maximum distance for merging locules.</li>
+</ul>
+<p><strong>Shape analysis</strong>:</p>
+<ul>
+<li><code>epsilon_hull</code> (<code>float</code>, default <code>0.005</code>) — tolerance for convex hull simplification.</li>
+<li><code>use_ellipse_fruit</code> (<code>bool</code>, default <code>False</code>) — whether to fit ellipses to fruits.</li>
+<li><code>n_shifts</code> (<code>int</code>, default <code>500</code>) — number of shifts for symmetry analysis.</li>
+<li><code>angle_weight</code> (<code>float</code>, default <code>0.5</code>) — weight for angle symmetry.</li>
+<li><code>radius_weight</code> (<code>float</code>, default <code>0.5</code>) — weight for radius symmetry.</li>
+<li><code>min_radius_threshold</code> (<code>float</code>, default <code>0.1</code>) — minimum radius threshold.</li>
+<li><code>rel_tol</code> (<code>float</code>, default <code>1e-6</code>) — relative tolerance in symmetry.</li>
+</ul>
+<p><strong>Calibration</strong>:</p>
+<ul>
+<li><code>width_cm</code> (<code>float | None</code>) — manual width in cm.</li>
+<li><code>length_cm</code> (<code>float | None</code>) — manual length in cm.</li>
+<li><code>scale_size</code> (<code>str</code>, default <code>'letter_ansi'</code>) — reference scale for px/cm calibration.</li>
+</ul>
+<p><strong>Extra</strong>:</p>
+<ul>
+<li><code>**kwargs</code> — forwarded to <code>create_mask()</code> (e.g., HSV thresholds, Canny parameters).</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<ul>
+<li>
+<p><code>None</code> — does not return a value. Instead, writes results to disk:</p>
+<ul>
+<li><code>annotated_&lt;filename&gt;</code> → annotated images.</li>
+<li><code>all_results.csv</code> → concatenated table of all analyzed images.</li>
+<li><code>error_report.csv</code> → errors and skipped images.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">batch</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/&quot;</span><span class="p">)</span>
+<span class="n">batch</span><span class="o">.</span><span class="n">analyze_folder</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;fruits/Results&quot;</span><span class="p">,</span> <span class="n">stamp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Outputs are saved directly in the Results folder</span>
+<span class="c1"># including annotated images, all_results.csv, and error_report.csv</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><strong>Notes</strong></p>
+<ul>
+<li>Internally loops over images in the input folder and applies <code>analyze_image</code> to each one.</li>
+<li>Uses <code>psutil</code> for runtime and memory reporting.</li>
+</ul>
+</div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="pdf_to_img"><code>pdf_to_img</code></h2>
+<h2>Description</h2>
+
+<p>Converts a multi-page PDF into a sequence of JPEG images (one per page).</p>
+<p>Wrapper utility embedded in <code>ImageAnalyzer</code>, built on top of <code>pdf2image.convert_from_path</code>.</p>
+<p>If <code>output_dir</code> is not provided, a new folder called <code>images_from_pdf</code> is automatically created next to the PDF file.</p>
+<p>Each page is saved as <code>&lt;pdf_name&gt;_pageN.jpg</code>.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Required</strong> </p>
+<ul>
+<li><code>pdf_path</code> (<code>str</code>) — path to the input PDF file. Must have <code>.pdf</code> extension.</li>
+</ul>
+<p><strong>Optional</strong></p>
+<ul>
+<li><code>dpi</code> (<code>int</code>, default <code>300</code>) — resolution in dots per inch for conversion.</li>
+<li><code>output_dir</code> (<code>str | None</code>, default <code>None</code>) — destination folder. If <code>None</code>, creates <code>&lt;pdf_dir&gt;/images_from_pdf</code>.</li>
+<li><code>n_threads</code> (<code>int | None</code>, default <code>None</code>) — number of CPU threads for conversion. If <code>None</code>, defaults to <code>1</code>.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print progress and summary messages.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<ul>
+<li><code>list[str]</code> — list of paths to the saved JPEG images.</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Convert a PDF to images with default settings</span>
+<span class="n">images</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="o">.</span><span class="n">pdf_to_img</span><span class="p">(</span><span class="s2">&quot;docs/report.pdf&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example output:</span>
+<span class="c1"># [</span>
+<span class="c1">#   &quot;docs/images_from_pdf/report_page1.jpg&quot;,</span>
+<span class="c1">#   &quot;docs/images_from_pdf/report_page2.jpg&quot;,</span>
+<span class="c1">#   ...</span>
+<span class="c1"># ]</span>
+
+<span class="c1"># Save into a custom directory, at higher resolution</span>
+<span class="n">images</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="o">.</span><span class="n">pdf_to_img</span><span class="p">(</span>
+    <span class="n">pdf_path</span><span class="o">=</span><span class="s2">&quot;docs/report.pdf&quot;</span><span class="p">,</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;exports/pdf_images&quot;</span><span class="p">,</span>
+    <span class="n">n_threads</span><span class="o">=</span><span class="mi">4</span>
+<span class="p">)</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><strong>Notes</strong></p>
+<ul>
+<li>Input validation ensures the file exists and has <code>.pdf</code> extension.</li>
+<li>If no <code>output_dir</code> is given, a new folder <code>images_from_pdf</code> is created automatically.</li>
+<li>Filenames follow the pattern <code>&lt;pdf_name&gt;_page{i+1}.jpg</code>.</li>
+</ul>
+</div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="save_img"><code>save_img</code></h2>
+<h2>Description:</h2>
+
+<p>Embedded in <code>AnnotatedImage</code>. Saves the annotated RGB image (produced and stored by <code>ImageAnalyzer</code>) to disk without axes or margins.</p>
+<p>If the output directory does not exist, it is created automatically.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Optional</strong></p>
+<ul>
+<li><code>path</code> (<code>str | None</code>, default <code>None</code>) — output file path. If <code>None</code>, uses <code>&lt;original_dir&gt;/&lt;image_name&gt;_annotated.&lt;ext&gt;</code>.</li>
+<li><code>format</code> (<code>str | None</code>, default <code>None</code>) — image format (e.g., <code>'jpg'</code>, <code>'png'</code>). If <code>None</code>, inferred from the file extension in <code>path</code>, or defaults to <code>'jpg'</code>.</li>
+<li><code>dpi</code> (<code>int</code>, default <code>300</code>) — resolution in dots per inch for raster image export.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print a confirmation message after saving.</li>
+<li><code>**kwargs</code> — additional keyword arguments passed to <code>matplotlib.pyplot.savefig</code> (e.g., <code>transparent=True</code>).</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<ul>
+<li><code>None</code> — writes the file to disk.</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save annotated image (auto-creates directory if missing)</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_img</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># Access default path</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annotated</span><span class="o">.</span><span class="n">image_path</span><span class="p">)</span>  <span class="c1"># original image path reference</span>
+</code></pre></div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="save_csv"><code>save_csv</code></h2>
+<h2>Description:</h2>
+
+<p>Embedded in <code>AnnotatedImage</code>. Saves the results table (computed by <code>ImageAnalyzer</code> and stored in the object) to a CSV file.</p>
+<p>If the output directory does not exist, it is created automatically.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<ul>
+<li><code>path</code> (<code>str | None</code>, default <code>None</code>) — output CSV path. If <code>None</code>, uses <code>&lt;original_dir&gt;/&lt;image_name&gt;_results.csv</code>.</li>
+<li><code>sep</code> (<code>str</code>, default <code>','</code>) — column separator to use in the CSV file.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print a confirmation message after saving.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<ul>
+<li><code>None</code> — writes the file to disk.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Raises</strong></p>
+<ul>
+<li>Raises <code>ValueError</code> if <code>self.table</code> is empty (i.e., no results to save).</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Save results table (auto-creates directory if missing)</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="c1"># The CSV will contain the per-fruit and per-locule measurements</span>
+</code></pre></div>
+<p><br></p>
+<hr style="border: 1.5px solid #a0a0a0ff;">
+
+<p><br></p>
+<h2 id="save_all"><code>save_all</code></h2>
+<h2>Description:</h2>
+
+<p>Embedded in <code>AnnotatedImage</code>. Convenience method that saves both the annotated image and the results table (produced by <code>ImageAnalyzer</code>) in one call.</p>
+<p>If the output directory does not exist, it is created automatically.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Parameters</strong></p>
+<p><strong>Optional</strong></p>
+<ul>
+<li><code>base_name</code> (<code>str | None</code>, default <code>None</code>) — base name for the files, without extension. If <code>None</code>, uses the original image name.</li>
+<li><code>output_dir</code> (<code>str | None</code>, default <code>None</code>) — directory where the files will be saved. If <code>None</code>, uses the original image directory.</li>
+<li><code>format</code> (<code>str</code>, default <code>'jpg'</code>) — image format for export (e.g., <code>'jpg'</code>, <code>'png'</code>).</li>
+<li><code>dpi</code> (<code>int</code>, default <code>300</code>) — resolution in dots per inch for raster export.</li>
+<li><code>sep</code> (<code>str</code>, default <code>','</code>) — column separator for the CSV file.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print confirmation messages after saving.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Returns</strong></p>
+<ul>
+<li><code>None</code> — writes both files (annotated image + CSV) to disk.</li>
+</ul>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save both outputs in a custom directory (auto-created if missing)</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_all</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;results/fruits&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">)</span>
+
+<span class="c1"># This creates:</span>
+<span class="c1"># results/fruits/sample_annotated.png</span>
+<span class="c1"># results/fruits/sample_results.csv</span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../tables_of_traits/" class="btn btn-neutral float-left" title="Traits Description"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../helper_functions/" class="btn btn-neutral float-right" title="Internal Structure – helper_functions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/mariameraz" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../tables_of_traits/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../helper_functions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

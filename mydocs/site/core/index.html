@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Internal Structure – Core API - Traitly</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Internal Structure \u2013 Core API";
+        var mkdocs_page_input_path = "core.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Traitly
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">General Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/requirements/">Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/multi_platform/">Multi-Platform Support</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../modules_description/">2.2 Modules Overview</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modules</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Internal Structure</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../internal_structure/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../internal_structure/requirements/">Internal Structure – requirements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../internal_structure/tables_of_traits/">Traits Description</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Components</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/components/user_facing_classes/">User-Facing Classes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/components/helper_functions/">Internal Structure – helper_functions</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/components/core_functions/">Internal/Core Functions</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tutorials</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/tutorials/stamps_analysis/">Stamps Analysis</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/tutorials/cranberry_slice_analysis/">Tutorial: Fruit Internal Structure Analysis Using Slice Images</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/tutorials/complex_slices/">Tutorial: Fruit Internal Structure Analysis Using Slice Images</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Color Correction</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/">Color Correction – index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/tables_of_traits/">Color Correction – tables_of_traits</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/user_facing_classes/">Color Correction – user_facing_classes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/helper_functions/">Color Correction – helper_functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/color_correction_functions/">Color Correction – color_correction_functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/tutorials/">Color Correction – tutorials</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Internal Structure – Core API</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#morphoslicer.internal_structure.core">core</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.inner_pericarp_area">inner_pericarp_area</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.rotate_box">rotate_box</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.create_mask">create_mask</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.px_per_cm">px_per_cm</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.find_fruits">find_fruits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.merge_locules">merge_locules</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.calculate_fruit_centroids">calculate_fruit_centroids</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.precalculate_locules_data">precalculate_locules_data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.angular_symmetry">angular_symmetry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.radial_symmetry">radial_symmetry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.rotational_symmetry">rotational_symmetry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.calculate_axes">calculate_axes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.get_fruit_morphology">get_fruit_morphology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#morphoslicer.internal_structure.core.analyze_fruits">analyze_fruits</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Traitly</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Internal Structure – Core API</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="internal-structure-core-api">Internal Structure – Core API</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="morphoslicer.internal_structure.core" class="doc doc-heading">
+            <code>morphoslicer.internal_structure.core</code>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.inner_pericarp_area" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">inner_pericarp_area</span><span class="p">(</span><span class="n">locules</span><span class="p">,</span> <span class="n">contours</span><span class="p">,</span> <span class="n">px_per_cm_width</span><span class="p">,</span> <span class="n">px_per_cm_length</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">draw_inner_pericarp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_ellipse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">,</span> <span class="n">contour_thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">contour_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">))</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculates and visualizes the inner pericarp area (enclosing locules) using either ellipse fitting 
+or convex hull approximation. Returns the annotated image and calculated area in square pixels.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>REQUIRED</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>locules (List[int]</code>)
+              –
+              <div class="doc-md-description">
+                <p>Indices of contours in <code>contours</code> that correspond to fruit locules.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>contours (List[numpy.ndarray]</code>)
+              –
+              <div class="doc-md-description">
+                <p>Detected contours (as returned by cv2.findContours()).
+- px_per_cm_width (float): Pixels per centimeter along the shorter side of the image (width).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>px_per_cm_length (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixels per centimeter along the longer side of the image (length).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>OPTIONAL</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>img (numpy.ndarray</code>)
+              –
+              <div class="doc-md-description">
+                <p>Input BGR image (uint8) where contours will be drawn (if draw_inner_pericarp=True).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>draw_inner_pericarp (bool</code>)
+              –
+              <div class="doc-md-description">
+                <p>If True, draws the contour on <code>img</code> (default: False).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>use_ellipse (bool</code>)
+              –
+              <div class="doc-md-description">
+                <p>If True, uses ellipse fitting; otherwise uses convex hull (default: False).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>epsilon (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Smoothing factor as percentage of arc length (range: [0, 1], default: 0.0001).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>rel_tol (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Relative tolerance for isotropy determination (default: 1e-6).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>contour_thickness (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Thickness of drawn contours in pixels (default: 2).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>contour_color (Tuple[int, int, int]</code>)
+              –
+              <div class="doc-md-description">
+                <p>BGR color for contours (default: cyan (0, 240, 240)).</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>img: Input image with drawn contours (if draw_inner_pericarp=True), otherwise unchanged.</li>
+</ul>
+              </div>
+            </li>
+            <li>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>area_cm2 (float): Calculated area in square centimeters.</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code>-<span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If <code>epsilon</code> is outside [0, 1] or <code>contours</code>/<code>loculi</code> indices are invalid.</p>
+              </div>
+            </li>
+            <li>
+                  <code>-<span title="cv2.error">error</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If OpenCV operations fail (e.g., insufficient points for ellipse fitting).</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<details class="notes" open>
+  <summary>Notes</summary>
+  <ul>
+<li>For ellipse fitting: Requires ≥5 contour points (returns area=0 if insufficient).</li>
+<li>Convex hull: More stable for irregular shapes but may overestimate area.</li>
+<li>Smoothing (epsilon): Lower values preserve detail; higher values simplify the contour.</li>
+<li>Color convention: Uses BGR (OpenCV standard) for <code>contour_color</code>.</li>
+<li>Area conversion: Handles both isotropic and anisotropic pixel scaling.</li>
+</ul>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.rotate_box" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rotate_box</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">px_per_cm_width</span><span class="p">,</span> <span class="n">px_per_cm_length</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">draw_box</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">box_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">box_thickness</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculates the rotated bounding box of a contour and its dimensions in pixels and centimeters.
+Optionally draws the bounding box on the input image.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>REQUIRED</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>contour (numpy.ndarray</code>)
+              –
+              <div class="doc-md-description">
+                <p>Contour of the object (e.g., fruit) as returned by cv2.findContours().</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>px_per_cm_width (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixels per centimeter along the shorter side of the image (width).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>px_per_cm_length (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixels per centimeter along the longer side of the image (length).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>OPTIONAL</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>img (numpy.ndarray</code>)
+              –
+              <div class="doc-md-description">
+                <p>BGR image where the bounding box will be drawn (if draw_box=True).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>draw_box (bool</code>)
+              –
+              <div class="doc-md-description">
+                <p>If True, draws the bounding box on <code>img</code> (default: True).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>box_color (Tuple[int,int,int]</code>)
+              –
+              <div class="doc-md-description">
+                <p>BGR color for the bounding box (default: light blue (255, 180, 0)).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>box_thickness (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Thickness of the bounding box lines in pixels (default: 3).</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <p>Tuple[float, float] containing:
+- box_height_cm: Height in centimeters (calculated using average resolution).
+- box_width_cm: Width in centimeters (calculated using average resolution).</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<details class="notes" open>
+  <summary>Notes</summary>
+  <ul>
+<li>The bounding box is axis-independent (rotated to fit the contour tightly).</li>
+<li>Dimensions are converted to cm using the average of <code>px_per_cm_width</code> and <code>px_per_cm_length</code>.</li>
+<li>The "height" is always the longer side, and "width" the shorter side, regardless of orientation.</li>
+</ul>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.create_mask" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_mask</span><span class="p">(</span><span class="n">img_hsv</span><span class="p">,</span> <span class="n">lower_hsv</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">upper_hsv</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_iteration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_kernel</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">kernel_open</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kernel_close</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">canny_min</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">canny_max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">fig_axis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a binary mask to segment objects from an HSV image using color thresholding, morphological operations and edge detection</p>
+<p>Arguments:</p>
+
+
+<details class="required" open>
+  <summary>REQUIRED</summary>
+  <ul>
+<li>img_hsv (numpy.ndarray): Image in HSV format.</li>
+</ul>
+</details>
+
+<details class="optional" open>
+  <summary>OPTIONAL</summary>
+  <ul>
+<li>lower_hsv (Tuple[int, int, int]): Lower bound for HSV background detection (default: (0,0,0)).</li>
+<li>upper_hsv (Tuple[int, int, int]): Upper bound for HSV background detection default: (180,255,30).</li>
+<li>n_iteration (int): Number of iterations for morphological operations.</li>
+<li>n_kernel (int): Kernel size (odd) for morphological ops when kernel_open/kernel_close are None (default: 7).</li>
+<li>kernel_open (int): Custom kernel size for opening (overrides n_kernel if set).</li>
+<li>kernel_close (int): Custom kernel size for closing (overrides n_kernel if set).</li>
+<li>canny_min (int): First threshold for Canny edge detection.</li>
+<li>canny_max (int): Second threshold for Canny edge detection.</li>
+<li>plot (numpy.ndarray): Whether to plot the resulting mask as a binary image.</li>
+<li>figsize (Tuple[int, int]): Figure size for plotting.</li>
+</ul>
+</details>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>Binary mask as 2D numpy array (numpy.dnarray)</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code>-<span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If parameters are invalid</p>
+              </div>
+            </li>
+            <li>
+                  <code>-<span title="TypeError">TypeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If input types are incorrect</p>
+              </div>
+            </li>
+            <li>
+                  <code>-<span title="RuntimeError">RuntimeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If image processing fails</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.px_per_cm" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">px_per_cm</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;letter_ansi&#39;</span><span class="p">,</span> <span class="n">width_cm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length_cm</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculates pixel density (pixels/cm) from an image and physical dimensions.
+Always treats the longest physical dimension as height and shortest as width,
+regardless of image orientation (portrait/landscape).</p>
+<p>Arguments:</p>
+
+
+<details class="required" open>
+  <summary>REQUIRED</summary>
+  <ul>
+<li>img (numpy.ndarray): Input image (2D grayscale or 3D BGR array).</li>
+</ul>
+</details>
+
+<details class="optional" open>
+  <summary>OPTIONAL</summary>
+  <ul>
+<li>size (str): Predefined physical size ('letter_ansi', 'legal_ansi', 'a4_iso', 'a3_iso') (default: 'letter_ansi').</li>
+<li>width_cm (float): Custom physical width in cm (short side, overrides size if provided with height_cm).</li>
+<li>length_cm (float): Custom physical length in cm (long side, overrides size if provided with width_cm).</li>
+</ul>
+</details>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <p>Tuple[float, float, float, float] containing:
+- pixels_per_cm_x: Pixel density for horizontal dimension (short side) (float)
+- pixels_per_cm_y: Pixel density for vertical dimension (long side) (float)
+- used_width_cm: Physical width used (short dimension in cm) (float)
+- used_length_cm: Physical length used (long dimension in cm) (float)</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code>-<span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If parameters are invalid (length &lt; width, negative values, etc.)</p>
+              </div>
+            </li>
+            <li>
+                  <code>-<span title="TypeError">TypeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If input types are incorrect</p>
+              </div>
+            </li>
+            <li>
+                  <code>-<span title="RuntimeError">RuntimeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If calculation fails</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<details class="note" open>
+  <summary>Note</summary>
+  <ul>
+<li>Physical dimensions are automatically converted to (long_side, short_side) format</li>
+<li>Image dimensions are matched to physical proportions (longest image side to longest paper side)</li>
+<li>For custom dimensions: length_cm must be &gt;= width_cm (long side must be length)</li>
+</ul>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.find_fruits" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">find_fruits</span><span class="p">(</span><span class="n">binary_mask</span><span class="p">,</span> <span class="n">min_locule_area</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">min_locules_per_fruit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_circularity</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">max_circularity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">min_aspect_ratio</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">max_aspect_ratio</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">rescale_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contour_approximation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">,</span> <span class="n">contour_filters</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Detects fruit contours in a binary mask using morphological filtering criteria and returns 
+a mapping of fruits to their internal cavities (locules).</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>REQUIRED</code></b>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>binary_mask (np.ndarray): Binary image where white represents objects (fruits) and black background (uint8).</li>
+</ul>
+              </div>
+            </li>
+            <li>
+              <b><code>OPTIONAL</code></b>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>min_locule_area (int): Minimum pixel area for a locule to be considered valid (default: 50).</li>
+<li>min_locules_per_fruit (int): Minimum number of locules required to classify as fruit (default: 1).</li>
+<li>min_circularity (float): Minimum circularity threshold (0-1, 1=perfect circle) (default: 0.4).</li>
+<li>max_circularity (float): Maximum circularity threshold (default: 1.0).</li>
+<li>min_aspect_ratio (float): Minimum width/height ratio for valid contours (default: 0.3).</li>
+<li>max_aspect_ratio (float): Maximum width/height ratio (default: 3.0).</li>
+<li>rescale_factor (float): Scaling factor (0.0-1.0) for faster processing (None=no rescaling).</li>
+<li>contour_approximation: OpenCV contour approximation method (default: CHAIN_APPROX_SIMPLE).</li>
+<li>contour_filters (Dict): Dictionary to override default filter values.</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <p>Tuple[List[np.ndarray], Dict[int, List[int]]] containing:
+- contours: List of all detected contours (in original coordinates)
+- fruit_locules_map: Dictionary mapping fruit indices to lists of locule indices</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If input parameters are invalid</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="cv2.error">error</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If OpenCV contour detection fails</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.merge_locules" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">merge_locules</span><span class="p">(</span><span class="n">locules_indices</span><span class="p">,</span> <span class="n">contours</span><span class="p">,</span> <span class="n">min_distance</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_distance</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">min_area</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Merge fragmented locule contours that are close to each other into single contours. 
+It helps consolidate small, nearby fragments into larger, more meaningful shapes.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>REQUIRED</code></b>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>locules_indices (List[]): List of indices pointing to locule contours in the contour list</li>
+<li>contours (List[np.ndarray]): List of all detected contours (including non-locules)</li>
+</ul>
+              </div>
+            </li>
+            <li>
+              <b><code>OPTIONAL</code></b>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>min_distance (int): Minimun allowed distance between locules to consider them part of the same structure (default: 50 pixels)</li>
+<li>max_distance (int): Maximum allowed distance between locules to consider them part of the same structure (default: 50 pixels)</li>
+<li>min_area (int): Minimum area a contour must have to be considered valid (default: 10 pixels^2). Smaller contours are discarded as noise</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>result_locules</code></b>(                  <code><span title="typing.List">List</span></code>
+)              –
+              <div class="doc-md-description">
+                <p>Merged contours (locules that were close enough have been combined)</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.calculate_fruit_centroids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">calculate_fruit_centroids</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculates the centroid (cx, cy) for each contour in the list.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>contours</code></b>
+                  (<code><span title="typing.List">List</span>[<span title="numpy.ndarray">ndarray</span>]</code>)
+              –
+              <div class="doc-md-description">
+                <p>List of contours (OpenCV format).</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <p>List[Tuple[int, int] | None]: A list containing centroid coordinates (cx, cy)
+                          for each contour index. If the contour has zero area,
+                          returns None for that position.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.precalculate_locules_data" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">precalculate_locules_data</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">locules</span><span class="p">,</span> <span class="n">centroid</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Precalculates and stores geometric data about locules from image contours to optimize firther processing.</p>
+<p>Args:</p>
+<pre><code>REQUIRED:
+    - contours (List[np.ndarray]): List of contous points (OpenCV format).
+    - locules (List[int]): Indices of contours that represent locules.
+    - centroid (Tuple[int,int]): Reference centroid as a tuple (x,y).
+</code></pre>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>locules_data (List[Dict]): A list of dictionaries, each containg:</li>
+<li>'contour_id' (int): Contour identifier.</li>
+<li>'centroid' (Tuple[int, int]): (x,y) coordinates of the locule's centroid.</li>
+<li>'area' (float): Area of the locule in pixels.</li>
+<li>'perimeter' (float): Perimeter of the locule in pixels.</li>
+<li>'contour' (np.ndarray): Original contour points.</li>
+<li>'polar_coords' (Tuple[float, float]): Pair of (angle_in_radians, radius) calculated relative to the reference centroid.</li>
+<li>'circularity' (float): Circularity of the locule contour in a range from 0 to 1, where 1 indicates a perfect circle and 0 a extreme imperfect shape.</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<details class="notes" open>
+  <summary>Notes</summary>
+  <ul>
+<li>Uses OpenCV moments for centroid calculation.</li>
+<li>Skips contours with zero area (m00 = 0)</li>
+</ul>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.angular_symmetry" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">angular_symmetry</span><span class="p">(</span><span class="n">locules_data</span><span class="p">,</span> <span class="n">num_shifts</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculate angular symmetry by comparing actual locule angles with the most symmetrical arrangement.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>REQUIRED</code></b>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>locules_data (List[Dict]): List of dictionaries, each containing at least the 'polar_coord'
+  of a locule, where 'polar_coord'[0] is the angle in radians from the reference centroid.</li>
+</ul>
+              </div>
+            </li>
+            <li>
+              <b><code>OPTIONAL</code></b>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>num_shifts (int): Number of angular shifts to test when trying to align the ideal angles
+  to the observed angles (default = 1000).</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>float</code></b>              –
+              <div class="doc-md-description">
+                <p>Normalized angular error in range [0, 1]:
+   - 0.0  → perfect angular symmetry.
+   - 1.0  → maximum possible angular deviation for given number of locules.
+   - nan  → undefined if fewer than 2 locules.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.radial_symmetry" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">radial_symmetry</span><span class="p">(</span><span class="n">locules_data</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculate radial symmetry using coefficient of variation (CV) of distances.
+Args:
+    REQUIRED:
+        - locules_data (List[Dict]): List of dictionaries, where each dictionary contains the centroid coordinates (x,y) of a locule and precalculated 'polar_coordinates'.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>float</code></b>              –
+              <div class="doc-md-description">
+                <p>CV of distances (0 = perfect symmetry, nan = undefined).</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.rotational_symmetry" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rotational_symmetry</span><span class="p">(</span><span class="n">locules_data</span><span class="p">,</span> <span class="n">angle_error</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">angle_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">radius_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">min_radius_threshold</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculates rotational symmetry for a fruit using both angular and radial asymmetry.
+0 = perfect symmetry, 1 = maximum asymmetry.
+Optionally accepts a precomputed angular error to avoid recalculation.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>REQUIRED</code></b>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>locules_data (List[Dict]): Each dict contains 'polar_coord' = (angle, radius)</li>
+</ul>
+              </div>
+            </li>
+            <li>
+              <b><code>OPTIONAL</code></b>
+              –
+              <div class="doc-md-description">
+                <ul>
+<li>angle_error (float, optional): Precomputed angular error (0-1). If None, it is calculated internally.</li>
+<li>angle_weight (float): Weight of angular error in combined metric (default=0.5)</li>
+<li>radius_weight (float): Weight of radial error in combined metric (default=0.5)</li>
+<li>min_radius_threshold (float): Ignore locules with radius &lt; fraction of mean (default=0.1)</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>float</code></b>              –
+              <div class="doc-md-description">
+                <p>Combined rotational symmetry metric in [0,1], or np.nan if undefined.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.calculate_axes" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">calculate_axes</span><span class="p">(</span><span class="n">fruit_contour</span><span class="p">,</span> <span class="n">px_per_cm_width</span><span class="p">,</span> <span class="n">px_per_cm_length</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">draw_axes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">major_axis_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">minor_axis_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">axis_thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculate the minor and major axes of a fruit's contour in centimeters, accounting for 
+pixel scaling differences along X and Y axes. Optionally draw the axes on an image.</p>
+<p>The major axis is found as the maximum distance between hull vertex pairs in an appropriate
+coordinate space (pixels if isotropic, centimeters if anisotropic). The minor axis is defined
+as the maximum thickness measured perpendicular to the major axis.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>REQUIRED</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>fruit_contour (np.ndarray</code>)
+              –
+              <div class="doc-md-description">
+                <p>Nx2 or Nx1x2 array of contour points.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>px_per_cm_width (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixel-to-cm conversion factor for X-axis.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>px_per_cm_length (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixel-to-cm conversion factor for Y-axis.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>OPTIONAL</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>rel_tol (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Relative tolerance to determine isotropy.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>annotated_img (np.ndarray</code>)
+              –
+              <div class="doc-md-description">
+                <p>Image where axes will be drawn if draw_axes=True.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>draw_axes (bool</code>)
+              –
+              <div class="doc-md-description">
+                <p>Whether to draw the axes on the annotated_img.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>major_axis_color (tuple</code>)
+              –
+              <div class="doc-md-description">
+                <p>BGR color for major axis (default: green).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>minor_axis_color (tuple</code>)
+              –
+              <div class="doc-md-description">
+                <p>BGR color for minor axis (default: blue).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>axis_thickness (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Thickness of axis lines in pixels.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>tuple</code></b>              –
+              <div class="doc-md-description">
+                <ul>
+<li>(float, np.ndarray, np.ndarray): (major_axis_cm, p1_px, p2_px)</li>
+<li>(float, np.ndarray, np.ndarray): (minor_axis_cm, p_min_px, p_max_px)</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.get_fruit_morphology" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_fruit_morphology</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">px_per_cm_width</span><span class="p">,</span> <span class="n">px_per_cm_length</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculate comprehensive fruit morphology metrics.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>contour</code></b>
+                  (<code><span title="numpy.ndarray">ndarray</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Fruit contour points</p>
+              </div>
+            </li>
+            <li>
+              <b><code>px_per_cm_width</code></b>
+                  (<code><span title="float">float</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixel to cm conversion for X-axis</p>
+              </div>
+            </li>
+            <li>
+              <b><code>px_per_cm_length</code></b>
+                  (<code><span title="float">float</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixel to cm conversion for Y-axis</p>
+              </div>
+            </li>
+            <li>
+              <b><code>rel_tol</code></b>
+                  (<code><span title="float">float</span></code>, default:
+                      <code>1e-06</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Relative tolerance for isotropy determination</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>dict</code></b>              –
+              <div class="doc-md-description">
+                <p>Dictionary containing fruit morphology metrics</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="morphoslicer.internal_structure.core.analyze_fruits" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">analyze_fruits</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">contours</span><span class="p">,</span> <span class="n">fruit_locus_map</span><span class="p">,</span> <span class="n">px_per_cm_width</span><span class="p">,</span> <span class="n">px_per_cm_length</span><span class="p">,</span> <span class="n">img_name</span><span class="p">,</span> <span class="n">label_text</span><span class="p">,</span> <span class="n">label_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contour_mode</span><span class="o">=</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span> <span class="n">epsilon_hull</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">min_locule_area</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">max_locule_area</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_shifts</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">angle_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">radius_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">min_radius_threshold</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">use_ellipse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">,</span> <span class="n">stamp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">font_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">font_thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">text_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">bg_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">line_spacing</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_axis</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">title_location</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Analyze fruit contours and their locules to extract morphological, pericarp, and locule features. 
+Optionally annotate the results on the input image.</p>
+<p>The function processes each fruit contour, estimates its major/minor axes, area, perimeter, 
+and shape descriptors. It also identifies locules, computes their size and circularity, 
+and evaluates symmetry metrics. An annotated image with contours, centroids, axes, and 
+text labels can be optionally returned for visualization.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>REQUIRED</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>img (np.ndarray</code>)
+              –
+              <div class="doc-md-description">
+                <p>Input image in BGR format.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>contours (list</code>)
+              –
+              <div class="doc-md-description">
+                <p>List of all valid contours detected in the image.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>fruit_locus_map (dict</code>)
+              –
+              <div class="doc-md-description">
+                <p>Dictionary mapping fruit IDs to corresponding locule indices.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>px_per_cm_width (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixel density per cm for the shortest side of the image (width).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>px_per_cm_length (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Pixel density per cm for the longest side of the image (length).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>img_name (str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Name of the analyzed image.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>label_text (str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Label associated with the image (e.g., treatment, cultivar).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>OPTIONAL</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>label_id (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Contour ID corresponding to the label region, excluded from fruit analysis.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>contour_mode (str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Contour adjustment method ('raw' or polygonal).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>epsilon_hull (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Epsilon for polygonal approximation of fruit contour.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>min_locule_area (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Minimum area in pixels required for a contour to be considered a locule.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>max_locule_area (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Maximum area in pixels for a contour to be considered a locule.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>max_dist (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Maximum distance in pixels to merge two locules.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>min_dist (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Minimum distance in pixels to merge two locules.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>Symmetry</code></b>
+                  (<code><span title="parameters">parameters</span></code>)
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>num_shifts (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Number of angular shifts tested for angular symmetry alignment.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>angle_weight (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Weight of angular error in rotational symmetry.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>radius_weight (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Weight of radius error in rotational symmetry.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>min_radius_threshold (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Ignore locules with radius smaller than this fraction of the mean.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>Inner</code></b>
+                  (<code><span title="pericarp">pericarp</span></code>)
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>use_ellipse (bool</code>)
+              –
+              <div class="doc-md-description">
+                <p>Whether to fit ellipses instead of raw contours for pericarp.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>rel_tol (float</code>)
+              –
+              <div class="doc-md-description">
+                <p>Relative tolerance to determine isotropy for pixel scaling.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>Stamps</code></b>
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>stamp (bool</code>)
+              –
+              <div class="doc-md-description">
+                <p>If True, invert the input image colors (used for stamp images).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>Plotting</code></b>
+                  (<code>and annotation</code>)
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>plot (bool</code>)
+              –
+              <div class="doc-md-description">
+                <p>If True, display the annotated image at the end of processing.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>plot_size (tuple</code>)
+              –
+              <div class="doc-md-description">
+                <p>Figure size for the annotated image.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>font_scale (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Font scaling for annotations.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>font_thickness (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Font thickness for annotations.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>text_color (tuple</code>)
+              –
+              <div class="doc-md-description">
+                <p>BGR text color for annotations.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>bg_color (tuple</code>)
+              –
+              <div class="doc-md-description">
+                <p>BGR background color for text boxes.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>padding (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Padding around text annotations.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>line_spacing (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Spacing between text lines.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>path (str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Optional path where annotated results will be stored.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>fig_axis (bool</code>)
+              –
+              <div class="doc-md-description">
+                <p>If True, show axis around the plotted image.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>title_fontsize (int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Font size of the figure title.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>-</code></b>
+                  (<code>title_location (str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Title location in the figure.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+<b><code>AnnotatedImage</code></b>              –
+              <div class="doc-md-description">
+                <ul>
+<li>annotated_img (np.ndarray): Annotated image with drawn contours, centroids, axes, and labels.</li>
+<li>results (list[dict]): List of dictionaries with morphological and locule metrics per fruit.
+  Each dictionary includes:<ul>
+<li>major_axis_cm, minor_axis_cm</li>
+<li>fruit area, perimeter, circularity, solidity, compactness</li>
+<li>pericarp metrics (inner/outer area, thickness)</li>
+<li>locule metrics (area, circularity, density, ratios)</li>
+<li>symmetry metrics (angular, radial, rotational)</li>
+<li>rotated box dimensions and area</li>
+</ul>
+</li>
+</ul>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../color_correction/tutorials/" class="btn btn-neutral float-left" title="Color Correction – tutorials"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/mariameraz" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../color_correction/tutorials/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* Quita el ancho máximo del área de contenido */
+.wy-nav-content {
+  max-width: none !important;   /* elimina el límite ~800px */
+  width: 100%;
+}
+
+/* Un poco de “aire” a los lados */
+.wy-nav-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Asegura que tablas y bloques largos no rompan el layout */
+.rst-content table.docutils,
+.rst-content .wy-table-responsive table {
+  width: 100% !important;
+  display: block;
+  overflow-x: auto;
+}
+
+.wy-nav-content pre,
+.rst-content pre {
+  overflow-x: auto;
+}
+

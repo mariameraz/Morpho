@@ -1,0 +1,74 @@
+site_name: Traitly
+
+theme:
+  name: readthedocs
+
+repo_url: https://github.com/mariameraz
+repo_name: GitHub
+edit_uri: ''   
+
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - toc
+  - tables
+  - fenced_code
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+  - mermaid2
+  - mkdocstrings
+  - mkdocs-jupyter:
+      include: ["*.ipynb"]
+  - mkdocs-nav-enhancements:
+      enable_previous_next: true
+      previous_next_include_sections: true
+
+nav:
+  - Home: index.md
+  - Installation:
+    - Overview: installation/index.md
+    - Requirements: installation/requirements.md
+    - Multi-Platform Support: installation/multi_platform.md
+  - Modules Description: modules_description.md
+  - Modules:
+    - Internal Structure:
+        - Introduction: internal_structure/index.md
+        - Requirements: internal_structure/requirements.md
+        - Tables of Traits: internal_structure/tables_of_traits.md
+        - Components:
+            - User-Facing classes: internal_structure/components/user_facing_classes.md
+            - Helper Functions: internal_structure/components/helper_functions.md  
+            - Internal/Core Functions: internal_structure/components/core_functions.md
+        - Tutorials: 
+            - Stamps Analysis: internal_structure/tutorials/stamps_analysis.ipynb
+            - Cranberry Slice Analysis: internal_structure/tutorials/cranberry_slice_analysis.ipynb
+            - Complex locule segmentation tutorial: internal_structure/tutorials/complex_slices.ipynb
+    - Color Correction: 
+        - Introduction: color_correction/index.md
+        - Tables of Traits: color_correction/tables_of_traits.md
+        - User-Facing classes: color_correction/user_facing_classes.md
+        - Helper Functions: color_correction/helper_functions.md
+        - Color Correction Functions: color_correction/color_correction_functions.md
+        - Tutorials: color_correction/tutorials.md
+  - Workflow: core.md
+
+
+
+
+
