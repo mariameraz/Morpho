@@ -1,0 +1,3047 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>1.2 Traits Analyzed {#traits-analyzed} - Traitly</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "1.2 Traits Analyzed {#traits-analyzed}";
+        var mkdocs_page_input_path = "Documentacion.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Traitly
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">General Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/requirements/">Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/multi_platform/">Multi-Platform Support</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../modules_description/">2.2 Modules Overview</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modules</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Internal Structure</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../internal_structure/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../internal_structure/requirements/">Internal Structure – requirements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../internal_structure/tables_of_traits/">Traits Description</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Components</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/components/user_facing_classes/">User-Facing Classes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/components/helper_functions/">Internal Structure – helper_functions</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/components/core_functions/">Internal/Core Functions</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tutorials</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/tutorials/stamps_analysis/">Stamps Analysis</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/tutorials/cranberry_slice_analysis/">Tutorial: Fruit Internal Structure Analysis Using Slice Images</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../internal_structure/tutorials/complex_slices/">Tutorial: Fruit Internal Structure Analysis Using Slice Images</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Color Correction</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/">Color Correction – index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/tables_of_traits/">Color Correction – tables_of_traits</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/user_facing_classes/">Color Correction – user_facing_classes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/helper_functions/">Color Correction – helper_functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/color_correction_functions/">Color Correction – color_correction_functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../color_correction/tutorials/">Color Correction – tutorials</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../core/">Internal Structure – Core API</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Traitly</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">1.2 Traits Analyzed {#traits-analyzed}</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="12-traits-analyzed-traits-analyzed">1.2 Traits Analyzed {#traits-analyzed}</h3>
+<p>Table 1. Internal structure traits obtained by Traitly.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Trait description (type &amp; range)</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image_name</code></td>
+<td>Input image name (string)</td>
+<td>— (metadata)</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>User-defined label (string)</td>
+<td>— (metadata)</td>
+</tr>
+<tr>
+<td><code>fruit_id</code></td>
+<td>Sequential fruit identifier (int ≥1)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>n_locules</code></td>
+<td>Number of detected locules (int ≥0)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>major_axis_cm</code></td>
+<td>Longest distance across fruit (float, cm &gt;0)</td>
+<td><code>calculate_axes</code></td>
+</tr>
+<tr>
+<td><code>minor_axis_cm</code></td>
+<td>Maximum thickness perpendicular to major axis (float, cm &gt;0)</td>
+<td><code>calculate_axes</code></td>
+</tr>
+<tr>
+<td><code>fruit_area_cm2</code></td>
+<td>Total fruit area (float, cm² &gt;0)</td>
+<td><code>get_fruit_morphology</code></td>
+</tr>
+<tr>
+<td><code>fruit_perimeter_cm</code></td>
+<td>Fruit perimeter length (float, cm &gt;0)</td>
+<td><code>get_fruit_morphology</code></td>
+</tr>
+<tr>
+<td><code>fruit_circularity</code></td>
+<td>Roundness index (float, 0–1; 1 = circle)</td>
+<td><code>get_fruit_morphology</code></td>
+</tr>
+<tr>
+<td><code>fruit_aspect_ratio</code></td>
+<td>Width ÷ length ratio (float, 0–1; 1 = circle, &lt;1 = elongated)</td>
+<td><code>analyze_fruits</code> + <code>rotate_box</code></td>
+</tr>
+<tr>
+<td><code>fruit_solidity</code></td>
+<td>Area ÷ convex hull area (float, 0–1)</td>
+<td><code>get_fruit_morphology</code></td>
+</tr>
+<tr>
+<td><code>fruit_compactness</code></td>
+<td>Shape irregularity (float, &gt;0; higher = less compact)</td>
+<td><code>get_fruit_morphology</code></td>
+</tr>
+<tr>
+<td><code>box_length_cm</code></td>
+<td>Rotated bounding box larger side (length) (float, cm &gt; 0)</td>
+<td><code>rotate_box</code></td>
+</tr>
+<tr>
+<td><code>box_width_cm</code></td>
+<td>Rotated bounding box shorter side (width) (float, cm &gt; 0)</td>
+<td><code>rotate_box</code></td>
+</tr>
+<tr>
+<td><code>compactness_index</code></td>
+<td>Fruit area ÷ bounding box area (float, 0–1)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>inner_pericarp_area_cm2</code></td>
+<td>Area enclosing all locules (float, cm² ≥0)</td>
+<td><code>inner_pericarp_area</code></td>
+</tr>
+<tr>
+<td><code>outer_pericarp_area_cm2</code></td>
+<td>Flesh area (fruit total area − inner pericarp area) (float, cm² ≥0)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>avg_pericarp_thickness_cm</code></td>
+<td>Avg. thickness between inner &amp; outer ellipses (float, cm ≥0)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>mean_locule_area_cm2</code></td>
+<td>Mean locule area (float, cm² ≥0)</td>
+<td><code>precalculate_locules_data</code> + <code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>std_locule_area_cm2</code></td>
+<td>Standard deviation of locule areas (float, cm² ≥0)</td>
+<td><code>precalculate_locules_data</code> + <code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>total_locule_area_cm2</code>**</td>
+<td>Sum of all locule areas (float, cm² ≥0)</td>
+<td><code>precalculate_locules_data</code> + <code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>cv_locule_area</code></td>
+<td>Coefficient of variation in locule area (float, ≥0; unitless CV)</td>
+<td><code>precalculate_locules_data</code> + <code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>mean_locule_circularity</code></td>
+<td>Avg. locule roundness (float, 0–1)</td>
+<td><code>precalculate_locules_data</code></td>
+</tr>
+<tr>
+<td><code>std_locule_circularity</code></td>
+<td>Variation in locule circularity (float, 0–1)</td>
+<td><code>precalculate_locules_data</code></td>
+</tr>
+<tr>
+<td><code>cv_locule_circularity</code></td>
+<td>Coefficient of variation of locule circularity (float, ≥0)</td>
+<td><code>precalculate_locules_data</code></td>
+</tr>
+<tr>
+<td><code>angular_symmetry</code></td>
+<td>Deviation of <strong>locule centroids</strong> from perfect angular spacing around the <strong>fruit centroid</strong> (float, rad ≥0; 0 = perfect)</td>
+<td><code>angular_symmetry</code></td>
+</tr>
+<tr>
+<td><code>radial_symmetry</code></td>
+<td>Variation in radial distances of <strong>locule centroids</strong> from the <strong>fruit centroid</strong> (float, CV ≥0; 0 = perfect)</td>
+<td><code>radial_symmetry</code></td>
+</tr>
+<tr>
+<td><code>rotational_symmetry</code></td>
+<td>Combined measure of angular and radial symmetry of <strong>locule centroids</strong> relative to the <strong>fruit centroid</strong> (float, 0–1; 0 = perfect)</td>
+<td><code>rotational_symmetry</code></td>
+</tr>
+<tr>
+<td><code>locules_density</code></td>
+<td>Locules per cm² of fruit (float, ≥0)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>inner_area_ratio</code></td>
+<td>Inner pericarp ÷ fruit area (float, 0–1)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>locule_area_ratio</code></td>
+<td>Largest ÷ smallest locule area (float, ≥1 if &gt;1 locule)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>locule_area_percentage</code></td>
+<td>% fruit area occupied by locules (float, 0–100%)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+<tr>
+<td><code>locule_packing_efficiency</code></td>
+<td>% of inner pericarp filled with locules (float, 0–100%)</td>
+<td><code>analyze_fruits</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="notes-caveats">Notes &amp; caveats</h3>
+<ul>
+<li><strong>Units &amp; scaling</strong>: All cm/cm² values respect <strong>isotropic vs anisotropic</strong> pixel scales (<code>px_per_cm_x</code>, <code>px_per_cm_y</code>).</li>
+<li><strong>NaNs/zeros</strong>: Some metrics may be <code>NaN</code> (e.g., undefined symmetry with &lt;2 locules) or <code>0</code> (e.g., guarded ratios when denominators are 0).</li>
+<li><strong>Circularity</strong>: The theoretical range is 0–1; minor floating-point artifacts can yield values slightly &gt;1 on noisy, low-res contours.</li>
+<li>
+<p><strong>Symmetry metrics</strong>:</p>
+</li>
+<li>
+<p><code>angular_symmetry</code> is in <strong>radians</strong> (not normalized).</p>
+</li>
+<li><code>radial_symmetry</code> is a <strong>CV</strong> (scale-free, ≥0).</li>
+<li><code>rotational_symmetry</code> is <strong>clipped to [0,1]</strong> after combining angular and radial terms.</li>
+<li><strong>Aspect ratio</strong>: Defined from the rotated box as width/length (≤1).</li>
+<li><strong>Pericarp thickness</strong>: Reported as a <strong>scalar average</strong>, not a spatial map.</li>
+</ul>
+<h3 id="13-multi-platform-support">1.3 <strong>Multi-Platform Support</strong></h3>
+<p><strong><em>Traitly</em></strong> offers multiple interfaces to accommodate different user preferences and workflows:</p>
+<ul>
+<li><strong>Python API</strong>: Allows users to integrate the software directly into Python scripts or interactive environments like JupyterLab for programmatic control and automation.</li>
+<li><strong>Command-Line Interface (CLI)</strong>: Optimized for efficient batch processing and analysis of large image datasets.</li>
+<li><strong>Graphical User Interface (GUI)</strong>: Provides a user-friendly visual interface via a Streamlit web application, allowing users to analyze single or multiple images through intuitive point-and-click interactions without programming.</li>
+</ul>
+<p>This multi-interface approach ensures flexibility and accessibility across diverse use cases and skill levels.</p>
+<h2 id="2-using-the-python-code-python-api">2. Using the Python Code (Python API)</h2>
+<p>This manual is organized to guide users through the different layers of functionality provided by the software. The components are grouped based on their intended use and level of abstraction:</p>
+<ul>
+<li><strong>User-Facing Classes</strong>  are designed for direct user interaction and orchestrate the main workflows. They provide straightforward, high-level interfaces that simplify the pipeline and give users the essential tools to perform common tasks without needing to directly interact with or fully understand the underlying implementation.</li>
+<li><strong>Advanced Utilities</strong> cater to power users who need to customize or extend workflows beyond the basic use cases.</li>
+<li><strong>Helper Functions</strong> include commonly used small utilities that simplify repetitive tasks and support higher-level components.</li>
+<li><strong>Internal/Core Utilities</strong> consist of functions that support internal operations and computations, used by the user-facing classes, and are primarily intended for users who want to understand or modify the internal workings.</li>
+</ul>
+<h3 id="21-installation-and-requirements">2.1 Installation and requirements</h3>
+<h3 id="22-modules-overview">2.2 Modules Overview</h3>
+<p><strong><em>Traitly</em></strong> is organized into specialized modules that focus on distinct types of analyses:
+- <code>internal_structure</code>: Tools and classes for analyzing the internal spatial organization and morphology of locules or other structures within images.
+- <code>color_correction</code>: Functions to preprocess images by correcting color imbalances, lighting variations, and enhancing consistency across datasets.</p>
+<p>Each module contains dedicated components grouped based on their intended use and level of abstraction:</p>
+<ul>
+<li><span style="color:#c3adc4; font-weight:bold;">User-Facing Classes</span> are designed for direct user interaction and orchestrate the main workflows. They provide straightforward, high-level interfaces that simplify the pipeline and give users the essential tools to perform common tasks without needing to directly interact with or fully understand the underlying implementation.</li>
+<li><span style="color:#DAA520; font-weight:bold;">Advanced Utilities</span> cater to power users who need to customize or extend workflows beyond the basic use cases.</li>
+<li><span style="color:#BC8F8F; font-weight:bold;">Helper Functions</span> include commonly used small utilities that simplify repetitive tasks and support higher-level components.</li>
+<li><span style="color:#8fadd7; font-weight:bold;">Internal/Core Utilities</span> consist of functions that support internal operations and computations, used by the user-facing classes, and are primarily intended for users who want to understand or modify the internal workings.</li>
+</ul>
+<p><br></p>
+<h3 id="23-module-internal-structure">2.3 Module: Internal Structure</h3>
+<p><br></p>
+<div style="background-color:#D8BFD8; padding:8px; border-radius:6px; 
+text-align:center;">
+
+#### **User-Facing Classes**
+
+</div>
+
+<p><br></p>
+<div style="background-color:rgba(234, 212, 243, 0.6); padding:8px; border-radius:6px; text-align:left;">
+
+  <h4 style="margin:0;">High-level Classes:</h4>
+
+</div>
+
+<h4>Class: <code>AnalyzingImage</code></h4>
+
+<p><strong>Description</strong>:
+Main class for <strong>preparing and analyzing images</strong> of fruits (or similar objects).
+Provides methods for <strong>reading</strong>, <strong>masking</strong>, <strong>detecting contours/locules</strong>, and <strong>running morphological analysis</strong>.
+Can also batch-process entire folders of images.</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>
+<p><strong>Initialization</strong></p>
+</li>
+<li>
+<p>Accepts a path to either a single image or a directory of images.</p>
+</li>
+<li>
+<p>Tracks state (original image, masks, contours, label text, calibration).</p>
+</li>
+<li>
+<p><strong>PDF conversion</strong></p>
+</li>
+<li>
+<p><code>pdf_to_img()</code> converts multi-page PDFs into JPEG images.</p>
+</li>
+<li>
+<p>Creates an output folder automatically if none is provided.</p>
+</li>
+<li>
+<p><strong>Reading images</strong></p>
+</li>
+<li>
+<p><code>read_image()</code> loads the image into memory using utility functions.</p>
+</li>
+<li>
+<p>Optionally displays it with customizable figure size.</p>
+</li>
+<li>
+<p><strong>Mask creation</strong></p>
+</li>
+<li>
+<p><code>create_mask()</code> segments fruits from the background.</p>
+</li>
+<li>
+<p>Supports options for inverted stamps, Canny thresholds, HSV thresholds, CLAHE contrast, and locule detection.</p>
+</li>
+<li>
+<p><strong>Fruit detection</strong></p>
+</li>
+<li>
+<p><code>find_fruits()</code> filters contours using circularity, aspect ratio, and area thresholds.</p>
+</li>
+<li>Builds a mapping between fruits and their locules.</li>
+<li>
+<p>Detects labels within the image for metadata.</p>
+</li>
+<li>
+<p><strong>Metadata handling</strong></p>
+</li>
+<li>
+<p><code>detect_metadata()</code> extracts image name and label text.</p>
+</li>
+<li>
+<p><strong>Image analysis</strong></p>
+</li>
+<li>
+<p><code>analyze_image()</code> computes morphological descriptors and generates annotated results.</p>
+</li>
+<li>
+<p>Returns an <code>AnnotatedImage</code> with both annotated image and results table.</p>
+</li>
+<li>
+<p><strong>Batch processing</strong></p>
+</li>
+<li>
+<p><code>analyze_folder()</code> loops over all images in a directory.</p>
+</li>
+<li>Applies the full workflow (mask → contours → analysis).</li>
+<li>
+<p>Saves annotated images, results (<code>all_results.csv</code>), and error reports.</p>
+</li>
+<li>
+<p><strong>Summaries</strong></p>
+</li>
+<li>
+<p><code>metadata_summary()</code> prints quick metadata (labels, contours, fruit count, physical dimensions).</p>
+</li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>image_path</code> (<code>str</code>): Path to an input image file <strong>or</strong> a folder containing multiple images.</li>
+</ul>
+<p><em>Optional</em>:</p>
+<p><em>(Set within methods, e.g. thresholds, kernel sizes, etc.)</em></p>
+<p><strong>Returns</strong>:
+Instance of <code>AnalyzingImage</code>, with multiple methods to run analysis.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Analyze a single image</span>
+<span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">(</span><span class="n">stamp</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">find_fruits</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">detect_metadata</span><span class="p">()</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">save_all</span><span class="p">()</span>
+
+<span class="c1"># Analyze all images in a folder</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/&quot;</span><span class="p">)</span>
+<span class="n">batch</span><span class="o">.</span><span class="n">analyze_folder</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;fruits/Results&quot;</span><span class="p">,</span> <span class="n">stamp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h4>Class: <code>AnnotatedImage</code></h4>
+
+<p><strong>Description</strong>:
+Represents an <strong>analyzed image</strong> along with its <strong>associated results</strong> (tables, metrics).
+Provides functionality to <strong>save outputs</strong> in different formats, including annotated images (<code>.jpg</code>, <code>.png</code>, etc.) and result tables (<code>.csv</code>).</p>
+<p>This class is typically created as the <strong>output</strong> of the analysis workflow performed by <strong><code>ImageAnalyzer</code></strong>.
+It acts as a <strong>container</strong> that holds both the <strong>visual annotation</strong> (image with contours/labels) and the <strong>quantitative results</strong> (CSV-ready table).</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>
+<p><strong>Initialization</strong></p>
+</li>
+<li>
+<p>Converts the input <code>cv2_image</code> (BGR) to RGB.</p>
+</li>
+<li>Stores results in both <code>results</code> and <code>table</code>.</li>
+<li>
+<p>Optionally stores the original image path.</p>
+</li>
+<li>
+<p><strong>Directory handling</strong></p>
+</li>
+<li>
+<p><code>_ensure_dir_exists()</code> checks if a directory exists before saving files.</p>
+</li>
+<li>
+<p>Expands <code>~</code> and relative paths to absolute paths.</p>
+</li>
+<li>
+<p><strong>Saving images</strong></p>
+</li>
+<li>
+<p><code>save_img()</code> exports the annotated RGB image to disk.</p>
+</li>
+<li>Uses <code>matplotlib</code> to remove axes and margins, producing a clean figure.</li>
+<li>
+<p>Supports DPI and format customization.</p>
+</li>
+<li>
+<p><strong>Saving tables</strong></p>
+</li>
+<li>
+<p><code>save_csv()</code> converts the <code>table</code> (list of results) into a Pandas DataFrame.</p>
+</li>
+<li>
+<p>Saves the results as a <code>.csv</code> file.</p>
+</li>
+<li>
+<p><strong>Combined saving</strong></p>
+</li>
+<li>
+<p><code>save_all()</code> writes both the annotated image and CSV results using a common base name.</p>
+</li>
+<li>Allows flexible control of output directory and file names.</li>
+</ol>
+<p><strong>Relationship with <code>ImageAnalyzer</code></strong>:</p>
+<ul>
+<li>The class <strong><code>ImageAnalyzer</code></strong> performs the full workflow (masking, contour detection, morphological analysis).</li>
+<li>When analysis is completed, <code>ImageAnalyzer.analyze_image()</code> returns an <strong><code>AnnotatedImage</code></strong> instance.</li>
+<li>This means <strong><code>AnnotatedImage</code> is the final product of the analysis pipeline</strong>, used for reporting, exporting, and visualization.</li>
+</ul>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>cv2_image</code> (<code>np.ndarray</code>): Input image in <strong>BGR</strong> format.</li>
+</ul>
+<p><em>Optional</em>:</p>
+<ul>
+<li><code>results</code> (<code>list</code>): Analysis results (default = empty list).</li>
+<li><code>image_path</code> (<code>str | None</code>): Path to the original image file.</li>
+</ul>
+<p><strong>Returns</strong>:
+Instance of <code>AnnotatedImage</code> with methods to save outputs.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run analysis with ImageAnalyzer</span>
+<span class="n">analyzer</span> <span class="o">=</span> <span class="n">ImageAnalyzer</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">find_fruits</span><span class="p">()</span>
+
+<span class="c1"># Perform analysis and retrieve an AnnotatedImage</span>
+<span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save outputs</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_img</span><span class="p">()</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_csv</span><span class="p">()</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_all</span><span class="p">()</span>
+</code></pre></div>
+<p><br></p>
+<div style="background-color:rgba(234, 212, 243, 0.6); padding:8px; border-radius:6px; text-align:left;">
+
+  <h4 style="margin:0;">Wrapper Methods (ImageAnalyzer / AnnotatedImage):</h4>
+
+</div>
+
+<h5>Method: <code>read_image(...)</code></h5>
+
+<p><strong>Description</strong>:
+Loads the image from <code>image_path</code> into memory and optionally displays it.
+Works directly with the file path provided at initialization and stores the result internally in <code>self.img</code>.
+For algorithmic details, refer to <code>Utilities → ms.load_img</code>.</p>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li><code>plot</code> (<code>bool</code>, default <code>False</code>) — Whether to display the loaded image.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — Print a confirmation message after loading.</li>
+<li><code>plot_size</code> (<code>tuple[int,int]</code>, default <code>(5,5)</code>) — Size of the display figure.</li>
+<li><code>plot_axis</code> (<code>bool</code>, default <code>False</code>) — Whether to show axes in the display.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>
+<p><code>None</code> — does not return a value. Instead, stores the loaded image in:</p>
+</li>
+<li>
+<p><code>self.img</code> → original image in <strong>BGR format</strong> (as loaded with OpenCV).</p>
+</li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>Internally calls <code>ms.load_img</code> for image reading and optional plotting.</li>
+<li>The image is preserved in memory for use in subsequent steps (<code>create_mask</code>, <code>find_fruits</code>, etc.).</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_size</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Access the loaded image directly</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">img</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (H, W, 3) -&gt; BGR image</span>
+</code></pre></div>
+<hr />
+<h5>Method: <code>create_mask(...)</code></h5>
+
+<p><strong>Description</strong>:
+Segments fruits from the background. Wrapper around the core masking routine that adds state storage (class attributes), stamp handling, and optional plotting.
+Works directly with the image and metadata managed by <code>ImageAnalyzer</code> and is built on top of <code>core.create_mask</code>. For algorithmic details, see <code>Internal/Core Utilities → core.create_mask</code>.</p>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li>
+<p><strong>Morphology</strong>:</p>
+</li>
+<li>
+<p><code>n_kernel</code> (<code>int</code>, default <code>5</code>) — size of the structuring element used in morphological operations.</p>
+</li>
+<li>
+<p><code>n_iteration</code> (<code>int</code>, default <code>1</code>) — number of times morphological operations are applied.</p>
+</li>
+<li>
+<p><strong>Edges &amp; Color</strong>:</p>
+</li>
+<li>
+<p><code>canny_min</code> (<code>int</code>, default <code>30</code>) — minimum threshold for Canny edge detection.</p>
+</li>
+<li><code>canny_max</code> (<code>int</code>, default <code>100</code>) — maximum threshold for Canny edge detection.</li>
+<li><code>lower_hsv</code> (<code>list[int] | None</code>, default <code>None</code>) — lower bound for HSV color filtering (e.g., background removal).</li>
+<li>
+<p><code>upper_hsv</code> (<code>list[int] | None</code>, default <code>None</code>) — upper bound for HSV color filtering.</p>
+</li>
+<li>
+<p><strong>Stamps &amp; Locules</strong>:</p>
+</li>
+<li>
+<p><code>stamp</code> (<code>bool</code>, default <code>False</code>) — if <code>True</code>, the input image is inverted before processing (for stamp-like images).</p>
+</li>
+<li><code>locules_filled</code> (<code>bool</code>, default <code>False</code>) — if <code>True</code>, applies extra CLAHE + Otsu thresholding to detect internal locules (even when not hollow).</li>
+<li><code>min_locule_size</code> (<code>int</code>, default <code>300</code>) — minimum pixel area required to consider a locule valid.</li>
+<li><code>n_blur</code> (<code>int</code>, default <code>11</code>) — kernel size for median blur used to smooth the locule mask.</li>
+<li><code>clip_limit</code> (<code>int</code>, default <code>4</code>) — contrast limit for CLAHE enhancement.</li>
+<li>
+<p><code>tile_grid_size</code> (<code>int</code>, default <code>8</code>) — CLAHE grid size (local histogram equalization regions).</p>
+</li>
+<li>
+<p><strong>Visualization</strong>:</p>
+</li>
+<li>
+<p><code>plot</code> (<code>bool</code>, default <code>False</code>) — whether to display the generated mask.</p>
+</li>
+<li><code>plot_size</code> (<code>tuple[int,int]</code>, default <code>(5,5)</code>) — size of the plot figure.</li>
+<li><code>plot_axis</code> (<code>bool</code>, default <code>False</code>) — if <code>True</code>, shows axis ticks/labels in the plot.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>
+<p><code>None</code> — does not return a value. Instead, stores results internally:</p>
+</li>
+<li>
+<p><code>self.mask</code> → main binary mask (always set).</p>
+</li>
+<li><code>self.mask_fruits</code> → set when <code>locules_filled=True</code>.</li>
+<li><code>self.img_inverted</code> → set when <code>stamp=True</code>.</li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>When <code>locules_filled=True</code>, the method enhances the L channel (LAB space) using CLAHE, then applies Otsu thresholding and morphology to detect internal regions.</li>
+<li>This allows segmentation of <strong>internal locules</strong> that may not appear as hollow cavities (i.e., filled or partially filled locules).</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">(</span><span class="n">stamp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locules_filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Access the generated mask directly</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">mask</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (H, W)</span>
+</code></pre></div>
+<hr />
+<h5>Method: <code>find_fruits(...)</code></h5>
+
+<p><strong>Description</strong>:
+Detects fruits and locules from the mask, applying geometric filters and label detection.
+Stores contours and fruit–locule mappings as class attributes.
+For algorithmic details, refer to <code>Internal/Core Utilities → core.find_fruits</code>.</p>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li>
+<p><strong>Shape filters</strong>:</p>
+</li>
+<li>
+<p><code>min_circularity</code> (<code>float</code>, default <code>0.5</code>) — minimum circularity to accept a fruit contour.</p>
+</li>
+<li><code>max_circularity</code> (<code>float</code>, default <code>1.0</code>) — maximum circularity to accept a fruit contour.</li>
+<li><code>min_aspect_ratio</code> (<code>float</code>, default <code>0.3</code>) — minimum aspect ratio (width/height) for valid contours.</li>
+<li><code>max_aspect_ratio</code> (<code>float</code>, default <code>3.0</code>) — maximum aspect ratio (width/height) for valid contours.</li>
+<li>
+<p><code>contour_filters</code> (<code>dict | None</code>) — custom thresholds to override defaults.</p>
+</li>
+<li>
+<p><strong>Locules</strong>:</p>
+</li>
+<li>
+<p><code>min_locule_area</code> (<code>int</code>, default <code>50</code>) — minimum area (px²) for a locule to be considered valid.</p>
+</li>
+<li>
+<p><code>min_locule_per_fruit</code> (<code>int</code>, default <code>1</code>) — minimum number of locules required to keep a fruit.</p>
+</li>
+<li>
+<p><strong>Labels</strong>:</p>
+</li>
+<li>
+<p><code>language_label</code> (<code>list[str]</code>, default <code>['es','en']</code>) — languages to use in OCR for label detection.</p>
+</li>
+<li><code>min_area_label</code> (<code>int</code>, default <code>500</code>) — minimum contour area to classify as label region.</li>
+<li><code>min_canny_label</code> (<code>int</code>, default <code>0</code>), <code>max_canny_label</code> (<code>int</code>, default <code>150</code>) — Canny thresholds for label edge detection.</li>
+<li>
+<p><code>blur_label</code> (<code>tuple[int,int]</code>, default <code>(11,11)</code>) — blur kernel applied before label detection.</p>
+</li>
+<li>
+<p><strong>Misc</strong>:</p>
+</li>
+<li>
+<p><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print detection summary.</p>
+</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>
+<p><code>None</code> — does not return a value. Instead, stores results internally:</p>
+</li>
+<li>
+<p><code>self.contours</code> → list of detected contours.</p>
+</li>
+<li><code>self.fruit_locules_map</code> → mapping fruit → locule IDs.</li>
+<li><code>self.label_text</code>, <code>self.label_coord</code>, <code>self.label_id</code> (if a label is detected).</li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>Internally wraps <code>core.find_fruits</code> and adds label detection (via <code>ms.detect_label</code>) plus state storage.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">find_fruits</span><span class="p">()</span>
+
+<span class="c1"># Access contours and fruit-locule mapping</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">analyzer</span><span class="o">.</span><span class="n">contours</span><span class="p">))</span>         
+<span class="nb">print</span><span class="p">(</span><span class="n">analyzer</span><span class="o">.</span><span class="n">fruit_locules_map</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</code></pre></div>
+<hr />
+<h5>Method: <code>analyze_image(...)</code></h5>
+
+<p><strong>Description</strong>:
+Runs the full morphological analysis on detected fruits and locules.
+Handles label detection (if not done), calibration of px/cm, and contour analysis.
+Returns an <code>AnnotatedImage</code> with annotated RGB image and results table.
+For algorithmic details, refer to <code>Internal/Core Utilities → core.px_per_cm</code> and <code>core.analyze_fruits</code>.</p>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li>
+<p><strong>Visualization</strong>:</p>
+</li>
+<li>
+<p><code>plot</code> (<code>bool</code>, default <code>True</code>) — display results with annotations.</p>
+</li>
+<li><code>plot_size</code> (<code>tuple[int,int]</code>, default <code>(10,10)</code>) — figure size for display.</li>
+<li><code>plot_axis</code> (<code>bool</code>, default <code>False</code>) — show axis in plots.</li>
+<li><code>font_scale</code> (<code>float</code>, default <code>1.5</code>) — font size for text annotations.</li>
+<li><code>font_thickness</code> (<code>int</code>, default <code>2</code>) — line thickness for text.</li>
+<li><code>plot_title_fontsize</code> (<code>int</code>, default <code>12</code>) — font size for title.</li>
+<li><code>label_bg_color</code> (<code>tuple[int,int,int]</code>, default <code>(255,255,255)</code>) — background color for label boxes.</li>
+<li><code>line_spacing</code> (<code>int</code>, default <code>15</code>) — spacing between annotation lines.</li>
+<li>
+<p><code>plot_title_pos</code> (<code>str</code>, default <code>'center'</code>) — title alignment.</p>
+</li>
+<li>
+<p><strong>Contours &amp; Shape</strong>:</p>
+</li>
+<li>
+<p><code>use_ellipse</code> (<code>bool</code>, default <code>False</code>) — fit ellipses to contours instead of raw polygon.</p>
+</li>
+<li><code>contour_mode</code> (<code>str</code>, default <code>'raw'</code>) — contour approximation mode.</li>
+<li>
+<p><code>epsilon_hull</code> (<code>float</code>, default <code>0.001</code>) — tolerance for convex hull simplification.</p>
+</li>
+<li>
+<p><strong>Locules</strong>:</p>
+</li>
+<li>
+<p><code>min_locule_area</code> (<code>int</code>, default <code>100</code>) — minimum area (px²) to consider a locule.</p>
+</li>
+<li><code>max_locule_area</code> (<code>int | None</code>) — maximum allowed locule area.</li>
+<li><code>min_distance</code> (<code>int</code>, default <code>0</code>) — minimum distance for merging locules.</li>
+<li>
+<p><code>max_distance</code> (<code>int</code>, default <code>100</code>) — maximum distance for merging locules.</p>
+</li>
+<li>
+<p><strong>Symmetry</strong>:</p>
+</li>
+<li>
+<p><code>n_shifts</code> (<code>int</code>, default <code>500</code>) — number of shifts for symmetry analysis.</p>
+</li>
+<li><code>angle_weight</code> (<code>float</code>, default <code>0.5</code>) — weight for angle symmetry.</li>
+<li><code>radius_weight</code> (<code>float</code>, default <code>0.5</code>) — weight for radius symmetry.</li>
+<li><code>min_radius_threshold</code> (<code>float</code>, default <code>0.1</code>) — minimum radius threshold.</li>
+<li>
+<p><code>rel_tol</code> (<code>float</code>, default <code>1e-6</code>) — relative tolerance in calculations.</p>
+</li>
+<li>
+<p><strong>Calibration</strong>:</p>
+</li>
+<li>
+<p><code>width_cm</code> (<code>float | None</code>) — manual physical width in cm.</p>
+</li>
+<li><code>length_cm</code> (<code>float | None</code>) — manual physical length in cm.</li>
+<li><code>scale_size</code> (<code>str</code>, default <code>'letter_ansi'</code>) — reference scale for px/cm calibration.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>
+<p><code>AnnotatedImage</code> — containing:</p>
+</li>
+<li>
+<p><code>rgb_image</code> → annotated image (RGB).</p>
+</li>
+<li><code>table</code> → list of results (metrics per fruit/locule).</li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>Internally calls <code>core.px_per_cm</code> for calibration and <code>core.analyze_fruits</code> for analysis.</li>
+<li>Also uses <code>ms.detect_label</code> if label metadata was not detected before.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/sample.jpg&quot;</span><span class="p">)</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">create_mask</span><span class="p">()</span>
+<span class="n">analyzer</span><span class="o">.</span><span class="n">find_fruits</span><span class="p">()</span>
+
+<span class="c1"># Perform final analysis</span>
+<span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Access image and results</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">annotated</span><span class="p">))</span>            <span class="c1"># AnnotatedImage</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">annotated</span><span class="o">.</span><span class="n">table</span><span class="p">))</span>       <span class="c1"># number of rows in results</span>
+</code></pre></div>
+<hr />
+<h5>Method: <code>analyze_folder(...)</code></h5>
+
+<p><strong>Description</strong>:
+Batch wrapper that processes all valid images in a directory.
+Applies the full pipeline (read → mask → find_fruits → analyze_image) to each file, saving annotated images, results, and error reports.
+For algorithmic details, see <code>Internal/Core Utilities → core.analyze_fruits</code> (used internally via <code>analyze_image</code>).</p>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li>
+<p><strong>General</strong>:</p>
+</li>
+<li>
+<p><code>output_dir</code> (<code>str | None</code>, default <code>None</code>) — folder for saving results (defaults to <code>&lt;input&gt;/Results</code>).</p>
+</li>
+<li><code>stamp</code> (<code>bool</code>, default <code>False</code>) — whether input images are inverted stamps.</li>
+<li><code>contour_mode</code> (<code>str</code>, default <code>'raw'</code>) — contour approximation mode.</li>
+<li><code>n_kernel</code> (<code>int</code>, default <code>7</code>) — kernel size for morphology in mask creation.</li>
+<li>
+<p><code>min_circularity</code> (<code>float</code>, default <code>0.3</code>) — minimum circularity filter for fruits.</p>
+</li>
+<li>
+<p><strong>Visualization</strong>:</p>
+</li>
+<li>
+<p><code>font_scale</code> (<code>float</code>, default <code>1.5</code>) — font size for text annotations.</p>
+</li>
+<li><code>font_thickness</code> (<code>int</code>, default <code>2</code>) — thickness of annotation text.</li>
+<li><code>padding</code> (<code>int</code>, default <code>15</code>) — padding around text.</li>
+<li><code>line_spacing</code> (<code>int</code>, default <code>15</code>) — spacing between annotation lines.</li>
+<li>
+<p><code>label_bg_color</code> (<code>tuple[int,int,int]</code>, default <code>(255,255,255)</code>) — background color for labels.</p>
+</li>
+<li>
+<p><strong>Locules</strong>:</p>
+</li>
+<li>
+<p><code>min_locule_area</code> (<code>int</code>, default <code>300</code>) — minimum area (px²) for locule acceptance.</p>
+</li>
+<li><code>max_locule_area</code> (<code>int | None</code>) — maximum locule area.</li>
+<li><code>min_distance</code> (<code>int</code>, default <code>2</code>) — minimum distance for merging locules.</li>
+<li>
+<p><code>max_distance</code> (<code>int</code>, default <code>30</code>) — maximum distance for merging locules.</p>
+</li>
+<li>
+<p><strong>Shape analysis</strong>:</p>
+</li>
+<li>
+<p><code>epsilon_hull</code> (<code>float</code>, default <code>0.005</code>) — tolerance for convex hull simplification.</p>
+</li>
+<li><code>use_ellipse_fruit</code> (<code>bool</code>, default <code>False</code>) — whether to fit ellipses to fruits.</li>
+<li><code>n_shifts</code> (<code>int</code>, default <code>500</code>) — number of shifts for symmetry analysis.</li>
+<li><code>angle_weight</code> (<code>float</code>, default <code>0.5</code>) — weight for angle symmetry.</li>
+<li><code>radius_weight</code> (<code>float</code>, default <code>0.5</code>) — weight for radius symmetry.</li>
+<li><code>min_radius_threshold</code> (<code>float</code>, default <code>0.1</code>) — minimum radius threshold.</li>
+<li>
+<p><code>rel_tol</code> (<code>float</code>, default <code>1e-6</code>) — relative tolerance in symmetry.</p>
+</li>
+<li>
+<p><strong>Calibration</strong>:</p>
+</li>
+<li>
+<p><code>width_cm</code> (<code>float | None</code>) — manual width in cm.</p>
+</li>
+<li><code>length_cm</code> (<code>float | None</code>) — manual length in cm.</li>
+<li>
+<p><code>scale_size</code> (<code>str</code>, default <code>'letter_ansi'</code>) — reference scale for px/cm calibration.</p>
+</li>
+<li>
+<p><strong>Extra</strong>:</p>
+</li>
+<li>
+<p><code>**kwargs</code> — forwarded to <code>create_mask()</code> (e.g., HSV thresholds, Canny parameters).</p>
+</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>
+<p><code>None</code> — does not return a value. Instead, writes results to disk:</p>
+</li>
+<li>
+<p><code>annotated_&lt;filename&gt;</code> → annotated images.</p>
+</li>
+<li><code>all_results.csv</code> → concatenated table of all analyzed images.</li>
+<li><code>error_report.csv</code> → errors and skipped images.</li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>Internally loops over images in the input folder and applies <code>analyze_image</code> to each one.</li>
+<li>Uses <code>psutil</code> for runtime and memory reporting.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">batch</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="p">(</span><span class="s2">&quot;fruits/&quot;</span><span class="p">)</span>
+<span class="n">batch</span><span class="o">.</span><span class="n">analyze_folder</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;fruits/Results&quot;</span><span class="p">,</span> <span class="n">stamp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Outputs are saved directly in the Results folder</span>
+<span class="c1"># including annotated images, all_results.csv, and error_report.csv</span>
+</code></pre></div>
+<hr />
+<h5>Method: <code>pdf_to_img(...)</code></h5>
+
+<p><strong>Description</strong>:
+Converts a multi-page PDF into a sequence of JPEG images (one per page).
+Wrapper utility embedded in <code>ImageAnalyzer</code>, built on top of <code>pdf2image.convert_from_path</code>.
+If <code>output_dir</code> is not provided, a new folder called <code>images_from_pdf</code> is automatically created next to the PDF file.
+Each page is saved as <code>&lt;pdf_name&gt;_pageN.jpg</code>.</p>
+<p><strong>Arguments</strong> (<em>Required</em>):</p>
+<ul>
+<li><code>pdf_path</code> (<code>str</code>) — path to the input PDF file. Must have <code>.pdf</code> extension.</li>
+</ul>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li><code>dpi</code> (<code>int</code>, default <code>300</code>) — resolution in dots per inch for conversion.</li>
+<li><code>output_dir</code> (<code>str | None</code>, default <code>None</code>) — destination folder. If <code>None</code>, creates <code>&lt;pdf_dir&gt;/images_from_pdf</code>.</li>
+<li><code>n_threads</code> (<code>int | None</code>, default <code>None</code>) — number of CPU threads for conversion. If <code>None</code>, defaults to <code>1</code>.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print progress and summary messages.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><code>list[str]</code> — list of paths to the saved JPEG images.</li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>Input validation ensures the file exists and has <code>.pdf</code> extension.</li>
+<li>If no <code>output_dir</code> is given, a new folder <code>images_from_pdf</code> is created automatically.</li>
+<li>Filenames follow the pattern <code>&lt;pdf_name&gt;_page{i+1}.jpg</code>.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Convert a PDF to images with default settings</span>
+<span class="n">images</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="o">.</span><span class="n">pdf_to_img</span><span class="p">(</span><span class="s2">&quot;docs/report.pdf&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example output:</span>
+<span class="c1"># [</span>
+<span class="c1">#   &quot;docs/images_from_pdf/report_page1.jpg&quot;,</span>
+<span class="c1">#   &quot;docs/images_from_pdf/report_page2.jpg&quot;,</span>
+<span class="c1">#   ...</span>
+<span class="c1"># ]</span>
+
+<span class="c1"># Save into a custom directory, at higher resolution</span>
+<span class="n">images</span> <span class="o">=</span> <span class="n">AnalyzingImage</span><span class="o">.</span><span class="n">pdf_to_img</span><span class="p">(</span>
+    <span class="n">pdf_path</span><span class="o">=</span><span class="s2">&quot;docs/report.pdf&quot;</span><span class="p">,</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;exports/pdf_images&quot;</span><span class="p">,</span>
+    <span class="n">n_threads</span><span class="o">=</span><span class="mi">4</span>
+<span class="p">)</span>
+</code></pre></div>
+<hr />
+<div style="background-color:rgba(234, 212, 243, 0.6); padding:8px; border-radius:6px; text-align:left;">
+
+  <h4 style="margin:0;">New Utilities (AnnotatedImage):</h4>
+
+</div>
+
+<h5>Method: <code>save_img(...)</code></h5>
+
+<p><strong>Description</strong>:
+Embedded in <code>AnnotatedImage</code>. Saves the annotated RGB image (produced and stored by <code>ImageAnalyzer</code>) to disk without axes or margins.
+If the output directory does not exist, it is created automatically.</p>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li><code>path</code> (<code>str | None</code>, default <code>None</code>) — output file path. If <code>None</code>, uses <code>&lt;original_dir&gt;/&lt;image_name&gt;_annotated.&lt;ext&gt;</code>.</li>
+<li><code>format</code> (<code>str | None</code>, default <code>None</code>) — image format (e.g., <code>'jpg'</code>, <code>'png'</code>). If <code>None</code>, inferred from the file extension in <code>path</code>, or defaults to <code>'jpg'</code>.</li>
+<li><code>dpi</code> (<code>int</code>, default <code>300</code>) — resolution in dots per inch for raster image export.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print a confirmation message after saving.</li>
+<li><code>**kwargs</code> — additional keyword arguments passed to <code>matplotlib.pyplot.savefig</code> (e.g., <code>transparent=True</code>).</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><code>None</code> — writes the file to disk.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save annotated image (auto-creates directory if missing)</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_img</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># Access default path</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annotated</span><span class="o">.</span><span class="n">image_path</span><span class="p">)</span>  <span class="c1"># original image path reference</span>
+</code></pre></div>
+<hr />
+<h5>Method: <code>save_csv(...)</code></h5>
+
+<p><strong>Description</strong>:
+Embedded in <code>AnnotatedImage</code>. Saves the results table (computed by <code>ImageAnalyzer</code> and stored in the object) to a CSV file.
+If the output directory does not exist, it is created automatically.</p>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li><code>path</code> (<code>str | None</code>, default <code>None</code>) — output CSV path. If <code>None</code>, uses <code>&lt;original_dir&gt;/&lt;image_name&gt;_results.csv</code>.</li>
+<li><code>sep</code> (<code>str</code>, default <code>','</code>) — column separator to use in the CSV file.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print a confirmation message after saving.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><code>None</code> — writes the file to disk.</li>
+</ul>
+<p><strong>Errors</strong>:</p>
+<ul>
+<li>Raises <code>ValueError</code> if <code>self.table</code> is empty (i.e., no results to save).</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Save results table (auto-creates directory if missing)</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="c1"># The CSV will contain the per-fruit and per-locule measurements</span>
+</code></pre></div>
+<hr />
+<h5>Method: <code>save_all(...)</code></h5>
+
+<p><strong>Description</strong>:
+Embedded in <code>AnnotatedImage</code>. Convenience method that saves both the annotated image and the results table (produced by <code>ImageAnalyzer</code>) in one call.
+If the output directory does not exist, it is created automatically.</p>
+<p><strong>Arguments</strong> (<em>Optional</em>):</p>
+<ul>
+<li><code>base_name</code> (<code>str | None</code>, default <code>None</code>) — base name for the files, without extension. If <code>None</code>, uses the original image name.</li>
+<li><code>output_dir</code> (<code>str | None</code>, default <code>None</code>) — directory where the files will be saved. If <code>None</code>, uses the original image directory.</li>
+<li><code>format</code> (<code>str</code>, default <code>'jpg'</code>) — image format for export (e.g., <code>'jpg'</code>, <code>'png'</code>).</li>
+<li><code>dpi</code> (<code>int</code>, default <code>300</code>) — resolution in dots per inch for raster export.</li>
+<li><code>sep</code> (<code>str</code>, default <code>','</code>) — column separator for the CSV file.</li>
+<li><code>output_message</code> (<code>bool</code>, default <code>True</code>) — whether to print confirmation messages after saving.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><code>None</code> — writes both files (annotated image + CSV) to disk.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotated</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_image</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save both outputs in a custom directory (auto-created if missing)</span>
+<span class="n">annotated</span><span class="o">.</span><span class="n">save_all</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;results/fruits&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">)</span>
+
+<span class="c1"># This creates:</span>
+<span class="c1"># results/fruits/sample_annotated.png</span>
+<span class="c1"># results/fruits/sample_results.csv</span>
+</code></pre></div>
+<hr />
+<div style="background-color:#DAA520; padding:8px; border-radius:6px; 
+text-align:center;">
+
+#### **Advanced Utilities**
+
+</div>
+
+<hr />
+<div style="background-color:#BC8F8F; padding:8px; border-radius:6px; 
+text-align:center;">
+
+#### Helper Functions
+
+</div>
+
+<p><br></p>
+<h4>Function: <code>load_img</code></h4>
+
+<p><strong>Description</strong>:
+Loads an image from disk in <strong>BGR</strong> format (OpenCV) with basic file-type validation, and optionally displays it for quick inspection.</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>
+<p><strong>Extension validation</strong></p>
+</li>
+<li>
+<p>Accepts only: <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.tif</code>, <code>.tiff</code>.</p>
+</li>
+<li>Raises a <code>ValueError</code> if the extension is not in the allowed set.</li>
+<li>
+<p><strong>Image loading</strong></p>
+</li>
+<li>
+<p>Uses <code>cv2.imread(path)</code> to read the image in <strong>BGR</strong>.</p>
+</li>
+<li>If loading fails (<code>img is None</code>), raises a <code>ValueError</code> with the filename.</li>
+<li>
+<p><strong>Optional plotting</strong></p>
+</li>
+<li>
+<p>If <code>plot=True</code>, calls <code>plot_img(img, metadata=False, fig_axis=fig_axis, plot_size=plot_size)</code> to display the image.</p>
+</li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>path</code> (<code>str</code>): Full path to the image file.</li>
+</ul>
+<p><em>Optional</em>:</p>
+<ul>
+<li><code>plot</code> (<code>bool</code>): Display the image after loading (default <code>True</code>).</li>
+<li><code>plot_size</code> (<code>Tuple[int,int]</code>): Figure size in inches <code>(width, height)</code> for display (default <code>(20, 10)</code>).</li>
+<li><code>fig_axis</code> (<code>bool</code>): Show axes in the plot if <code>True</code> (default <code>True</code>).</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><code>np.ndarray | None</code>: The loaded image in <strong>BGR</strong> format if successful; otherwise <code>None</code> (on caught exceptions).</li>
+</ul>
+<p><strong>Raises</strong>:</p>
+<ul>
+<li><code>ValueError</code>: If the extension is invalid or if the image cannot be loaded by OpenCV.</li>
+<li>Other exceptions are caught and reported; the function then returns <code>None</code>.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">img</span> <span class="o">=</span> <span class="n">load_img</span><span class="p">(</span>
+    <span class="n">path</span><span class="o">=</span><span class="s2">&quot;data/slice_03.jpg&quot;</span><span class="p">,</span>
+    <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">plot_size</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">fig_axis</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">img</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image loaded:&quot;</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div>
+<p><br></p>
+<hr />
+<h4>Function: <code>detect_img_name</code></h4>
+
+<p><strong>Description</strong>:
+Extracts the <strong>base filename (without extension)</strong> from a given image path, while validating the input type and file extension. Provides a warning if the file extension is not a recognized image format.</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>
+<p><strong>Input validation</strong></p>
+</li>
+<li>
+<p>Ensures <code>path_image</code> is of type <code>str</code>.</p>
+</li>
+<li>Raises a <code>TypeError</code> if a different type is provided.</li>
+<li>
+<p><strong>Extension check</strong></p>
+</li>
+<li>
+<p>Accepts extensions: <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.tiff</code>, <code>.tif</code>.</p>
+</li>
+<li>If the extension is not in this set, issues a <code>warnings.warn</code>.</li>
+<li>
+<p><strong>Filename extraction</strong></p>
+</li>
+<li>
+<p>Uses <code>os.path.basename</code> and <code>os.path.splitext</code> to return the filename without extension.</p>
+</li>
+<li>
+<p><strong>Error handling</strong></p>
+</li>
+<li>
+<p>On unexpected exceptions, prints the error and returns <code>None</code>.</p>
+</li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>path_image</code> (<code>str</code>): Full path to the image file.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><code>str</code>: Base name of the file (without extension) if valid.</li>
+<li><code>None</code>: If an exception occurs.</li>
+</ul>
+<p><strong>Raises</strong>:</p>
+<ul>
+<li><code>TypeError</code>: If <code>path_image</code> is not a string.</li>
+<li><code>Warning</code>: If the extension is not a valid image format (execution continues).</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="n">detect_img_name</span><span class="p">(</span><span class="s2">&quot;dataset/images/sample_slice.tif&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  
+<span class="c1"># Output: &quot;sample_slice&quot;</span>
+</code></pre></div>
+<p><br></p>
+<hr />
+<h4>Function: <code>detect_label</code></h4>
+
+<p><strong>Description</strong>:
+Detects and reads a <strong>text label</strong> in the input image by scanning contour candidates that look like rectangular label boxes. Uses <a href="https://www.jaided.ai/easyocr/">EasyOCR</a> to extract the text from the detected region. Returns the recognized label text and the label contour coordinates if found; otherwise returns a default message and <code>None</code>.</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>
+<p><strong>OCR initialization</strong></p>
+</li>
+<li>
+<p>Tries to build an <code>easyocr.Reader</code> with the provided <code>language</code> list (e.g., <code>['es','en']</code>); falls back to English <code>['en']</code> if initialization fails.</p>
+</li>
+<li>
+<p>For additional supported languages, see the official <a href="https://www.jaided.ai/easyocr/">EasyOCR documentation</a>.</p>
+</li>
+<li>
+<p><strong>Contour screening for label candidates</strong></p>
+</li>
+<li>
+<p>For each contour:</p>
+<ul>
+<li>Computes perimeter and polygonal approximation with <code>cv2.approxPolyDP(contour, 0.02*peri, True)</code>.</li>
+<li>Computes area with <code>cv2.contourArea</code>.</li>
+<li>Considers the contour a <strong>label candidate</strong> if <code>area &gt; min_area_label</code> <strong>and</strong> the approximation has <strong>4 vertices</strong> (rough rectangle).</li>
+</ul>
+</li>
+<li>
+<p><strong>Region extraction &amp; preprocessing</strong></p>
+</li>
+<li>
+<p>Crops the candidate region via <code>cv2.boundingRect(approx)</code>.</p>
+</li>
+<li>
+<p>Converts to grayscale → Gaussian blur with kernel <code>blur_label</code> → Canny edges with thresholds <code>min_canny_label</code> / <code>max_canny_label</code> → Otsu thresholding to obtain a high-contrast mask for OCR.</p>
+</li>
+<li>
+<p><strong>Text recognition</strong></p>
+</li>
+<li>
+<p>Runs <code>reader.readtext(thresh)</code> and, if any results are found, joins recognized strings with spaces.</p>
+</li>
+<li>
+<p>On first successful read, returns <strong>immediately</strong> the <code>label_text</code> and the label contour coordinates.</p>
+</li>
+<li>
+<p><strong>Failure &amp; errors</strong></p>
+</li>
+<li>
+<p>The function continues scanning other contours even if one candidate fails text extraction due to:</p>
+<ul>
+<li>Poor image quality (blurry, low resolution)</li>
+<li>Label damage (folded, torn, or obscured labels)</li>
+<li>Unfavorable lighting conditions (shadows, glare)</li>
+<li>Non-text labels (logos, barcodes, or color patches)</li>
+<li>Unsupported characters or fonts</li>
+</ul>
+</li>
+<li>Per-contour exceptions are caught and logged, allowing the function to continue evaluating other potential label contours</li>
+<li>If text extraction fails for all candidates, returns the default "no label" message rather than failing completely</li>
+</ol>
+<p><strong>Arguments</strong>:
+<em>Required</em>:</p>
+<ul>
+<li><code>img</code> (<code>np.ndarray</code>): Source image in <strong>BGR</strong> format.</li>
+<li><code>contours</code> (<code>List[np.ndarray]</code>): Contours to screen for a rectangular label region.</li>
+<li><code>filtered_fruit_locus_map</code> (<code>dict</code>): Mapping of fruits→locules (not used internally; kept for interface consistency).</li>
+</ul>
+<p><em>Optional</em>:</p>
+<ul>
+<li><code>language</code> (<code>List[str]</code>): Language codes for EasyOCR. Default <code>['es','en']</code> (Spanish and English), fallback <code>['en']</code> (English).</li>
+<li><code>min_area_label</code> (<code>int</code>): Minimum contour area to consider a label candidate (default <code>500</code> px<span class="arithmatex">\(^2\)</span>).</li>
+<li><code>blur_label</code> (<code>Tuple[int,int]</code>): Gaussian blur kernel for label preprocessing (default <code>(11,11)</code>).</li>
+<li><code>min_canny_label</code> (<code>int</code>): Lower Canny edge threshold (default <code>0</code>).</li>
+<li><code>max_canny_label</code> (<code>int</code>): Upper Canny edge threshold (default <code>150</code>).</li>
+</ul>
+<p>Aquí está la documentación actualizada que refleja esos escenarios de fallo:</p>
+<p><strong>Returns</strong>:<br />
+<code>Tuple[str, Optional[numpy.ndarray]]</code>:<br />
+- <code>label_text</code>: The extracted text string from the most probable label contour, OR<br />
+<code>"No label included/detected"</code> if:
+  - No contours pass the initial size/area filters
+  - <strong>No candidate contour yields readable text</strong> (e.g., due to poor image quality, blurry labels, or OCR failure)
+  - All potential label contours raise exceptions during processing
+- <code>label_contour</code>: The contour coordinates of the detected label, OR <code>None</code> if no valid label was found/read</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">label_text</span><span class="p">,</span> <span class="n">label_coords</span> <span class="o">=</span> <span class="n">detect_label</span><span class="p">(</span>
+    <span class="n">img</span><span class="o">=</span><span class="n">img_bgr</span><span class="p">,</span>
+    <span class="n">contours</span><span class="o">=</span><span class="n">all_contours</span><span class="p">,</span>
+    <span class="n">filtered_fruit_locus_map</span><span class="o">=</span><span class="n">fruit_locules_map</span><span class="p">,</span>
+    <span class="n">language</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;es&#39;</span><span class="p">,</span><span class="s1">&#39;en&#39;</span><span class="p">],</span>
+    <span class="n">min_area_label</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+    <span class="n">blur_label</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span>
+    <span class="n">min_canny_label</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">max_canny_label</span><span class="o">=</span><span class="mi">180</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">label_text</span><span class="p">)</span>           <span class="c1"># e.g., &quot;Cultivar A - Plot 12&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">label_coords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="c1"># False if a label was found</span>
+</code></pre></div>
+<p><strong>Notes</strong>:</p>
+<ol>
+<li><strong>Early return</strong>: The function returns on the <strong>first</strong> rectangle that produces OCR output; if multiple labels exist, only the first detected is reported.</li>
+<li><strong>Preprocessing sensitivity</strong>: <code>blur_label</code>, <code>min_canny_label</code>, and <code>max_canny_label</code> let you tune OCR readiness for low/high-contrast labels.</li>
+<li><strong>Coordinate format</strong>: <code>label_coordinates</code> is the <strong>contour</strong> of the detected rectangle (list of points), not the bounding box.</li>
+<li><strong>Dependency</strong>: Requires <code>easyocr</code> (and its OCR backends).</li>
+</ol>
+<p><br></p>
+<hr />
+<h4> Function: <code>plot_image</code></h4>
+
+<p><strong>Description</strong>:<br />
+Utility function to <strong>display images</strong> with optional axis visibility and custom titles. Converts the input image from <strong>BGR</strong> (OpenCV default) to <strong>RGB</strong> (matplotlib default) for correct color rendering. Useful for visual inspection of processed or annotated images during fruit analysis.</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li><strong>Color conversion</strong>  </li>
+<li>Uses <code>cv2.cvtColor(img, cv2.COLOR_BGR2RGB)</code> to display images correctly with matplotlib.  </li>
+<li>
+<p>Without this conversion, colors would appear inverted (e.g., blue ↔ red).</p>
+</li>
+<li>
+<p><strong>Figure setup</strong>  </p>
+</li>
+<li>Creates a matplotlib figure with dimensions specified by <code>plot_size</code>.  </li>
+<li>Sets a title combining the image name (<code>img_name</code>) and the provided label (<code>label_text</code>).  </li>
+<li>
+<p>Applies <code>tight_layout()</code> for better spacing.</p>
+</li>
+<li>
+<p><strong>Axis control</strong>  </p>
+</li>
+<li>If <code>fig_axis=True</code>, axes are displayed (useful for pixel-level reference).  </li>
+<li>If <code>fig_axis=False</code>, axes are hidden for a cleaner visualization.</li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:
+- <code>img</code> (<code>np.ndarray</code>): Image to display in <strong>BGR format</strong> (as returned by OpenCV).</p>
+<p><em>Optional</em>:
+- <code>fig_axis</code> (<code>bool</code>): Show axes if <code>True</code>, hide them if <code>False</code> (default <code>False</code>).<br />
+- <code>plot_size</code> (<code>Tuple[int,int]</code>): Figure size in inches (default <code>(10,10)</code>).<br />
+- <code>label_text</code> (<code>str</code>): Custom label or annotation text displayed in the title (default <code>"None"</code>).<br />
+- <code>img_name</code> (<code>str</code>): Image identifier shown in the title (default <code>"None"</code>).<br />
+- <code>title_fontsize</code> (<code>int</code>): Font size of the title (default <code>12</code>).<br />
+- <code>title_location</code> (<code>str</code>): Title alignment in the figure; options: <code>'left'</code>, <code>'center'</code>, <code>'right'</code> (default <code>'center'</code>).  </p>
+<p><strong>Returns</strong>:<br />
+<code>None</code> — The function directly <strong>renders the image</strong> using matplotlib.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">plot_image</span><span class="p">(</span>
+    <span class="n">img</span><span class="o">=</span><span class="n">annotated_img</span><span class="p">,</span>
+    <span class="n">fig_axis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">plot_size</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
+    <span class="n">label_text</span><span class="o">=</span><span class="s2">&quot;Cultivar A&quot;</span><span class="p">,</span>
+    <span class="n">img_name</span><span class="o">=</span><span class="s2">&quot;slice_03.jpg&quot;</span><span class="p">,</span>
+    <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">title_location</span><span class="o">=</span><span class="s2">&quot;left&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><br></p>
+<hr />
+<h4>Function: <code>is_contour_valid</code></h4>
+
+<p><strong>Description</strong>:
+Evaluates whether a given contour satisfies a set of geometric criteria, including <strong>area</strong>, <strong>circularity</strong>, and <strong>aspect ratio</strong>. Returns a boolean indicating if the contour passes all thresholds.</p>
+<p>This is typically used as a <strong>filtering step</strong> to discard invalid or noisy contours before further analysis (e.g., fruits or locules that are too small, too elongated, or too irregular).</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>
+<p><strong>Default thresholds</strong></p>
+</li>
+<li>
+<p>If no <code>filters</code> dictionary is provided, the function applies defaults:</p>
+<ul>
+<li><code>min_area = 300</code></li>
+<li><code>min_circularity = 0.6</code></li>
+<li><code>max_circularity = 1.0</code></li>
+<li><code>min_aspect_ratio = 0.4</code></li>
+<li><code>max_aspect_ratio = 1.0</code></li>
+<li>If <code>filters</code> is provided, only the specified keys are overridden while others remain at default values.</li>
+</ul>
+</li>
+<li>
+<p><strong>Area check</strong></p>
+</li>
+<li>
+<p>Uses <code>cv2.contourArea(contour)</code> to compute the enclosed area.</p>
+</li>
+<li>
+<p>If the area is below the <code>min_area</code> threshold, the contour is immediately rejected.</p>
+</li>
+<li>
+<p><strong>Perimeter and circularity</strong></p>
+</li>
+<li>
+<p>The perimeter is computed with <code>cv2.arcLength(contour, True)</code>.</p>
+</li>
+<li>
+<p>Circularity is defined as:</p>
+<p>$$
+ \text{circularity} = \frac{4 \pi \times \text{area}}{\text{perimeter}^2}
+ $$</p>
+<p><em>Values close to 1 represent circles; smaller values indicate elongated or irregular shapes.</em>
+   * The contour is rejected if circularity is outside <code>[min_circularity, max_circularity]</code>.</p>
+</li>
+<li>
+<p><strong>Aspect ratio</strong></p>
+</li>
+<li>
+<p>Computes the rotated bounding box with <code>cv2.minAreaRect(contour)</code>.</p>
+</li>
+<li>
+<p>Aspect ratio is defined as:</p>
+<p>$$
+ \text{aspect ratio} = \frac{\min(w,h)}{\max(w,h)}
+ $$</p>
+<p>where <code>w</code> and <code>h</code> are bounding box dimensions.
+   * Ensures the contour's elongation is within <code>[min_aspect_ratio, max_aspect_ratio]</code>.</p>
+</li>
+<li>
+<p><strong>Final validation</strong></p>
+</li>
+<li>
+<p>A contour is considered <strong>valid</strong> only if it passes all three checks (area, circularity, and aspect ratio).</p>
+</li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>contour</code> (<code>np.ndarray</code>): Input contour to evaluate (shape: <code>[N, 1, 2]</code>).</li>
+</ul>
+<p><em>Optional</em>:</p>
+<ul>
+<li>
+<p><code>filters</code> (<code>dict</code>, default <code>None</code>): Dictionary to override filter thresholds. Missing keys are filled with defaults:</p>
+</li>
+<li>
+<p><code>min_area</code> (<code>float</code>): Minimum area threshold (default <code>300</code>).</p>
+</li>
+<li><code>min_circularity</code> (<code>float</code>): Minimum circularity (default <code>0.7</code>).</li>
+<li><code>max_circularity</code> (<code>float</code>): Maximum circularity (default <code>1.0</code>).</li>
+<li><code>min_aspect_ratio</code> (<code>float</code>): Minimum aspect ratio (default <code>0.8</code>).</li>
+<li><code>max_aspect_ratio</code> (<code>float</code>): Maximum aspect ratio (default <code>1.0</code>).</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>
+<p><code>bool</code>:</p>
+</li>
+<li>
+<p>If <code>True</code>, contour passes all filters.</p>
+</li>
+<li>If <code>False</code>, contour rejected by at least one filter.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">filters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;min_area&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>          <span class="c1"># override only min_area</span>
+    <span class="s2">&quot;min_circularity&quot;</span><span class="p">:</span> <span class="mf">0.6</span>    <span class="c1"># override circularity threshold</span>
+<span class="p">}</span>
+
+<span class="n">valid</span> <span class="o">=</span> <span class="n">is_contour_valid</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">filters</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">valid</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Contour accepted.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Contour rejected.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<hr />
+<h4> Function: <code>pdf_to_img</code></h4>
+
+<p><strong>Description</strong>:
+Converts a <strong>PDF file</strong> into a sequence of <strong>JPEG images</strong>, one per page, using the <code>pdf2image</code> library.
+Saves the images to a specified folder (or to a default <code>images_from_pdf</code> directory created next to the input PDF).</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>
+<p><strong>Validation</strong>:</p>
+</li>
+<li>
+<p>Checks that the input file has a <code>.pdf</code> extension.</p>
+</li>
+<li>
+<p>Prints an error message if the file type is invalid.</p>
+</li>
+<li>
+<p><strong>Conversion</strong>:</p>
+</li>
+<li>
+<p>Calls <code>convert_from_path()</code> with the specified <code>dpi</code> (default = 600) and number of threads (<code>n_threads</code>).</p>
+</li>
+<li>
+<p>Converts each page of the PDF into a <code>PIL.Image</code> object.</p>
+</li>
+<li>
+<p><strong>Output directory</strong>:</p>
+</li>
+<li>
+<p>If <code>path_img</code> is not provided, automatically creates a folder called <code>images_from_pdf</code> in the same directory as the input PDF.</p>
+</li>
+<li>
+<p>Uses <code>os.makedirs(..., exist_ok=True)</code> to ensure the directory exists.</p>
+</li>
+<li>
+<p><strong>Saving images</strong>:</p>
+</li>
+<li>
+<p>Iterates through each converted page and saves it as <code>PDFNAME_page{i}.jpg</code>.</p>
+</li>
+<li>
+<p>Output is in JPEG format regardless of input.</p>
+</li>
+<li>
+<p><strong>Messages</strong>:</p>
+</li>
+<li>
+<p>If <code>output_message=True</code>, prints the total number of images saved and the directory path.</p>
+</li>
+<li>Errors are caught and reported as exceptions.</li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>path_pdf</code> (<code>str</code>): Path to the input PDF file.</li>
+</ul>
+<p><em>Optional</em>:</p>
+<ul>
+<li><code>dpi</code> (<code>int</code>): Resolution in dots per inch for rendering (default = 600).</li>
+<li><code>path_img</code> (<code>str | None</code>): Destination directory for the output images. If <code>None</code>, creates <code>images_from_pdf/</code> next to the PDF.</li>
+<li><code>n_threads</code> (<code>int | None</code>): Number of CPU threads to use during conversion (default = 1).</li>
+<li><code>output_message</code> (<code>bool</code>): If <code>True</code>, prints a summary message after saving images (default = True).</li>
+</ul>
+<p><strong>Returns</strong>:
+None (images are saved to disk).</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">pdf_to_img</span><span class="p">(</span>
+    <span class="n">path_pdf</span><span class="o">=</span><span class="s2">&quot;reports/experiment_results.pdf&quot;</span><span class="p">,</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+    <span class="n">n_threads</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">output_message</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="c1"># Output:</span>
+<span class="c1"># &quot;10 images saved in: reports/images_from_pdf&quot;</span>
+</code></pre></div>
+<p><br></p>
+<div style="background-color:#e6f2ff; padding:8px; border-radius:6px; 
+text-align:center;">
+
+#### Internal/Core Utilities
+
+</div>
+
+<p><br></p>
+<div style="background-color:rgba(230, 242, 255, 0.6); padding:8px; border-radius:6px; text-align:left;">
+
+  <h4 style="margin:0;">Image processing:</h4>
+
+</div>
+
+<p><br></p>
+<h4>Function: <code>create_mask</code></h4>
+
+<p><strong>Description</strong>:<br />
+Creates a binary mask to segment objects from an HSV image using color thresholding, morphological operations, and edge detection. Designed for flexible background removal with customizable processing steps.</p>
+<p><strong>Implementation Details</strong>:<br />
+The function combines multiple computer vision techniques:
+1. <strong>Color Thresholding</strong>: Uses HSV bounds to isolate background/foreground with <code>cv2.inRange()</code>.
+2. <strong>Morphological Refinement</strong>: 
+   - Applies opening (noise removal) and closing (hole filling) with elliptical kernels.
+   - Supports separate kernel sizes for opening/closing operations.
+3. <strong>Edge Enhancement</strong>: Blends Canny edges with the thresholded mask for precise boundaries.</p>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:<br />
+- <code>img_hsv</code> (<code>numpy.ndarray</code>): Input image in HSV format (shape: <code>(H,W,3)</code>, dtype: <code>uint8</code>).  </p>
+<p><em>Optional</em>:<br />
+- <code>lower_hsv</code> (<code>Tuple[int, int, int]</code>): Lower HSV bounds for background (default: <code>[0, 0, 0]</code>).<br />
+- <code>upper_hsv</code> (<code>Tuple[int, int, int]</code>): Upper HSV bounds for background (default: <code>[180, 255, 30]</code>).<br />
+- <code>n_iteration</code> (<code>int</code>): Iterations for morphological ops (default: <code>1</code>).<br />
+- <code>n_kernel</code> (<code>int</code>): Default kernel size (odd) when <code>kernel_open</code>/<code>kernel_close</code> are None (default: <code>7</code>).<br />
+- <code>kernel_open</code> (<code>int</code>): Custom kernel size for opening operation (overrides <code>n_kernel</code> if set).<br />
+- <code>kernel_close</code> (<code>int</code>): Custom kernel size for closing operation (overrides <code>n_kernel</code> if set).<br />
+- <code>canny_min</code> (<code>int</code>): Lower threshold for Canny edge detection (default: <code>30</code>).<br />
+- <code>canny_max</code> (<code>int</code>): Upper threshold for Canny edge detection (default: <code>100</code>).<br />
+- <code>plot</code> (<code>bool</code>): Whether to plot the resulting mask (default: <code>True</code>).<br />
+- <code>figsize</code> (<code>Tuple[int, int]</code>): Figure size for plotting (default: <code>(20, 10)</code>).<br />
+- <code>axis</code> (<code>bool</code>): Whether to show axes when plotting (default: <code>False</code>).  </p>
+<p><strong>Returns</strong>:<br />
+<code>numpy.ndarray</code>: Binary mask (shape: <code>(H,W)</code>, dtype: <code>uint8</code>) where:<br />
+- <code>255</code> (white): Foreground pixels<br />
+- <code>0</code> (black): Background pixels</p>
+<p><strong>Raises</strong>:<br />
+- <code>TypeError</code>: If input is not a numpy array.<br />
+- <code>ValueError</code>: For invalid HSV bounds, even kernel sizes, or incorrect dtypes.<br />
+- <code>RuntimeError</code>: If OpenCV operations fail.  </p>
+<p><strong>Example</strong>:<br />
+<div class="highlight"><pre><span></span><code><span class="c1"># Basic usage (black background removal)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">create_mask</span><span class="p">(</span><span class="n">img_hsv</span><span class="p">)</span>
+
+<span class="c1"># Custom HSV range for blue background</span>
+<span class="n">blue_mask</span> <span class="o">=</span> <span class="n">create_mask</span><span class="p">(</span>
+    <span class="n">img_hsv</span><span class="p">,</span>
+    <span class="n">lower_hsv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]),</span>
+    <span class="n">upper_hsv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">130</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]),</span>
+    <span class="n">kernel_open</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">kernel_close</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Notes</strong>:<br />
+1. <strong>HSV Defaults</strong>: Default bounds target black/dark backgrounds (<code>V ≤ 30</code>).<br />
+2. <strong>Kernel Strategy</strong>:<br />
+   - Smaller <code>kernel_open</code> preserves fine details.<br />
+   - Larger <code>kernel_close</code> fills bigger holes.<br />
+3. <strong>Edge Detection</strong>: Canny thresholds (<code>canny_min/max</code>) should be tuned for edge sensitivity.<br />
+4. <strong>Performance</strong>: For batch processing, set <code>plot=False</code>.  </p>
+<p><br></p>
+<hr />
+<h4>Function: <code>px_per_cm</code></h4>
+
+<p><strong>Description</strong>:
+Calculates pixel density (pixels/cm) from scanned objects, including <strong>documents</strong> (paper sheets) or <strong>biological speciments</strong> (fruit slices/leaves) placed directly on the scanner. Uses physicl dimension to establish precise scale. Automatically determines image orientation (portrait or landscape) and treats the <strong>longest</strong> physical side as <strong>length</strong> and the <strong>shortest</strong> as <strong>width</strong>, regardless of input orientation. <strong>When documents uses as input, For precise measurements, always use the scanner-reported dimensions rather than theorical paper size.</strong></p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li><strong>Image Dimensions (cm)</strong>:</li>
+<li>The function uses the actual scanned dimensions (including any automatic cropping or optical distorions).</li>
+<li>Provides independent X/Y scaling to handle non-square pixels.</li>
+<li>The physical dimensions must satisfy <code>length_cm ≥ width_cm</code>. If using predefined sizes (e.g., <code>'a4_iso'</code>), this condition is enforced automatically.</li>
+<li>
+<p>If custom dimensions are used and <code>width_cm &gt; length_cm</code>, a <code>ValueError</code> is raised.</p>
+</li>
+<li>
+<p><strong>Image Dimensions (pixels)</strong>:</p>
+</li>
+<li>
+<p>Uses the shape of the image array to determine image orientation.</p>
+</li>
+<li>
+<p>Automatically handles orientation:</p>
+<ul>
+<li><code>length_px</code> = longer side (height/Y-axis)</li>
+<li><code>width_px</code> = shorter side (width/X-axis)</li>
+</ul>
+</li>
+</ol>
+<p><em>For example:</em>
+    * If the image shape is 3500 px × 2500 px (portrait), then: <code>length_px = 3500</code> and <code>width_px = 2500</code>
+    * If the image shape is 2500 px × 3500 px (landscape), then, the function swaps the values internally so that: <code>length_px = 3500</code> and <code>width_px = 2500</code></p>
+<ol>
+<li>
+<p><strong>Density Calculation</strong>:</p>
+</li>
+<li>
+<p><code>px_per_cm_width = width_px / width_cm</code></p>
+</li>
+<li><code>px_per_cm_length = length_px / length_cm</code>
+    <em>These represent the <strong>pixel density</strong> along the width and length respectively.</em></li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>img</code> (numpy.ndarray): Input image (2D grayscale or 3D BGR).</li>
+</ul>
+<p><em>Optional</em>:</p>
+<ul>
+<li><code>size</code> (str): Predefined paper size. Options:</li>
+<li><code>'letter_ansi'</code> (default): 21.6 × 27.9 cm</li>
+<li><code>'legal_ansi'</code>: 21.59 × 35.56 cm</li>
+<li><code>'a4_iso'</code>: 21.0 × 29.7 cm</li>
+<li>
+<p><code>'a3_iso'</code>: 29.7 × 42.0 cm</p>
+</li>
+<li>
+<p><code>width_cm</code> (<code>float</code>): Physical width (shorter side, cm). Requires <code>length_cm</code>.</p>
+</li>
+<li><code>length_cm</code> (<code>float</code>): Physical length (longer side, cm). Requires <code>width_cm</code>.</li>
+</ul>
+<p><strong>Returns</strong>:
+<code>Tuple[float, float, float, float]</code>:</p>
+<ul>
+<li><code>px_per_cm_width</code> (<code>float</code>): Pixels per centimeter along the <strong>shorter side</strong> of the image (width).  </li>
+<li><code>px_per_cm_length</code> (<code>float</code>): Pixels per centimeter along the <strong>longer side</strong> of the image (length).  </li>
+<li><code>used_width_cm</code>: Validated width (cm)</li>
+<li><code>used_length_cm</code>: Validated length (cm)</li>
+</ul>
+<p><strong>Raises</strong>:</p>
+<ul>
+<li><code>ValueError</code>: If <code>length_cm &lt; width_cm</code>, if dimensions are non-positive, or if <code>size</code> is invalid.</li>
+<li><code>TypeError</code>: If input image is not a NumPy array or dimension values are not numeric.</li>
+<li><code>RuntimeError</code>: If calculation fails (e.g., extreme aspect ratio mismatch).</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For a landscape A4 document (21.0 × 29.7 cm)</span>
+<span class="n">px_x</span><span class="p">,</span> <span class="n">px_y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">px_per_cm</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;a4_iso&#39;</span><span class="p">)</span>
+
+<span class="c1"># With custom dimensions (30 × 20 cm is invalid, must be 20 × 30)</span>
+<span class="n">px_x</span><span class="p">,</span> <span class="n">px_y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">px_per_cm</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">width_cm</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">length_cm</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Notes</strong>:</p>
+<ol>
+<li>
+<p><strong>Image Size Validation</strong>: Scanner cropping typically affects paper dimensions by \~1–3%. Check the image metadata or scanner information to extract the actual scanned image dimensions. When analyzing stamps, if scanner dimensions are unavailable, you can use the actual paper dimensions. However, keep in mind that this may introduce a minimal error (±1–3% in most cases).</p>
+</li>
+<li>
+<p><strong>Image Requirements</strong>: The image must be 2D (grayscale) or 3D (e.g. BGR);  Although a BGR image is expected in the pipeline, the function itself does not depend on the specific color format (e.g. BGR, RGB, HSV, Lab, etc.), only on the array shape.</p>
+</li>
+<li><strong>Aspect Ratio</strong>: In most cases, an equal X/Y pixel density is expected. However, this function calculates independent X/Y scaling factors (<code>px_per_cm_width</code>, <code>px_per_cm_length</code>) to handle cases where pixel-to-cm ratios differ between axes (due to non-square pixels, optical distortions, or anisotropic processing), ensuring precise dimensional measurements.</li>
+<li><strong>Dimension Rules</strong>: Negative or zero dimensions are not allowed.</li>
+<li><strong>Orientation Handling</strong>: The <code>px_per_cm</code> function does <strong>not</strong> rotate the image—only interprets orientation based on dimensions.</li>
+</ol>
+<p><br></p>
+<div style="background-color:rgba(230, 242, 255, 0.6); padding:8px; border-radius:6px; text-align:left;">
+  <h4 style="margin:0;">Contour processing:</h4>
+</div>
+
+<p><br></p>
+<h4>Function: <code>get_fruit_contour</code></h4>
+
+<p><strong>Description</strong>:
+Retrieves the contour of a fruit from a list of contours and optionally transforms it into a simplified or fitted representation.
+The function supports <strong>raw contours</strong>, <strong>convex hulls</strong>, <strong>polygonal approximation</strong>, and <strong>ellipse fitting</strong>, depending on the selected <code>contour_mode</code>.</p>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>
+<p><strong>Raw contour (<code>'raw'</code>)</strong></p>
+</li>
+<li>
+<p>Returns the original contour exactly as detected by <code>cv2.findContours()</code>.</p>
+</li>
+<li>
+<p><strong>Convex hull (<code>'hull'</code>)</strong></p>
+</li>
+<li>
+<p>Computes the convex hull using <code>cv2.convexHull()</code>.</p>
+</li>
+<li>
+<p>Ensures the contour is convex and tightly encloses the fruit, potentially removing concave indentations.</p>
+</li>
+<li>
+<p><strong>Polygonal approximation (<code>'approx'</code>)</strong></p>
+</li>
+<li>
+<p>Uses <code>cv2.arcLength()</code> to measure contour perimeter.</p>
+</li>
+<li>Applies <code>cv2.approxPolyDP()</code> with tolerance <code>epsilon = max(1.0, epsilon_hull × perimeter)</code> to simplify the contour into fewer vertices.</li>
+<li>
+<p>Useful for reducing noise and representing smoother polygonal shapes.</p>
+</li>
+<li>
+<p><strong>Ellipse fitting (<code>'ellipse'</code>)</strong></p>
+</li>
+<li>
+<p>Requires at least 5 points.</p>
+</li>
+<li>Fits an ellipse using <code>cv2.fitEllipse()</code>.</li>
+<li>Converts the fitted ellipse into a discrete polygon (<code>cv2.ellipse2Poly()</code>), returning a contour-like representation of the ellipse.</li>
+<li>Good for regularizing highly irregular contours.</li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>contours</code> (<code>List[np.ndarray]</code>): List of contours, typically from <code>cv2.findContours()</code>.</li>
+<li><code>fruit_id</code> (<code>int</code>): Index of the contour in the list corresponding to the fruit of interest.</li>
+</ul>
+<p><em>Optional</em>:</p>
+<ul>
+<li>
+<p><code>contour_mode</code> (<code>str</code>): Mode for contour representation. Options:</p>
+</li>
+<li>
+<p><code>'raw'</code>: Original contour (default).</p>
+</li>
+<li><code>'hull'</code>: Convex hull.</li>
+<li><code>'approx'</code>: Polygonal approximation.</li>
+<li><code>'ellipse'</code>: Ellipse fit.</li>
+<li><code>epsilon_hull</code> (<code>float</code>): Factor controlling approximation tolerance (default = <code>0.0001</code>). Higher values = more simplification.</li>
+</ul>
+<p><strong>Returns</strong>:
+<code>np.ndarray</code>: Processed fruit contour with shape <code>(N, 1, 2)</code>.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Get raw contour</span>
+<span class="n">raw_contour</span> <span class="o">=</span> <span class="n">get_fruit_contour</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">fruit_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">contour_mode</span><span class="o">=</span><span class="s1">&#39;raw&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get convex hull</span>
+<span class="n">hull_contour</span> <span class="o">=</span> <span class="n">get_fruit_contour</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">fruit_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">contour_mode</span><span class="o">=</span><span class="s1">&#39;hull&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get polygonal approximation</span>
+<span class="n">approx_contour</span> <span class="o">=</span> <span class="n">get_fruit_contour</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">fruit_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">contour_mode</span><span class="o">=</span><span class="s1">&#39;approx&#39;</span><span class="p">,</span> <span class="n">epsilon_hull</span><span class="o">=</span><span class="mf">0.002</span><span class="p">)</span>
+
+<span class="c1"># Get ellipse-fitted contour</span>
+<span class="n">ellipse_contour</span> <span class="o">=</span> <span class="n">get_fruit_contour</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">fruit_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">contour_mode</span><span class="o">=</span><span class="s1">&#39;ellipse&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Notes</strong>:</p>
+<ol>
+<li><strong>Contour format</strong>: All outputs follow OpenCV’s contour format <code>(N, 1, 2)</code>.</li>
+<li><strong>Approximation parameter</strong>: The <code>epsilon_hull</code> value strongly influences polygonal simplification.</li>
+<li><strong>Ellipse fitting</strong>: If fewer than 5 points are available, ellipse mode falls back to the raw contour.</li>
+</ol>
+<p><br></p>
+<hr />
+<h4>Function: <code>merge_locules</code></h4>
+
+<p><strong>Description</strong>:
+Merges fragmented locule contours that are spatially close into unified contours, consolidating small, nearby fragments into larger, more meaningful locule shapes. This function helps clean and simplify locule segmentation, particularly in noisy or over-segmented masks.</p>
+<p><strong>Implementation Details</strong>:
+This function uses basic geometric proximity and contour approximation to merge nearby locules:</p>
+<ol>
+<li>
+<p><strong>Initial Filtering</strong>:</p>
+</li>
+<li>
+<p>Locules with area ≤ <code>min_area</code> (default: <code>10</code> px²) are excluded as noise using <code>cv2.contourArea</code>.</p>
+</li>
+<li>
+<p><strong>Pairwise Distance Evaluation</strong>:</p>
+</li>
+<li>
+<p>Iterates over all valid locule contours.</p>
+</li>
+<li>Computes <strong>minimum signed distance</strong> between each pair using <code>cv2.pointPolygonTest</code>, checking only every second point in the candidate contour for speed.</li>
+<li>
+<p>If the absolute distance between locules is within the range <code>(min_distance, max_distance)</code>, they are grouped for merging.</p>
+</li>
+<li>
+<p><strong>Contour Merging</strong>:</p>
+</li>
+<li>
+<p>Groups of nearby locules are combined using <code>np.vstack</code> to stack their contour points.</p>
+</li>
+<li>The resulting merged shape is simplified using <code>cv2.approxPolyDP</code> with an <code>epsilon</code> set to <code>0.001 × arcLength</code> for smoothing.</li>
+</ol>
+<p><strong>Arguments</strong>:</p>
+<p><em>Required</em>:</p>
+<ul>
+<li><code>locules_indices</code> (<code>List[int]</code>): Indices of locule contours in <code>contours</code>.</li>
+<li><code>contours</code> (<code>List[np.ndarray]</code>): List of all detected contours.</li>
+</ul>
+<p><em>Optional</em>:</p>
+<ul>
+<li><code>min_distance</code> (<code>int</code>): Minimum allowed distance between contours to consider them separate (default: <code>0</code>).</li>
+<li><code>max_distance</code> (<code>int</code>): Maximum allowed distance to consider contours for merging (default: <code>50</code>).</li>
+<li><code>min_area</code> (<code>int</code>): Minimum area (in pixels²) to keep a contour (default: <code>10</code>). Smaller ones are discarded as noise.</li>
+</ul>
+<p><strong>Returns</strong>:
+<code>List[np.ndarray]</code>:</p>
+<ul>
+<li><code>result_locules</code>: List of merged contours. Each contour represents either a merged group of locules or an unmerged valid locule.</li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ol>
+<li><strong>Distance-Based Merging</strong>: Uses geometric closeness (point-to-contour distance) rather than centroid distance to handle irregular shapes more accurately.</li>
+<li><strong>Contour Approximation</strong>: The final merged shapes are smoothed using <code>cv2.approxPolyDP</code>. You can optionally switch to <code>cv2.convexHull</code> if a more convex merging strategy is preferred.</li>
+<li><strong>Performance</strong>: Only a subset of points is tested for pairwise distances to reduce computation time on large or complex contours.</li>
+</ol>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">merged_locules</span> <span class="o">=</span> <span class="n">merge_locules</span><span class="p">(</span>
+    <span class="n">locules_indices</span><span class="p">,</span> 
+    <span class="n">contours</span><span class="o">=</span><span class="n">all_contours</span><span class="p">,</span> 
+    <span class="n">min_distance</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_distance</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">min_area</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</code></pre></div>
+<p><br></p>
+<hr />
+<h4>Function: <code>find_fruits</code></h4>
+
+<p><strong>Description</strong>:<br />
+Detects fruit contours in a binary mask using geometric filters and a parent–child hierarchy of contours. Returns all contours and a mapping of valid fruit contours (parents) to their internal locules (children).</p>
+<p><strong>Implementation Details</strong>:<br />
+This function leverages <a href="https://docs.opencv.org/4.x/d9/d8b/tutorial_py_contours_hierarchy.html">OpenCV’s hierarchical contour retrieval</a> (<code>cv2.RETR_TREE</code>) to identify fruits and their internal structures:</p>
+<ol>
+<li><strong>Hierarchical Contour Detection</strong>:  </li>
+<li>Uses <code>cv2.findContours()</code> with <code>cv2.RETR_TREE</code> to retrieve nested structures (e.g., fruit–locule hierarchy). </li>
+<li><strong>Contour Filtering</strong>:  </li>
+<li>Applies multiple geometric filters:<ul>
+<li><strong>Area</strong> (<code>min_area</code>)</li>
+<li><strong>Circularity</strong>: Calculated as <code>(4π × area) / perimeter²</code> (range: [0,1], where 1 is a perfect circle).  </li>
+</ul>
+</li>
+<li><strong>Aspect Ratio</strong>: Computed from rotated bounding box (<code>min(width,height)/max(width,height)</code>).</li>
+<li><strong>Validation Pipeline</strong>:  </li>
+<li>A contour is classified as a <em>fruit</em> if:  <ul>
+<li>It is a top-level contour (no parent or <code>hierarchy[i][3] == -1</code>).  </li>
+<li>Passes area, circularity, and aspect ratio filters.  </li>
+<li>Contains ≥ <code>min_locules_per_fruit</code> valid child contours (locules).  </li>
+<li>If no contours are found, the function returns an empty contour list ([], {}).</li>
+</ul>
+</li>
+<li>A <em>locule</em> is valid if:  <ul>
+<li>Nested within a fruit contour.  </li>
+<li>Area ≥ <code>min_locule_area</code>.  </li>
+</ul>
+</li>
+</ol>
+<p><strong>Arguments</strong>:  </p>
+<p><em>Required</em>:<br />
+- <code>binary_mask</code> (<code>numpy.ndarray</code>): Binary image (unit8) with value <code>255</code> (white) for foreground objects/fruits to detect and <code>0</code> (black) for background.  </p>
+<p><em>Optional</em>:<br />
+- <code>min_locule_area</code> (<code>int</code>): Minimum pixel area for locule (default: <code>50</code>).<br />
+- <code>min_locules_per_fruit</code> (<code>int</code>): Minimum locule(s) required to classify as fruit (default: <code>1</code>).<br />
+- <code>min_circularity</code> (<code>float</code>): Minimum circularity threshold (default: <code>0.4</code>).<br />
+- <code>max_circularity</code> (<code>float</code>): Maximum circularity threshold (default: <code>1.0</code>).<br />
+- <code>min_aspect_ratio</code> (<code>float</code>): Minimum width/height ratio (default: <code>0.3</code>).<br />
+- <code>max_aspect_ratio</code> (<code>float</code>): Maximum width/height ratio (default: <code>3.0</code>). 
+- <code>rescale_factor</code> (<code>float</code>): Scaling factor (0.0-1.0) for faster processing (default: <code>None</code>). When used, <code>min_locule_area</code> is automatically scaled to match the resized image. All contours are returned in original coordinates (automatically rescaled), ready for immediate analysis without post-processing.
+- <code>contour_approximation</code> (<code>int</code>): Contour approximation method used by OpenCV (default: <code>cv2.CHAIN_APPROX_SIMPLE</code>). For more details about available options, see the <a href="https://docs.opencv.org/4.x/d3/dc0/group__imgproc__shape.html#gadf1ad6a0b82947fa1fe3c3d497f260e0">OpenCV documentation</a>.<br />
+- <code>contour_filters</code> (<code>Optional[Dict]</code>): Allows passing a single dictionary with multiple parameters, which facilitates programmatic or dynamic use when working with variable or external configurations. Supported keys include: <code>'min_area'</code>, <code>'min_circularity'</code>, <code>'max_circularity'</code>, <code>'min_aspect_ratio'</code>, <code>'max_aspect_ratio'</code>.</p>
+<p><strong>Returns</strong>:<br />
+<code>Tuple[List[numpy.ndarray], Dict[int, List[int]]]</code>:<br />
+- <code>contours</code>: List of all detected contours (each as <code>np.ndarray</code> of points).<br />
+- <code>fruit_locules_map</code>: Dictionary mapping fruit contour indices → list of loculus indices.  </p>
+<p><strong>Raises</strong>:<br />
+- <code>ValueError</code>: For invalid inputs (negative values, non-uint8 mask).<br />
+- <code>cv2.error</code>: If OpenCV contour detection fails.  </p>
+<p><strong>Example</strong>:<br />
+<div class="highlight"><pre><span></span><code><span class="c1"># Basic usage  </span>
+<span class="n">contours</span><span class="p">,</span> <span class="n">fruit_map</span> <span class="o">=</span> <span class="n">find_fruits</span><span class="p">(</span>  
+    <span class="n">binary_mask</span><span class="p">,</span>  
+    <span class="n">min_locule_area</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">min_circularity</span><span class="o">=</span><span class="mf">0.3</span>  
+<span class="p">)</span>  
+
+<span class="c1"># With custom filters and rescaling</span>
+<span class="n">contours</span><span class="p">,</span> <span class="n">fruit_map</span> <span class="o">=</span> <span class="n">find_fruits</span><span class="p">(</span>
+    <span class="n">binary_mask</span><span class="p">,</span>
+    <span class="n">min_locule_area</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>  <span class="c1"># Original value (automatically adjusted if rescale_factor is used)</span>
+    <span class="n">rescale_factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># Halves image dimensions (adjusts min_locule_area to 12)</span>
+    <span class="n">contour_filters</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;min_circularity&#39;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>  <span class="c1"># Custom filter (not affected by rescaling)</span>
+        <span class="s1">&#39;max_aspect_ratio&#39;</span><span class="p">:</span> <span class="mf">2.0</span>   <span class="c1"># Custom filter</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="c1"># All contours are returned in original coordinates (automatically rescaled)</span>
+<span class="c1"># and ready for immediate analysis - no manual coordinate transformations needed.  </span>
+</code></pre></div></p>
+<p><strong>Notes</strong>:  </p>
+<ol>
+<li><strong>Minimum Locules Behavior</strong>: When <code>min_locules_per_fruit = 0</code>, the function will classify any top-level contour that meets the morphological thresholds as a valid fruit, regardless of whether it contains locules. These fruits will appear in the results with an empty locule <code>list ([])</code>.</li>
+<li><strong>Circularity Range</strong>: While the <strong>theoretical maximum</strong> for circularity is <code>1.0</code> (perfect circle), the function <strong>accepts values &gt;1</strong> due to potential floating-point artifacts in perimeter/area calculations (e.g., from low-resolution contours or noisy masks).  </li>
+<li><strong>Performance</strong>: For large images, consider downscaling <code>binary_mask</code> using <code>rescale_factor</code> first to reduce computation time. Note that reducing image size may affect the resolution and accuracy of small locule contours. </li>
+<li><strong>Tuning</strong>: Adjust <code>min_circularity</code> and <code>aspect_ratio</code> thresholds based on fruit shape variability.  </li>
+<li><strong>Debugging</strong>: Visualize contours with <code>cv2.drawContours</code> using indices from <code>fruit_locules_map</code>.  </li>
+</ol>
+<p><br></p>
+<hr />
+<div style="background-color:rgba(230, 242, 255, 0.6); padding:8px; border-radius:6px; text-align:left;">
+  <h4 style="margin:0;">Morphological metrics:</h4>
+</div>
+
+<p><br></p>
+<h4>Function: <code>get_fruit_morphology</code></h3>
+
+**Description**:
+Computes a set of **morphological metrics** from a fruit contour, including area, perimeter, and shape descriptors.
+Handles both **isotropic** and **anisotropic** pixel scaling to convert raw pixel-based measurements into **centimeter units**.
+
+**Implementation Details**:
+
+1. **Area & Perimeter (pixels)**
+
+   * Uses `cv2.contourArea()` to compute the enclosed area.
+   * Uses `cv2.arcLength(..., True)` to compute the perimeter.
+   * If either is ≤ 0, returns a dictionary filled with `np.nan` values.
+
+2. **Pixel → cm conversion**
+
+   * **Isotropic case** (`px_per_cm_x ≈ px_per_cm_y`):
+
+     * Uses the average pixel density for both area and perimeter conversion.
+   * **Anisotropic case**:
+
+     * Converts area using `px_per_cm_x * px_per_cm_y`.
+     * Converts perimeter using the average of the two densities.
+
+3. **Shape descriptors**
+
+   * **Circularity**:
+
+     $$
+     C = \frac{4 \pi A}{P^2}
+     $$
+
+     where $A$ is area (px²), $P$ is perimeter (px). Ranges from 0 (irregular) to 1 (perfect circle).
+
+   * **Solidity**:
+     Ratio between the contour area and its convex hull area.
+
+     $$
+     S = \frac{A}{A_{hull}}
+     $$
+
+   * **Compactness**:
+     Ratio of squared perimeter to area, sensitive to contour irregularity.
+
+     $$
+     K = \frac{P^2}{A}
+     $$
+
+   * **Convex Hull Area**:
+     Computed using `cv2.convexHull()` and `cv2.contourArea()`.
+
+**Arguments**:
+
+*Required*:
+
+* `contour` (`np.ndarray`): Contour points of the fruit (from `cv2.findContours()`).
+* `px_per_cm_x` (`float`): Pixel density along the shorter side of the image.
+* `px_per_cm_y` (`float`): Pixel density along the longer side of the image.
+
+*Optional*:
+
+* `rel_tol` (`float`): Relative tolerance to decide isotropy between `px_per_cm_x` and `px_per_cm_y` (default = `1e-6`).
+
+**Returns**:
+
+`dict`: Dictionary with the following keys:
+
+* `fruit_area_px` (`float`): Area in pixels².
+* `fruit_area_cm2` (`float`): Area in cm².
+* `fruit_perimeter_px` (`float`): Perimeter in pixels.
+* `fruit_perimeter_cm` (`float`): Perimeter in cm.
+* `fruit_circularity` (`float`): Circularity index \[0–1].
+* `fruit_solidity` (`float`): Solidity index (0–1).
+* `fruit_compactness` (`float`): Compactness ratio.
+* `fruit_convex_hull_area_px` (`float`): Convex hull area in pixels².
+
+
+**Example**:
+
+<div class="highlight"><pre><span></span><code><span class="n">morph</span> <span class="o">=</span> <span class="n">get_fruit_morphology</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">px_per_cm_x</span><span class="o">=</span><span class="mf">30.2</span><span class="p">,</span> <span class="n">px_per_cm_y</span><span class="o">=</span><span class="mf">29.8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">morph</span><span class="p">[</span><span class="s2">&quot;fruit_area_cm2&quot;</span><span class="p">],</span> <span class="n">morph</span><span class="p">[</span><span class="s2">&quot;fruit_circularity&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<br>
+
+---
+
+
+<h4>Function: <code>calculate_axes</code></h4>
+
+**Description**:  
+Computes the **major** and **minor** axes of a fruit contour in **centimeters**, handling **isotropic** and **anisotropic** pixel scales. Optionally draws both axes on an image.  
+- The **major axis** is the maximum pairwise distance between convex-hull vertices (searched in pixels if isotropic, or in centimeters if anisotropic).  
+- The **minor axis** is the maximum thickness **perpendicular** to the major axis, measured by projecting all contour points onto the perpendicular direction and taking `max − min` (converted to cm as appropriate).
+
+
+**Implementation Details**:
+
+1. **Preprocessing**  
+   * Reshapes the contour to `(N, 2)` float32 array.
+
+2. **Isotropy check**  
+   * If `px_per_cm_width ≈ px_per_cm_length` (within `rel_tol = 1e-6`), treats pixels as **isotropic** and uses the **average** pixels-per-cm factor.  
+   * Otherwise, treats pixels as **anisotropic** and builds a coordinate set in **centimeters** with axis-specific scaling:  
+     \[
+     x_\text{cm} = \frac{x}{\text{px\_per\_cm\_width}},\quad y_\text{cm} = \frac{y}{\text{px\_per\_cm\_length}}
+     \]
+
+3. **Major axis (endpoints & length)**  
+   * Computes the convex hull indices and searches all vertex pairs to find the **maximum distance** in the chosen coordinate space.  
+   * Converts the **length to cm** (divide by average px/cm if isotropic; already in cm if anisotropic).  
+   * Returns the **endpoints in original pixel coordinates** `(p1_px, p2_px)`.
+
+4. **Minor axis (thickness perpendicular to major)**  
+   * Forms the unit vector **perpendicular** to the major axis.  
+   * Projects all points onto this perpendicular direction (in px if isotropic, in cm if anisotropic).  
+   * Minor axis length = `max_projection − min_projection`; converts to **cm** if needed.  
+   * Also returns the **pixel coordinates** of the points achieving the min/max projection `(p_min_px, p_max_px)`.
+
+5. **Optional drawing**  
+   * If `draw_axes=True` and `img` is provided, draws both segments on the image using the given BGR colors and thickness.
+
+
+
+**Arguments**:
+
+*Required*:
+- `fruit_contour` (`np.ndarray`): Nx2 or Nx1x2 contour points.
+- `px_per_cm_width` (`float`): Pixels per centimeter along the **shorter side** of the image (width).  
+- `px_per_cm_length` (`float`): Pixels per centimeter along the **longer side** of the image (length).  
+
+*Optional*:
+- `rel_tol` (`float`): Tolerance to decide isotropy (default `1e-6`).  
+- `img` (`np.ndarray | None`): Image (BGR) where axes will be drawn if `draw_axes=True`.  
+- `draw_axes` (`bool`): Draw axes on `img` (default `False`).  
+- `major_axis_color` (`Tuple[int,int,int]`): BGR color for major axis (default `(0,255,0)`).  
+- `minor_axis_color` (`Tuple[int,int,int]`): BGR color for minor axis (default `(255,0,0)`).  
+- `axis_thickness` (`int`): Line thickness in pixels (default `2`).
+
+
+**Returns**:  
+`tuple` of two items:
+- `(major_axis_cm, p1_px, p2_px)` → **Major axis** length in **cm**, and its endpoints in **pixels**.  
+- `(minor_axis_cm, p_min_px, p_max_px)` → **Minor axis** length in **cm**, and its endpoints in **pixels**.
+
+
+**Example**:
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">major_axis</span><span class="p">,</span> <span class="n">p1_major</span><span class="p">,</span> <span class="n">p2_major</span><span class="p">),</span> <span class="p">(</span><span class="n">minor_axis</span><span class="p">,</span> <span class="n">p1_minor</span><span class="p">,</span> <span class="n">p2_minor</span><span class="p">)</span> <span class="o">=</span> <span class="n">calculate_axes</span><span class="p">(</span>
+    <span class="n">fruit_contour</span><span class="p">,</span>
+    <span class="n">px_per_cm_width</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span>
+    <span class="n">px_per_cm_length</span><span class="o">=</span><span class="mf">31.2</span><span class="p">,</span>
+    <span class="n">img</span><span class="o">=</span><span class="n">annotated_img</span><span class="p">,</span>
+    <span class="n">draw_axes</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Major: </span><span class="si">{</span><span class="n">major_axis</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cm, Minor: </span><span class="si">{</span><span class="n">minor_axis</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cm&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+**Notes**:
+
+1. **Projection-Based Method**: Measures the contour’s extent perpendicular to the major axis without assuming an ideal ellipse.
+
+2. **Positive and Negative Projections**: The method accounts for points on **both sides** of the perpendicular axis using `max - min`.
+
+3. **Axis-Specific Scaling**: Each axis is converted independently to centimeters using `px_per_cm_width` and `px_per_cm_length`, ensuring accuracy even if pixel densities differ.
+
+4. **Major Axis Dependence**: Accuracy depends on correct identification of `point1` and `point2` as defining the true major axis.
+
+5. **Vectorized Computation**: Projections are calculated using NumPy vectorization for efficiency, without loss of precision.
+
+<br>
+
+----
+
+
+<h4>Function: <code>rotate_box</code></h4>
+
+**Description**:  
+Computes the rotated bounding box of a contour and its dimensions in pixels/centimeters. Optionally draws the box on the image.
+
+**Implementation Details**:  
+
+* Uses `cv2.minAreaRect` to compute the smallest rotated rectangle enclosing the contour.  
+* Converts dimensions to centimeters:
+  - <a href='#isotropic-pixels'> Isotropic pixels </a> (px_per_cm_width ≈ px_per_cm_length): uses the average of both to convert length and width.
+  -  <a href='#anisotropic-pixels'> Anisotropic pixels </a>: converts each side with its corresponding density  
+    (`length_cm = length_px / px_per_cm_length`, `width_cm = width_px / px_per_cm_width`).
+
+* The **length** (Y) is defined as the longer side, and the **width** (X) as the shorter side of the bounding box, regardless of rotation.
+    _For example:_
+    * If the rotated bounding box has dimensions 80 px × 40 px and the angle is -45°, the **length** is 80 and the **width** is 40.
+    * If the object is rotated and the box dimensions become 40 px × 80 px with an angle of -90°, the **length** is still 80 and the **width** is still 40.
+
+**Arguments**:  
+*Required*:  
+- `img` (`numpy.ndarray`): BGR image for drawing the bounding box.  
+- `contour` (`numpy.ndarray`): Contour points (from `cv2.findContours`).  
+- `px_per_cm_width` (`float`): Pixels per centimeter along the **shorter side** of the image (width).  
+- `px_per_cm_length` (`float`): Pixels per centimeter along the **longer side** of the image (length).  
+
+
+*Optional*:  
+- `draw_box` (`bool`): Draw bounding box if `True` (default: `True`).  
+- `box_color` (`Tuple[int, int, int]`): BGR color (default: light blue `(255, 180, 0)`).  
+- `box_thickness` (`int`): Line thickness in pixels (default: `3`).  
+
+**Returns**:  
+`Tuple[float, float]`:  
+- `box_length_cm`: Length in cm.  
+- `box_width_cm`: Width in cm.  
+
+**Example**:  
+<div class="highlight"><pre><span></span><code><span class="n">box_length_cm</span><span class="p">,</span> <span class="n">box_width_cm</span> <span class="o">=</span> <span class="n">rotate_box</span><span class="p">(</span>
+    <span class="n">img</span><span class="p">,</span> <span class="n">contour</span><span class="p">,</span> <span class="n">px_per_cm_width</span><span class="o">=</span><span class="mf">150.5</span><span class="p">,</span> <span class="n">px_per_cm_length</span><span class="o">=</span><span class="mf">152.3</span><span class="p">,</span> 
+    <span class="n">box_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</code></pre></div>
+
+<br>
+
+----
+
+
+<h4>Function: <code>inner_pericarp_area</code></h4>
+
+**Description**:  
+Calculates and visualizes the **inner pericarp area** (enclosing locules) using either convex hull approximation or ellipse fitting. Returns the computed area in **squared centimeters** (and optionally draws on the provided image).
+
+**Implementation Details**:  
+The function uses [OpenCV](https://docs.opencv.org/4.x/d3/dc0/group__imgproc__shape.html#ga2c759ed9f497d4a618048a2f56dc97f1) (`cv2`) for geometric computations:
+1. **Convex Hull Method** (`use_ellipse=False`):
+   - Computes the smallest convex polygon enclosing all points with `cv2.convexHull`.
+   - Applies contour smoothing using `cv2.approxPolyDP` with `epsilon` (percentage of arc length).
+   - Calculates area via `cv2.contourArea` (implements [Green's theorem](https://tutorial.math.lamar.edu/classes/calciii/GreensTheorem.aspx)).
+
+2. **Ellipse Fitting** (`use_ellipse=True`):
+   - Requires ≥5 points (minimum for `cv2.fitEllipse`).
+   - Fits an ellipse to the points and calculates area as `π × (a × b)`, where `a` and `b` are semi-major/minor axes.
+
+3. **Pixels to cm$^2$ conversion**:
+  - For <a href='#isotropic-pixels'>isotropic case</a> (px_per_cm_width ≈ px_per_cm_length): Uses average pixel density.
+  - For <a href='#anisotropic-pixels'>anisotropic case</a>: Accounts for different scaling factors per axis.
+
+**Arguments**:  
+*Required*:  
+- `locules` (`List[int]`): Indices of locule contours in `contours`.   
+- `contours` (`List[numpy.ndarray]`): Detected contours from `cv2.findContours()`.  
+- `px_per_cm_width` (`float`): Pixels per centimeter along the **shorter side** of the image (width).  
+- `px_per_cm_length` (`float`): Pixels per centimeter along the **longer side** of the image (length).  
+
+
+*Optional*:  
+- `img` (`numpy.ndarray`): Input BGR image (uint8) for drawing contours (used only if `draw_inner_pericarp=True`).  
+- `draw_inner_pericarp` (`bool`): If `True`, draws the inner pericarp on `img` (default: `False`).  
+- `use_ellipse` (`bool`): Use ellipse fitting if `True`, else convex hull (default: `False`).  
+- `epsilon` (`float`): Smoothing factor (range [0, 1]; default: `0.0001`).  
+- `rel_tol` (`float`): Relative tolerance for isotropy determination (default: `1e-6`).  
+- `contour_thickness` (`int`): Contour line thickness in pixels (default: `2`).  
+- `contour_color` (`Tuple[int, int, int]`): BGR color (default: cyan `(0, 240, 240)`).  
+
+**Returns**:  
+`float`:  
+- `area_cm2`: Computed inner pericarp area in cm² (`0` if `locules` is empty or ellipse fitting is not possible).  
+
+**Example**:  
+<div class="highlight"><pre><span></span><code><span class="n">area_cm2</span> <span class="o">=</span> <span class="n">inner_pericarp_area</span><span class="p">(</span>
+    <span class="n">locules</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">contours</span><span class="o">=</span><span class="n">all_contours</span><span class="p">,</span>
+    <span class="n">px_per_cm_x</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span>
+    <span class="n">px_per_cm_y</span><span class="o">=</span><span class="mf">31.2</span><span class="p">,</span>
+    <span class="n">img</span><span class="o">=</span><span class="n">img</span><span class="p">,</span>
+    <span class="n">draw_inner_pericarp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">use_ellipse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">contour_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<br>
+
+---
+
+<div style="background-color:rgba(230, 242, 255, 0.6); padding:8px; border-radius:6px; text-align:left;">
+  <h4 style="margin:0;">Centroid and geometric data:</h4>
+</div>
+
+<br>
+
+<h4>Function: <code>calculate_fruit_centroids</code></h4>
+
+**Description**:  
+Computes the **centroid coordinates** of each contour in a list using image moments. If a contour has zero area, the centroid is undefined, and the function assigns `None` to that entry.  
+
+This is a common preprocessing step in fruit analysis for positioning, annotation, and spatial reference.  
+
+**Implementation Details**:  
+
+1. Iterates through each contour in the provided list.  
+2. Computes **image moments** with `cv2.moments(contour)`.  
+3. If the zeroth moment (`m00`, representing contour area) is nonzero:  
+   * Calculates centroid as:  
+     \[
+     cx = \frac{m10}{m00}, \quad cy = \frac{m01}{m00}
+     \]  
+   * Stores `(cx, cy)` as integer coordinates.  
+4. If `m00 == 0`, appends `None` instead of coordinates to avoid division by zero.  
+
+
+**Arguments**:  
+
+*Required*:  
+- `contours` (`List[np.ndarray]`): List of contours (as returned by `cv2.findContours`). Each contour is an array of points with shape `(N, 1, 2)`.  
+
+**Returns**:  
+- `List[Tuple[int, int] | None]`:  
+  * A list of centroids corresponding to each contour.  
+  * Each entry is either `(cx, cy)` in pixel coordinates, or `None` if the contour area is zero.  
+
+
+**Example**:  
+<div class="highlight"><pre><span></span><code><span class="n">contours</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">binary_img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+
+<span class="n">centroids</span> <span class="o">=</span> <span class="n">calculate_fruit_centroids</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">centroids</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Contour </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> centroid at </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Contour </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> has zero area&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<br>
+
+----
+
+
+<h4>Function: <code>precalculate_locules_data</code></h4>
+
+
+**Description**: 
+Extracts and stores geometric features of a given set of locule contours. For each specified locule, the function calculates its **centroid**, **area**, **perimeter**, **polar coordinates relative to a reference centroid**, **circularity**, and stores its **original contour points**. 
+
+**Imprementation Details**:
+
+1. **Contour Selection**:
+   - Only con tours whose indices are listed in `locules` are processed.
+   - Each locule contour is treated individually.
+
+2. **Centroid Calculation**: 
+   - Uses OpenCV spatial moments (`cv2.moments`) to calculate the centroid:
+     -  $\text{cx} = \frac{m_{10}}{m_{00}}$, $\text{cy} = \frac{m_{01}}{m_{00}}$
+   - If the area `m00` is zero (i.e., degenerate contour), the contour is **skipped**.
+
+3. **Area and Perimeter**: 
+   - Area is calculated via `cv2.contourArea()`.
+   - Perimeter (arc length) is calculated using `cv2.arcLength()` with the `closed = True` flag.
+
+4. **Polar Coordinates**:
+
+   * Calculated relative to the given reference centroid:
+     * **angle**: orientation from the positive x-axis to the vector connecting the reference centroid to the locule’s centroid, in the range \[0, 2π).
+     * **radius**: Euclidean distance between the reference centroid and the locule’s centroid.
+
+5. **Circularity**:
+
+   * Calculated as:
+
+     $$
+     \text{circularity} = \frac{4\pi \times \text{area}}{\text{perimeter}^2}
+     $$
+
+     * **1.0** = perfect circle.
+     * Lower values = more irregular or elongated shapes.
+   * Useful for assessing locule geometric regularity.
+
+6. **Data Storage**:
+
+   * Each locule's data is stored as a dictionary.
+   * All dictionaries are collected into a list and returned.
+
+
+
+**Arguments**:
+
+_Required_:
+
+- `contour` (`List[np.ndarray]`): List of all images contours (e.g. obtained from `traitly.find_fruits` or `cv2.findContours`).
+- `locules`: List of indices refering which contours in `contours` corespond to locules.
+- `centroid` (`Tuple[int, int]`): Reference centroid coordinates (x,y). 
+
+
+**Returns**:
+
+`List[Dict]`: A list of dictionaries, each containing the geometric properties of one locule:
+
+* `contour_id` (int): Countour identifier
+* `'centroid'` (`Tuple[int,int]`): Centroid `(x, y)` coordinates.
+* `'area'` (`float`): Area in pixels$^2$.
+* `'perimeter'` (`float`): Perimeter in pixels.
+* `'contour'` (`np.ndarray`): Original contour points.
+* `'polar_coord'` (`Tuple[float,float]`): (angle${_\text{in}}_{\text{ radians}}$, radius) relative to the reference centroid. 
+* `'circularity'` (`float`): Circularity value, 1.0 for a perfect circle.
+
+
+
+**Example**:
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Precalculate geometric features for specific locule contours</span>
+<span class="k">for</span> <span class="n">fruit_id</span><span class="p">,</span> <span class="n">locules</span> <span class="ow">in</span> <span class="n">fruit_locules_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> 
+    <span class="n">locule_features</span> <span class="o">=</span> <span class="n">precalculate_locules_data</span><span class="p">(</span>
+        <span class="n">contours</span><span class="o">=</span><span class="n">all_contours</span><span class="p">,</span>
+        <span class="n">locules</span><span class="o">=</span><span class="n">locules</span><span class="p">,</span>
+        <span class="n">centroid</span><span class="o">=</span><span class="n">fruit_centroid</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Access centroid of first locule</span>
+    <span class="n">centroid</span> <span class="o">=</span> <span class="n">locule_features</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;centroid&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">centroid</span><span class="p">)</span>
+</code></pre></div>
+
+**Notes**:
+
+1. **Skipped Contours**:
+   - Contours with no area (`m00 = 0`) are skipped to avoid division by zero when calculating centroids.
+2. **Data Integrity**:
+   - Output list preserves the order of input `locules`. Each dictionary maps back to the original `contours` via the '`contour'` key.
+
+<br>
+
+----
+
+<div style="background-color:rgba(230, 242, 255, 0.6); padding:8px; border-radius:6px; text-align:left;">
+  <h4 style="margin:0;">Symmetry analysis:</h4>
+</div>
+
+<br>
+
+<h4>Function: <code>angular_symmetry</code></h4>
+
+**Description**:  
+Quantifies the **angular symmetry** of locules arranged around the fruit centroid (reference point) by comparing actual locule angles with an ideal symmetric arrangement. The function searches for the **rotational alignment** that minimizes the mean angular deviation. It uses the **precomputed angles** from `precalculate_locules_data()`; only **locule centroid positions** are considered. **Shape and size of locules are ignored**.
+
+A perfectly symmetric configuration (e.g., locules equidistantly distributed in a circular pattern) returns a value close to `0.0`. Higher values indicate greater deviations from ideal angular symmetry.  
+The metric is expressed in **radians** and is not normalized.
+
+For a visual explanation of angular symmetry, refer to <a href='#locule-symmetry'>Figure 1A</a>.
+
+**Implementation Details**:
+
+1. **Angle Extraction**:
+
+   * For each locule, extracts the angle from the reference centroid (`polar_coord[0]`) in radians.
+   * Normalizes angles to `[0, 2π)` to maintain circular continuity.
+
+2. **Rotation Adjustment**:
+
+   * Computes the **circular mean** of all angles (`circmean`) to center the pattern.
+   * Subtracts this mean from each angle to remove overall rotation bias, then wraps back to `[0, 2π)`.
+
+3. **Ideal Symmetric Angles**:
+
+   * For $n$ locules, generates `n` equally spaced angles covering the full circle:
+
+     $$
+     \theta_k^{\text{ideal}} = \frac{2\pi}{n} \cdot k, \quad k = 0, \dots, n-1
+     $$
+   * Represents the angular positions of locules in a perfectly symmetric circular arrangement.
+
+4. **Error Minimization Across Rotations**:
+
+   * Tests `num_shifts` rotations of the ideal angles to find the best alignment with the actual locule angles.
+   * Computes the **angular difference matrix**, accounting for circular wrap-around:
+
+     $$
+     \text{diff} = \min(|\theta_{\text{actual}} - \theta_{\text{ideal}}|, 2\pi - |\theta_{\text{actual}} - \theta_{\text{ideal}}|)
+     $$
+   * Uses the **Hungarian algorithm** (`linear_sum_assignment`) to optimally assign observed locules to ideal angles, minimizing the mean angular error.
+   * Keeps the **minimum mean angular error** across all tested rotations (`best_error`).
+
+5. **Return Value**:
+
+   * Returns `best_error` in **radians**. Smaller values indicate better angular symmetry.
+   * Returns `np.nan` if fewer than 2 locules are provided.
+
+**Arguments**:
+
+*Required*:
+
+* `locules_data` (`List[Dict]`): List of locule data dictionaries. Each must contain `polar_coord` = `(angle, radius)`.
+
+*Optional*:
+
+* `num_shifts` (`int`): Number of rotational shifts to test when aligning ideal to actual angles (default = 500).
+
+**Returns**:  
+`float`: Mean angular deviation (radians).  
+
+* `0.0`: Perfect symmetry (locules uniformly spaced in a circle).  
+* `> 0.0`: Angular error in radians (higher = less symmetric).  
+* `np.nan`: Undefined if fewer than 2 locules are provided. Uses NumPy’s `np.nan`.  
+
+**Example**:
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Four symmetrically placed locules</span>
+<span class="n">locules</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)},</span>        <span class="c1"># 0°</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)},</span>    <span class="c1"># 90°</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)},</span>      <span class="c1"># 180°</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)}</span>   <span class="c1"># 270°</span>
+<span class="p">]</span>
+
+<span class="n">sym</span> <span class="o">=</span> <span class="n">angular_symmetry</span><span class="p">(</span><span class="n">locules</span><span class="p">)</span>
+<span class="c1"># Output: 0.0 (perfect angular symmetry)</span>
+</code></pre></div>
+
+**Notes**:
+
+1. **Rotation-Invariant**: Aligns the ideal pattern to actual locules, so rotated but symmetric arrangements yield low error.
+2. **No Distance Constraint**: Radial distances from the center are ignored (`radial_symmetry()`).
+3. **Collinearity**: If locules are nearly collinear, angular error increases.
+4. **Effect of Number of Locules:**
+The angular symmetry calculation is sensitive to the number of locules. Configurations with very few locules can yield large angular errors even when absolute angular deviations are small. Care should be taken when interpreting angular symmetry for fruits with a low number of locules (2-3).
+
+<br>
+
+---
+
+
+<h4>Function: <code>radial_symmetry</code></h4>
+
+**Description**:
+
+Calculates the **radial symmetry** of locules using the **coefficient of variation (CV)** of their distances from each locule centroid to the fruit centroid (reference point). The CV measures the relative variability of these distances, where `0.0` indicates perfect radial symmetry (all locules equidistant from the centroid), and higher values indicate increasing irregularity. This function uses the **precomputed radii** from `precalculate_locules_data()`; only **locule centroid positions** are considered. **Shape and size of locules are ignored**.
+
+For a visual explanation of angular symmetry,  refer to <a href='#locule-symmetry'>Figure 1B</a>.
+
+
+**Implementation Details**:
+
+1. **Distance Extraction**:
+
+   * For each locule, extract the precomputed radius from the reference centroid (`polar_coord[1]`), in pixels.
+
+2. **Symmetry Evaluation**:
+
+   * If fewer than two locules are provided, return `np.nan` since radial symmetry cannot be defined.
+
+   * Compute the **coefficient of variation (CV)** of the radii:
+
+     $$
+     CV = \frac{\text{standard deviation of radii}}{\text{mean radius}}
+     $$
+
+   * A CV of 0 indicates perfect radial symmetry (all locules equidistant).
+
+   * Larger CV values indicate greater radial asymmetry.
+
+
+**Arguments**:
+
+*Required*:
+
+* `locules_data` (`List[Dict]`): List of locule data dictionaries, **as returned by `precalculate_locules_data()`**. Each must contain:
+
+  * `'centroid'`: `(x, y)` coordinates of the locule centroid.
+  * `'polar_coord'`: `(angle, radius)` precomputed polar coordinates relative to the fruit centroid.
+
+**Returns**:
+
+`float`: Radial symmetry metric (CV of distances).
+
+* `0.0`: Perfect radial symmetry.
+* `> 0.0`: Increasing radial asymmetry.
+* `np.nan`: Undefined if fewer than 2 locules are provided.
+
+**Example**:
+
+<div class="highlight"><pre><span></span><code><span class="n">locules</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)},</span>        <span class="c1"># radius = 1</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)},</span>    <span class="c1"># radius = 1</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)},</span>      <span class="c1"># radius = 1 </span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)}</span>   <span class="c1"># radius = 1</span>
+<span class="p">]</span>
+
+<span class="n">cv</span> <span class="o">=</span> <span class="n">radial_symmetry</span><span class="p">(</span><span class="n">locules</span><span class="p">)</span>
+<span class="c1"># Output: 0.0 (perfect radial symmetry)</span>
+</code></pre></div>
+
+Notes:
+
+1. **Radial vs Angular Symmetry**: This function evaluates only radial (distance) symmetry, not angular spacing (see angular_symmetry()).
+
+2. **Rotation Invariance**: The radial distance CV is invariant to rotation because it depends only on the distances from locules to the centroid, which remain unchanged under rotation. 
+
+3. **Coefficient of Variation Use**: CV normalizes the standard deviation by the mean, making it scale-independent and useful for comparing radial symmetry across fruits of different sizes (e.g., small vs. large fruits), which correspond to varying numbers of pixels in image analysis.
+
+4. **Effect of Number of Locules**: CV does **not** directly account for the number of locules. Very few locules (e.g., 2 or 3) can produce high CV values even with small absolute differences. Interpret CV cautiously for low locule counts.
+
+<br>
+
+---
+
+<h4>Function: <code>rotational_symmetry</code></h4>
+
+**Description**:
+
+Quantifies the **rotational symmetry** of locules arranged around a fruit centroid by evaluating **both** their angular distribution and radial distances in a combined, weighted error metric. This function uses the **precomputed angles and radii** from `precalculate_locules_data()`; only **locule centroid positions** are considered. **Shape and size of locules are ignored**.
+
+Unlike `angular_symmetry()` or `radial_symmetry()` which assess angular or radial components independently, this function integrates both aspects to measure how closely locules approximate an ideal rotationally symmetric pattern—i.e., locules evenly spaced in angle and with uniform radial distances from the center.
+
+A **perfectly symmetric** configuration yields a score of `0.0`, while larger values indicate increasing asymmetry in either angular spacing or radial distances.  
+The final combined metric is **clipped to** `[0, 1]`.
+
+For a visual explanation of angular symmetry, refer to <a href='#locule-symmetry'>Figure 1C</a>.
+
+
+**Implementation Details**:
+
+1. **Input validation**:
+   If fewer than two locules are provided, symmetry is undefined, and the function returns `np.nan`.
+
+2. **Data extraction & preprocessing**:
+
+   * Extracts precomputed polar coordinates (`(angle, radius)`) from each locule's data dictionary.
+   * Normalizes radii by their mean to focus on relative size variation rather than absolute distance, ensuring comparability between fruits of different sizes.
+   * Filters out very small locules below a fraction of the mean radius (`min_radius_threshold`) to reduce noise.
+
+3. **Radial asymmetry calculation**:
+
+   * Computes the **Median Absolute Deviation (MAD)** of normalized radii as a robust measure of radial spread.
+   * Scales MAD using `0.6745` to approximate standard deviation under normal assumptions, then maps via `tanh` to obtain a **bounded radial error** `radius_error_norm` in roughly `[0,1)`.
+
+4. **Angular asymmetry**:
+
+   * If a precomputed `angle_error` is not provided, the function calculates angular asymmetry internally using `angular_symmetry()`, which returns a **mean angular deviation in radians** (not normalized).
+   * This captures deviations from evenly spaced angular positions around the fruit centroid, with rotational alignment handled internally.
+
+5. **Weighted combination**:
+
+   * Computes a **weighted average** of the angular (in radians) and radial (normalized) errors using `angle_weight` and `radius_weight`; weights are re-normalized by their sum.
+   * The resulting combined error is then **clipped to `[0,1]`** for consistency across fruits.
+
+
+**Arguments**:
+
+*Required*:
+
+* `locules_data` (`List[Dict]`): List of dictionaries, each containing:
+
+  * `'centroid'`: tuple `(x, y)` coordinates of the locule centroid (not used in calculation but required by convention).
+  * `'polar_coord'`: tuple `(angle, radius)` representing the locule position in polar coordinates relative to the fruit centroid.
+
+*Optional*:
+
+* `angle_error` (`float`): Precomputed **mean angular deviation in radians**. If `None`, it is calculated internally via `angular_symmetry()`.
+* `angle_weight` (`float`): Weight for angular error in the combined metric (default `0.5`).
+* `radius_weight` (`float`): Weight for radial error in the combined metric (default `0.5`).
+* `min_radius_threshold` (`float`): Minimum fraction of mean radius to include a locule in radial error calculation (default `0.1`).
+
+
+
+**Returns**:
+
+* `float`: Combined rotational symmetry metric **in `[0,1]`** (after clipping).
+
+  * `0.0` → **perfect rotational symmetry** (even angular spacing, uniform radial distances).
+  * Values closer to `1` → increasing asymmetry.
+  * `np.nan` → fewer than two valid locules.
+
+
+
+**Example**:
+
+<div class="highlight"><pre><span></span><code><span class="n">locules</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)},</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)},</span>
+    <span class="p">{</span><span class="s1">&#39;polar_coord&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)}</span>
+<span class="p">]</span>
+
+<span class="n">error</span> <span class="o">=</span> <span class="n">rotational_symmetry</span><span class="p">(</span><span class="n">locules</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>  <span class="c1"># Output: 0.0 (perfect rotational symmetry)</span>
+</code></pre></div>
+
+
+**Notes**:
+
+1. **Weighted Combination**: Integrates angular and radial asymmetry into a single scalar value.
+
+2. **Precomputed Angular Error**: If `angle_error` is provided, the function uses it directly; otherwise, it calls `angular_symmetry()`, which handles rotational alignment internally.
+
+3. **Rotation-Invariant**: Symmetric patterns yield the same score regardless of their orientation.
+
+4. **Radius Normalization**: Radii are normalized by their mean to make symmetry comparable across fruits of different sizes.
+
+5. **Minimum Locule Threshold**: Very small locules (below `min_radius_threshold` fraction of mean radius) are ignored to avoid noise.
+
+6. **Effect of Number of Locules**: With few locules, small absolute deviations can produce large errors. Interpret results carefully for fruits with 2–3 locules.
+
+
+<br> 
+
+---
+<div style="background-color:rgba(230, 242, 255, 0.6); padding:8px; border-radius:6px; text-align:left;">
+  <h4 style="margin:0;">High-level image analysis:</h4>
+</div>
+
+
+<h4>Function: <code>analyze_fruits</code></h4>
+
+**Description**:
+
+End-to-end analyzer that measures **fruit morphology**, **pericarp geometry**, and **locule** properties from a set of contours, then renders an **annotated image** (). 
+
+For each fruit contour, the function computes major/minor axes, rotated bounding box, compactness/circularity/solidity, inner pericarp area (from the locules), pericarp thickness, several **locule statistics** (area and circularity distributions), and **symmetry metrics** (angular, radial, and combined rotational symmetry). All visual elements (contours, centroids, axes, bounding boxes, labels) are drawn directly on the image during processing. If `plot=True`, the annotated image is displayed via `plot_image()` (e.g., in Jupyter or an interactive window).
+
+This function **assumes** that:
+
+1. `contours` contains the fruit and locule contours detected elsewhere.  
+2. `fruit_locus_map` maps each fruit id to the indices of its locule contours.  
+3. If `stamp=True`, the input image is expected to have black stamps on a white background.  
+4. The label text must be enclosed within a rectangular box in the image in order to be detected correctly.  
+5. The function expects the input image in **BGR format** (as returned by OpenCV).  Internally, the image is converted to **RGB** for annotation and output consistency.  
+
+
+**Implementation Details**:
+
+1. **Preprocessing & validation**
+   * Copy input image (BGR) and convert internally to RGB for annotation.
+   * Optionally invert colors for stamp images (`stamp=True`).
+   * Validate pixel → cm scales: both must be positive and `px_per_cm_y > px_per_cm_x`. If not, raise `ValueError`.
+
+2. **Fruit iteration & centroid lookup**
+
+   * Precompute all fruit centroids with `calculate_fruit_centroids()`.
+   * Iterate `fruit_locus_map`; skip `label_id` if provided.
+
+3. **Fruit contour & drawing**
+
+   * Retrieve the analysis contour via `get_fruit_contour()` using `contour_mode` and `epsilon_hull` by default.
+   * Draw the fruit contour and centroid on the annotation canvas.
+
+4. **Axes & rotated box**
+
+   * Compute major/minor axes (in cm) with `calculate_axes()`; draw the fruit axes on the annotation canvas.
+   * Compute the **rotated rectangle** via `rotate_box()`, returning (length, width) in px and cm; draw the box.
+
+5. **Fruit morphology**
+
+   * Call `get_fruit_morphology()` to obtain `fruit_area_cm2`, `fruit_perimeter_cm`, `fruit_circularity`, `fruit_solidity`, and `fruit_compactness`.
+   * Compute **aspect ratio** from rotated box (`box_width_cm / box_length_cm`).
+
+6. **Inner/outer pericarp area**
+
+   * Estimate **inner pericarp area** (cm²) using `inner_pericarp_area()` over the locules of that fruit (optionally with ellipse fitting via `use_ellipse`); draw the inner pericarp contour.
+   * Calculate the **outer pericarp area** (cm²) substracting `total_pericarp_area` - `inner_pericarp_area`.
+
+   * Derive **average pericarp thickness** by circle-equivalent radii difference: `sqrt(outer_area/π) − sqrt(inner_area/π)`.
+
+7. **Pericarp thickness**
+
+   * **Regardless of the chosen contour mode** for fruit and inner pericarp, the method **approximates ellipses (oval proxies)** around both shapes for stability and precision.
+   * The ratio of inner to outer ellipse areas is used to determine how much smaller the inner ellipse is.
+   * This scaling is then applied to the ellipse semi-axes, and thickness is obtained by subtracting the inner from the outer semi-axes.
+   * The method reports pericarp thickness as their average (`avg_pericarp_thickness_cm`).
+
+8. **Locule preprocessing & merging**
+
+   * Build `locules_data` from `precalculate_locules_data()`, filtering by `min_locule_area` (and `max_locule_area`, if set).
+   * Merge close locules with `merge_locules()` using `max_dist` / `min_dist`; draw merged contours.
+
+9. **Locule metrics**
+
+   * Compute per-fruit summary stats: mean/std/CV of **locule area** and **locule circularity**; count (`n_locules`).
+   * Draw each locule centroid for visualization.
+
+10. **Symmetry metrics**
+
+   * Compute `angular_symmetry()`, `radial_symmetry()`, and `rotational_symmetry()` using `num_shifts`, `angle_weight`, `radius_weight`, and `min_radius_threshold`.
+
+11. **Derived ratios & packing**
+
+    * `locules_density = n_locules / fruit_area_cm2`
+    * `inner_area_ratio = inner_pericarp_area_cm2 / fruit_area_cm2`
+    * `locule_area_ratio = max(locule_area) / min(locule_area)` (guarded)
+    * `total_locule_area_cm2`, `% locule area` of fruit, and **locule packing efficiency** relative to inner pericarp.
+
+12. **On-image text annotation**
+
+    * Place a semi-transparent label box near the fruit’s bounding rectangle, showing id and number of locules.
+
+13. **Plot & return**
+
+    * If `plot=True`, display via `plot_image()`.
+    * Return an `AnnotatedImage` object containing the annotated RGB image and a list of per-fruit metric dicts.
+    * If `plot=False`, the annotated image is returned silenty without display.
+
+
+**Arguments**:
+
+*Required*:
+
+* `img` (`np.ndarray`): Input image in **BGR** format.
+* `contours` (`list[np.ndarray]`): All valid contours (fruits + locules + label).
+* `fruit_locus_map` (`dict[int, list[int]]`): Maps fruit id → list of locule contour indices.
+* `px_per_cm_x` (`float`): Pixels per centimeter along the **short** image side (width).
+* `px_per_cm_y` (`float`): Pixels per centimeter along the **long** image side (length). Must be strictly greater than `px_per_cm_x`.
+* `img_name` (`str`): Image identifier.
+* `label_text` (`str`): Label to associate with results (e.g., cultivar/treatment).
+
+*Optional*:
+
+* `label_id` (`int | None`): Contour id of the label (excluded from fruit analysis).
+* `contour_mode` (`str`): `'raw'` (use original) or polygonal approximation; controlled by `epsilon_hull`.
+* `epsilon_hull` (`float`): Epsilon for polygon approximation of fruit/inner pericarp shapes.
+* `min_locule_area` (`int`): Minimum area (px²) for a valid locule.
+* `max_locule_area` (`int | None`): Maximum area (px²) for a valid locule; `None` disables upper filter.
+* `max_dist` (`int`): Max distance (px) to merge two locules.
+* `min_dist` (`int`): Min distance (px) to merge two locules.
+
+**Symmetry**:
+
+* `num_shifts` (`int`): Angular shifts to test during alignment in `angular_symmetry()`.
+* `angle_weight` (`float`): Weight of angular error in `rotational_symmetry()`.
+* `radius_weight` (`float`): Weight of radial error in `rotational_symmetry()`.
+* `min_radius_threshold` (`float`): Fraction of mean radius to keep a locule in symmetry calcs.
+
+**Inner pericarp**:
+
+* `use_ellipse` (`bool`): Fit ellipses for inner pericarp instead of raw contours.
+* `rel_tol` (`float`): Relative tolerance for isotropy checks when converting pixels → cm.
+
+**Stamps**:
+
+* `stamp` (`bool`): If `True`, invert image colors (useful for stamp-like inputs).
+
+**Plotting & annotation**:
+
+* `plot` (`bool`), `plot_size` (`tuple`), `font_scale` (`int`), `font_thickness` (`int`),
+  `text_color` (`Tuple[int,int,int]`), `bg_color` (`Tuple[int,int,int])`, `padding` (`int`), `line_spacing` (`int`),
+  `path` (`str | None`), `fig_axis` (`bool`), `title_fontsize` (`int`), `title_location` (`str`).
+
+
+**Returns**:
+
+`AnnotatedImage` object with:
+
+* `annotated_img` (`np.ndarray`): RGB image with contours, centroids, principal axes, rotated box, and per-fruit text labels drawn.
+* `results` (`list[dict]`): One dict per fruit containing:
+  * `image_name` (`str`)
+  * `label` (`str`)
+  * `fruit_id` (`int`)
+  * `n_locules` (`int`)
+  * `major_axis_cm` (`float`)
+  * `minor_axis_cm` (`float`)
+  * `fruit_area_cm2` (`float`)
+  * `fruit_perimeter_cm` (`float`)
+  * `fruit_circularity` (`float`)
+  * `fruit_aspect_ratio` (`float`)
+  * `fruit_solidity` (`float`)
+  * `fruit_compactness` (`float`)
+  * `box_length_cm` (`float`)
+  * `box_width_cm` (`float`)
+  * `compactness_index` (`float`)
+  * `inner_pericarp_area_cm2` (`float`)
+  * `outer_pericarp_area_cm2` (`float`)
+  * `avg_pericarp_thickness_cm` (`float`)
+  * `mean_locule_area_cm2` (`float`) 
+  * `std_locule_area_cm2` (`float`)
+  * `total_locule_area_cm2` (`float`)
+  * `cv_locule_area` (`float`)
+  * `mean_locule_circularity` (`float`)
+  * `std_locule_circularity` (`float`)
+  * `cv_locule_circularity` (`float`)
+  * `angular_symmetry` (`float`)
+  * `radial_symmetry` (`float`)
+  * `rotational_symmetry` (`float`)
+  * `locules_density` (`float`)
+  * `inner_area_ratio` (`float`)
+  * `locule_area_ratio` (`float`)
+  * `locule_area_percentage` (`float`)
+  * `locule_packing_efficiency` (`float`)
+
+<br> 
+
+  For more details about these measurements, refer to the [Traits Analyzed](#traits-analyzed) section.
+
+
+**Example**:
+
+<div class="highlight"><pre><span></span><code><span class="n">annot</span> <span class="o">=</span> <span class="n">analyze_fruits</span><span class="p">(</span>
+    <span class="n">img</span><span class="o">=</span><span class="n">img</span><span class="p">,</span>
+    <span class="n">contours</span><span class="o">=</span><span class="n">contours</span><span class="p">,</span>
+    <span class="n">fruit_locus_map</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">]},</span>
+    <span class="n">px_per_cm_x</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span>
+    <span class="n">px_per_cm_y</span><span class="o">=</span><span class="mf">31.2</span><span class="p">,</span>
+    <span class="n">img_name</span><span class="o">=</span><span class="s2">&quot;slice_03.jpg&quot;</span><span class="p">,</span>
+    <span class="n">label_text</span><span class="o">=</span><span class="s2">&quot;Cultivar A&quot;</span><span class="p">,</span>
+    <span class="n">label_id</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span>
+    <span class="n">contour_mode</span><span class="o">=</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span>
+    <span class="n">epsilon_hull</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">min_locule_area</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+    <span class="n">max_locule_area</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_dist</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">min_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">num_shifts</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="n">angle_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">radius_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">min_radius_threshold</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">use_ellipse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span>
+    <span class="n">stamp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">plot_size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">annot</span><span class="o">.</span><span class="n">table</span><span class="p">),</span> <span class="s2">&quot;fruits analyzed&quot;</span><span class="p">)</span>
+<span class="c1"># Access first fruit&#39;s metrics:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annot</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;major_axis_cm&quot;</span><span class="p">],</span> <span class="n">annot</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;rotational_symmetry&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+
+**Notes**:
+
+1. **Pixel scale constraints**: The function enforces `px_per_cm_y > px_per_cm_x` and both > 0; otherwise it raises `ValueError`.
+2. **Anisotropic scaling**: Conversions to cm² use **axis-specific** scale factors to correctly handle non-square pixels.
+3. **Locule merging**: `merge_locules()` helps consolidate nearby locule contours; tune `max_dist`/`min_dist` per imaging setup.
+4. **Thickness approximation**: Pericarp thickness uses circle-equivalent radii; it’s a robust scalar, not a spatial thickness map.
+5. **Symmetry interpretation**: With few locules (2–3), deviations can inflate error—interpret symmetry scores with care.
+6. **Rendering**: The function draws fruit and locule contours, centroids, major/minor axes, rotated box, and a compact info box (`id`, `n loc`).
+7. **Performance**: Core geometry relies on NumPy/OpenCV vectorization; heavy steps (e.g., symmetry alignment with many shifts) may be tuned via `num_shifts`.
+
+
+
+----
+
+#### **Examples**
+
+
+
+### 2.4 Module: Color Correction
+
+<div style="background-color:#D8BFD8; padding:8px; border-radius:6px; 
+text-align:center;">
+
+#### **User-Facing Classes**
+
+</div>
+
+<br>
+
+<div style="background-color:#DAA520; padding:8px; border-radius:6px; 
+text-align:center;">
+
+#### **Advanced Utilities**
+
+</div>
+
+<br>
+
+<div style="background-color:#BC8F8F; padding:8px; border-radius:6px; 
+text-align:center;">
+
+#### Helper Functions
+
+</div>
+
+<br>
+
+<div style="background-color:#e6f2ff; padding:8px; border-radius:6px; 
+text-align:center;">
+
+#### Internal/Core Utilities
+
+</div>
+
+---
+
+## 3. Web Interface
+
+### 3.1 Access and requirements
+
+### 3.2 Navigation and main features
+
+### 3.3 Common use cases
+
+### 3.4 Limitations and considerations
+
+---
+
+## 4. Command Line Interface (CLI)
+
+### 4.1 CLI installation
+
+### 4.2 Available commands and syntax
+
+### 4.3 Usage examples
+
+### 4.4 Parameters and advanced options
+
+---
+
+## 5. FAQ and Support/Collaboration
+
+* Frequently asked questions
+* Support contact information
+
+## 6. Citation
+---
+
+## 7. License
+
+---
+
+## 8. Tutorials 
+
+- Python API tutorials
+- Web interface guides
+- CLI usage examples
+
+---
+
+
+
+## Syllabus
+
+<h4 id="locule-symmetry">Locule symmetry</h3>
+
+![alt text](image-1.png)
+
+<h4 id="isotropic-pixels">Isotropic pixels</h3>
+
+Non-uniform scaling just means that different scales are applied to each dimension, making it anisotropic. The opposite would be isotropic scaling, where the same scale is applied to each dimension.
+
+<h4 id="anisotropic-pixels">Anisotropic pixels</h3>
+<p>Píxeles con la misma densidad en X e Y...</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/mariameraz" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
