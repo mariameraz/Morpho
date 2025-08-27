@@ -1,5 +1,7 @@
 site_name: Traitly
 
+site_dir: mydocs/docs
+
 theme:
   name: readthedocs
 
